@@ -28,32 +28,35 @@
     function play($deck, $players, $cardsToGive){
 
         $game = [];
-        for ($i=0; $i <= $players ; $i++) { 
-            $playerName = ["name"=>"Player_".$i];
-            array_push($game,$playerName);
+
+        for ($i=0; $i < $players ; $i++) { 
+
+            $player = [];
+            $playerCards = [];
+
             for ($k=0; $k < $cardsToGive; $k++) { 
+
                 $playerCards[$k] = array_pop($deck);
+
             }
-            $playerCards = ["cards"=>$playerCards];
-            array_push($game,$playerCards);
+
+            $player = array("cards"=>$playerCards,"name"=>"Player_".$i);
+
+            array_push($game,$player);
         }
 
         return $game;
-
     }
 
     $newDeck = createDeck($numero,$palo);
-    $game = play($newDeck,2,4);
-    
-    echo '<pre>';
-    var_dump($game);
-    foreach($game as $val) {
-        echo 'Name: '.$val.'<br/>';
 
-        //var_dump($val['cards']);
+    foreach(play($newDeck,4,5) as $player) {
+        echo '<strong>Name: '.$player["name"].'</strong><br/>';
+        foreach ($player["cards"] as $card) {
+            echo '<img src="EJERCICIO_CARTAS/baraja/'.$card[1].'-'.$card[0].'.gif" alt="">';
+        }
+        echo '<br/><br/>';
     }
 
-    // echo '<pre>';
-    // var_dump(play($newDeck,7,3));
 ?>
 
