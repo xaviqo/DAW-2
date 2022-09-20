@@ -1,0 +1,26 @@
+flex {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+header {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    grid-area: header;
+    background-color: #c0c0c0;
+}
+
+header h1 {
+    color: #13507c;
+    text-align: center;
+    font-size: 2.4em;
+}
+
+header h1 {
+    color: #13507c;
+    text-align: center;
+    font-size: 2.4em;
+}
