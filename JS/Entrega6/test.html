@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+    <style>
+        .menu{
+            list-style-type: none;
+            width: 200px;
+            height: 200px;
+            position: relative;
+            border-radius: 100%;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+        .menu li a{
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            transform: rotate(-45deg);
+        }
+        .menu li{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            background-color: bisque;
+            transform-origin: bottom right;
+        }
+        .menu li:nth-child(even){
+            background-color: aquamarine;
+        }
+        .menu li:nth-child(1){
+            transform: rotate(90deg) skew(18deg);
+        }
+        .menu li:nth-child(2){
+            transform: rotate(90deg) skew(18deg);
+        }
+        .menu li:nth-child(3){
+            transform: rotate(180deg)  skew(18deg);
+        }
+        .menu li:nth-child(4){
+            transform: rotate(270deg)  skew(18deg);
+           
+        }
+    </style>
+    <ul class="menu">
+        <li class="fa fa-home" style="color: black"><a href="#"><span class=""></span></a></li>
+        <li class="archi"><a href="#"><span class=""></span></a></li>
+        <li class="home"><a href="#"><span class=""></span></a></li>
+        <li class="check"><a href="#"><span class=""></span></a></li>
+        <li class="adjust"><a href="#"><span class=""></span></a></li>
+    </ul>
+</head>
+<body>
+    
+</body>
+</html>
