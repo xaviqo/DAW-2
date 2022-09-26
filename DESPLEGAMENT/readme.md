@@ -4,7 +4,7 @@
 Aquest projecte és la meva primera demo en gitlab
 ## Contribuidors
 ## Contacte
-**El teu nom** - ***el teu correu**
+**xavier quiñones** - **xavi@xavi.com**
 <br/>
 Enllaç del projecte:
-[https://gitlab.com/user/project](https://gitlab.com/user/project)
+[https://gitlab.com/xavi.qo/primer-projecte-clase](https://gitlab.com/xavi.qo/primer-projecte-clase)
