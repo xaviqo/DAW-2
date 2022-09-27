@@ -39,7 +39,7 @@
 
         .betBox {
             padding: 0 15%;
-            margin: 25% 25%;
+            margin: 25% 5%;
         }
     </style>
 </head>
@@ -58,6 +58,9 @@
                             <option value="falta">Falta[0] / Passa[1] (0/1)</option>
                             <option value="parell">Parell[0] / Senar[1] (0/1)</option>
                             <option value="color">Vermell[0] / Negre[1] (0/1)</option>
+                            <option value="dotzena">Dotzena - 1-12[0] / 13-24[1] / 25-36[2]</option>
+                            <option value="quadre">Quadre - Introduir número superior esquerre</option>
+                            <option value="cavall">Cavall (#-#)</option>
                         </select>
                     </div>
                 </div>

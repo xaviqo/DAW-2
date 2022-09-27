@@ -38,6 +38,10 @@
         return ($rnd%2==$num);
     }
 
+    function cavallGame($rnd,$num) {
+        return in_array($rnd,explode("-",$num));
+    }
+
     function colorGame($rnd,$num) {
         if ($rnd>0){
             if (($rnd>10 && $rnd<18) || $rnd>28){
@@ -49,12 +53,37 @@
         }
     }
 
+    function dotzenaGame($rnd,$num){
+        
+        switch ($num) {
+            case 0:
+                $num = explode("-","1-12");
+                break;
+            case 1:
+                $num = explode("-","12-24");
+                break;
+            case 2:
+                $num = explode("-","25-36");
+                break;
+            default:
+                return false;
+        }
+
+        return (($num[0] >= $rnd) || ($num[1] <= $rnd));
+    }
+
+    function quadreGame($rnd,$num){
+        return in_array($rnd,array($num,$num+1,$num+3,$num+4));
+    }
+
     // SWITCH GAME //
 
     if (validValue($num)) {
 
         $win = false;
         $mult = 1;
+        
+        //$rnd = 2;
 
         switch ($type) {
             case 'simple':
@@ -71,12 +100,17 @@
                 $win = colorGame($rnd,$num);
                 break;
             case 'dotzena':
-                break;
-            case 'quadre':
-                break;
+                $mult = 3;
+                $win = dotzenaGame($rnd,$num);
             case 'transversal':
                 break;
+            case 'quadre':
+                $mult = 8;
+                $win = quadreGame($rnd,$num);
+                break;
             case 'cavall':
+                $mult = 17;
+                $win = cavallGame($rnd,$num);
                 break;
             case 'columna':
                 break;
