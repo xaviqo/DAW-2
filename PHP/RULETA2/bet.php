@@ -76,6 +76,16 @@
         return in_array($rnd,array($num,$num+1,$num+3,$num+4));
     }
 
+    function columnaGame($rnd,$num){
+        $numbers = [];
+        array_push($numbers,explode("-",$num)[0]);
+        for ($i=explode("-",$num)[0]; $i < explode("-",$num)[1]; $i=$i+3) { 
+            array_push($numbers,$i);
+        }
+        array_push($numbers,explode("-",$num)[1]);
+        return in_array($rnd,$numbers);
+    }
+
     // SWITCH GAME //
 
     if (validValue($num)) {
@@ -113,6 +123,7 @@
                 $win = cavallGame($rnd,$num);
                 break;
             case 'columna':
+                $win = columnaGame($rnd,$num);
                 break;
             default:
                 echo "INVALID GAME TIME";

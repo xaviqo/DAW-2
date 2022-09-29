@@ -61,6 +61,7 @@
                             <option value="dotzena">Dotzena - 1-12[0] / 13-24[1] / 25-36[2]</option>
                             <option value="quadre">Quadre - Introduir número superior esquerre</option>
                             <option value="cavall">Cavall (#-#)</option>
+                            <option value="columna">Columna (#-#)</option>
                         </select>
                     </div>
                 </div>

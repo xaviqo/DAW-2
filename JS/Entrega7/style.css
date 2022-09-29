@@ -1,0 +1,131 @@
+body {
+    background-color: bisque;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+.gallery {
+    display: grid;
+    grid-template-areas: 
+    "allImgs imgShow imgShow"
+    "allImgs imgShow imgShow"
+    "imgName imgShow imgShow";
+    height: 60vh;
+    width: 80vw;
+}
+
+.allImgs {
+    grid-area: allImgs;
+    background-color: aquamarine;
+    width: 30vw;
+    height: 55vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.allImgs div {
+    position: relative;
+    width: 15%;
+    height: 15%;
+    border: 1px solid black;
+    box-shadow: 1px 1px 2px grey;
+    transition: 1s;
+    box-sizing: border-box;
+    z-index: 999;
+}
+
+.allImgs div a img:nth-child(even):hover{
+    transform: scale(1,2);
+}
+
+.allImgs div a img:nth-child(odd):hover{
+    transform: scale(2,1);
+}
+
+.allImgs div p {
+    display: none;
+    color: white;
+    font-size: large;
+    position: fixed;
+    top: 725px;
+    left: 200px;
+}
+
+.allImgs div:hover p{
+    display: flex;
+}
+
+a img {
+    width: 100%;
+    height: 100%;
+}
+
+a:focus img{  
+    width: 400%;
+    height: 400%;
+    transition-delay: 1s;
+    transition: 2s;
+}
+
+a.row1:focus img{
+    margin-top: 20px;
+}
+
+a.row2:focus img{
+    margin-top: -90px;
+}
+
+a.row3:focus img{
+    margin-top: -210px;
+}
+
+a.row4:focus img{
+    margin-top: -320px;
+}
+
+a.col1:focus img{
+    margin-left: 880px;
+}
+
+a.col2:focus img{
+    margin-left: 780px;
+}
+
+a.col3:focus img{
+    margin-left: 700px;
+}
+
+a.col4:focus img{
+    margin-left: 600px;
+}
+
+a.col5:focus img{
+    margin-left: 500px;
+}
+
+a.col6:focus img{
+    margin-left: 400px;
+}
+
+.imgName {
+    grid-area: imgName;
+    background-color: brown;
+    width: 30vw;
+    height: 15vh;
+}
+
+.imgShow {
+    grid-area: imgShow;
+    background-color: yellowgreen;
+    width: 50vw;
+}

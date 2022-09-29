@@ -69,14 +69,15 @@ ul li {
     transform-origin: bottom right;
     font-size: xx-large;
     color: rgba(255, 255, 255, 0.95);
-    text-shadow: 3px 3px rgb(17, 17, 17);
+    text-shadow: 1px 1px rgb(17, 17, 17);
 }
 
 ul li:hover{
-    background-color: rgba(215, 221, 190, .2);
+    background-color: rgba(215, 221, 190, .06);
     color: white;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    cursor: pointer
+    cursor: pointer;
+    transition: 0.5s;
+    text-shadow: 3px 3px rgb(17, 17, 17);
 }
 
 .icon{
@@ -133,8 +134,16 @@ ul li:nth-child(4){
     transform: rotate(1deg);
 }
 
+.titleOdd:hover{
+    transform: rotate(-1deg);
+}
+
 .titleEven{
     transform: rotate(-1deg);
+}
+
+.titleEven:hover{
+    transform: rotate(1deg);
 }
 
 .discTitle span{
@@ -182,6 +191,7 @@ div.infoText > div {
 }
 
 .infoButtons:hover{
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.3);
+    transition: all 0.5s;
     color: white;
 }

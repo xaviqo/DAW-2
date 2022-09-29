@@ -7,55 +7,75 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Document</title>
     <style>
-        .menu{
-            list-style-type: none;
-            width: 200px;
-            height: 200px;
-            position: relative;
-            border-radius: 100%;
-            overflow: hidden;
-            margin: 0;
-            padding: 0;
+        body {
+            background-color: black;
         }
-        .menu li a{
-            position: absolute;
-            bottom: 30px;
-            right: 30px;
-            transform: rotate(-45deg);
+        /* From uiverse.io by @Ali-Tahmazi99 */
+        input[type = "checkbox"] {
+        -webkit-appearance: none;
+        display: none;
+        visibility: hidden;
         }
-        .menu li{
-            width: 100px;
-            height: 100px;
-            position: absolute;
-            background-color: bisque;
-            transform-origin: bottom right;
+
+        .bar {
+        position: relative;
+        cursor: pointer;
+        width: 50px;
+        height: 40px;
         }
-        .menu li:nth-child(even){
-            background-color: aquamarine;
+
+        .bar span {
+        position: absolute;
+        width: 45px;
+        height: 7px;
+        background: #f1faee;
+        border-radius: 100px;
+        display: inline-block;
+        transition: 0.3s ease;
+        left: 0;
         }
-        .menu li:nth-child(1){
-            transform: rotate(90deg) skew(18deg);
+
+        .bar span.top {
+        top: 0;
         }
-        .menu li:nth-child(2){
-            transform: rotate(90deg) skew(18deg);
+
+        .bar span.middle {
+        top: 17px;
         }
-        .menu li:nth-child(3){
-            transform: rotate(180deg)  skew(18deg);
+
+        .bar span.bottom {
+        bottom: 0;
         }
-        .menu li:nth-child(4){
-            transform: rotate(270deg)  skew(18deg);
-           
+
+        input[type]:checked ~ span.top {
+        transform: rotate(45deg);
+        transform-origin: top left;
+        width: 48px;
+        left: 5px;
+        }
+
+        input[type]:checked ~ span.bottom {
+        transform: rotate(-45deg);
+        transform-origin: top left;
+        width: 48px;
+        bottom: -1px;
+        box-shadow: 0 0 10px #495057;
+        }
+
+        input[type]:checked ~ span.middle {
+        transform: translateX(-20px);
+        opacity: 0;
         }
     </style>
-    <ul class="menu">
-        <li class="fa fa-home" style="color: black"><a href="#"><span class=""></span></a></li>
-        <li class="archi"><a href="#"><span class=""></span></a></li>
-        <li class="home"><a href="#"><span class=""></span></a></li>
-        <li class="check"><a href="#"><span class=""></span></a></li>
-        <li class="adjust"><a href="#"><span class=""></span></a></li>
-    </ul>
 </head>
 <body>
-    
+    <div>
+        <label for="check" class="bar">
+            <input id="check" type="checkbox">
+            <span class="top"></span>
+            <span class="middle"></span>
+            <span class="bottom"></span>
+        </label>
+    </div>
 </body>
 </html>
