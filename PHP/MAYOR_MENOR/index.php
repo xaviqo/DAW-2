@@ -1,10 +1,26 @@
 <?php
+echo '<center style="margin-top: 25px">';
+
+echo '<form action="index.php">
+<input type="text" name="tryNumber">
+<input type="submit" value="send">
+</form>';
+
+$win = false;
+$br = '<br/>';
 session_start();
-echo "Type reset to restart game";
+echo "Type reset to restart game".$br;
+
+if ($_SESSION['win']) {
+    session_destroy();
+    header("Refresh:0");
+}
+
 if (!isset($_SESSION['random_number'])) {
 
     $_SESSION['random_number'] = rand(1,1000);
     $_SESSION['played_numbers'] = [];
+    $_SESSION['win'] = false;
 
 } elseif ($_REQUEST['tryNumber'] == 'reset') {
 
@@ -14,40 +30,30 @@ if (!isset($_SESSION['random_number'])) {
 } else {
     
     $try = count($_SESSION['played_numbers']);
-    $num = $_REQUEST['tryNumber'];
-    $rnd = $_SESSION['random_number'];
+    $num = (int)$_REQUEST['tryNumber'];
+    $rnd = (int)$_SESSION['random_number'];
     array_push($_SESSION['played_numbers'],$_REQUEST['tryNumber']);
 
-    if ($try <= 10) {
+    if ($num == $rnd){
+        echo "Correcto!";
+        $win = true;
+    } elseif ($num > $rnd){
+        echo "El número es menor";
+    } elseif ($num < $rnd){
+        echo "El número es mayor";
+    }
+        echo $br;
+
+    if ($win) {
+        array_push($_SESSION['win'],true);
+    } elseif ($try < 10) {
         echo "Te quedan ".(10-$try)." intentos.";
+    } elseif ($try==10){
+        echo "Ya no te quedan intentos, el número era ".$rnd;
     } else {
-        echo "No te quedan mas intentos :(";
         session_destroy();
         header("Refresh:0");
     }
 
-    if ($num == $rnd){
-        echo "Correcto!";
-    } elseif ($num > $rnd){
-        echo "El número es menor";
-    } elseif ($rnd < $num){
-        echo "El número es mayor";
-    }
-
 }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mayor/Menor</title>
-</head>
-<body>
-    <form action="index.php">
-        <input type="text" name="tryNumber">
-        <input type="submit" value="send">
-    </form>
-</body>
-</html>
