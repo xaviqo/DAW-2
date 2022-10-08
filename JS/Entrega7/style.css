@@ -41,14 +41,13 @@ main {
     box-shadow: 1px 1px 2px grey;
     transition: 1s;
     box-sizing: border-box;
-    z-index: 999;
 }
 
-.allImgs div a img:nth-child(even):hover{
+.allImgs div:nth-child(even):hover{
     transform: scale(1,2);
 }
 
-.allImgs div a img:nth-child(odd):hover{
+.allImgs div:nth-child(odd):hover{
     transform: scale(2,1);
 }
 
@@ -57,12 +56,8 @@ main {
     color: white;
     font-size: large;
     position: fixed;
-    top: 725px;
+    top: 735px;
     left: 200px;
-}
-
-.allImgs div:hover p{
-    display: flex;
 }
 
 a img {
@@ -70,11 +65,18 @@ a img {
     height: 100%;
 }
 
+.imgShow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 a:focus img{  
     width: 400%;
     height: 400%;
     transition-delay: 1s;
     transition: 2s;
+    transform: scale(0);
 }
 
 a.row1:focus img{

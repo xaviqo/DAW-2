@@ -115,7 +115,7 @@ ul li:nth-child(4){
 .discGroup div img {
     border: 1px solid rgba(0, 0, 0, 0.2);
     max-width: 400px;
-    box-shadow: 3px 3px 2px rgba(128, 128, 128, 0.5);
+    box-shadow: 3px 3px 3px rgba(128, 128, 128, 0.5);
 }
 
 .discTitle {
@@ -153,7 +153,6 @@ ul li:nth-child(4){
 /* INFO */
 
 .info {
-    margin: -3%;
     background-color: rgba(0, 0, 0, 0.9);
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -170,10 +169,16 @@ ul li:nth-child(4){
     margin-bottom: 0.6em;
 }
 
+.info div img {
+    transform: rotate(-1deg);
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
 .street {
-    margin: -10px;
+    margin: -15px;
     float: right;
-    box-shadow: none;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+
 }
 
 div.infoText > div {
@@ -193,5 +198,81 @@ div.infoText > div {
 .infoButtons:hover{
     background-color: rgba(0, 0, 0, 0.3);
     transition: all 0.5s;
+    color: white;
+}
+
+/* LIVES */
+
+.lives {
+    margin-top: 2vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.live {
+    margin: 5%;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 3px 3px 3px rgba(128, 128, 128, 0.5);
+}
+
+.liveImg {
+    height: 420px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.liveBoxes {
+    color: white;
+    padding: 1%;
+    padding-left: 2%;
+    display: flex;
+    align-items: center;
+    min-height: 5vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    height: 1vh;
+    font-size: 1.4em;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.groupName {
+    margin-top: -15px;
+    margin-left: 10px;
+    transform: rotate(-0.8deg);
+    float: left;
+    max-width: 325px;
+}
+
+.outerLiveDate {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: inherit;
+}
+
+.liveDate {
+    width: 20vw;
+    float: left;
+    r
+    transform: rotate(0.8deg);
+
+}
+
+.leftLive {
+    background-image: url(img/lives/lilsmz.jpg);
+}
+
+.centerLive {
+    background-image: url(img/lives/belako.jpg);
+}
+
+.rightLive {
+    background-image: url(img/lives/lmnc.jpg);
+}
+
+.liveText {
+    background-color: rgba(0, 0, 0, 0.9);
     color: white;
 }

@@ -8,8 +8,7 @@ if (!isset($_SESSION['random_number'])) {
 
 } elseif ($_REQUEST['tryNumber'] == 'reset') {
 
-    session_destroy();
-    header("Refresh:0");
+
 
 } else {
     
