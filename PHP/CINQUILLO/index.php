@@ -12,6 +12,7 @@ $players = [];
 $turn = 1;
 $round = 1;
 $valid_movement = false;
+$win = null;
 
 if (isset($_REQUEST['reset']) && isset($_SESSION['cinquillo']) && !isset($_REQUEST['spend'])) {
     session_destroy();
@@ -39,6 +40,7 @@ $round = $_SESSION['round'];
 $players = $_SESSION['players'];
 $ingame_cards = $_SESSION['ingame_cards'];
 
+$win = checkWinners($players);
 
 if (isset($_REQUEST['suit']) && isset($_REQUEST['fig'])) {
 
@@ -128,7 +130,7 @@ echo
             padding: 15px; 
             background-color: moccasin; 
             box-shadow: 0px 0px 5px gray;
-            width: 40vw;
+            width: 730px;
         }
         .playerDiv {
             border: 1px solid black; 
@@ -142,16 +144,29 @@ echo
             padding: 15px; 
             background-color: moccasin; 
             box-shadow: 0px 0px 5px gray;
-            width: 40vw;
+            width: 700px;
             margin-bottom: 20px;
+        }
+        .winDiv{
+            display: flex;
+            justify-content: center;
+            padding: 15px;
+        }
+        .winText {
+            font-size: x-large;
+            margin-top:25px;
+        }
+        .winImg {
+            margin: 0 15px;
+            width: 80px;
         }
     </style>
 </head>';
 
 echo '<body> 
-        <main style="display:flex; justify-content: center; flex-wrap: wrap; max-width: 50%"> 
+        <main style="display:flex; justify-content: center; flex-wrap: wrap; width: 730px;"> 
         <div class="ingameCardsDiv">';
-printIngameCards($ingame_cards);
+($win > 0)?printWinner($win):printIngameCards($ingame_cards);
 echo '</div>
         <form action="index.php">
         ';
@@ -296,6 +311,27 @@ function numToFigure($num)
         default:
             return $num;
     }
+}
+
+function checkWinners($players){
+
+    $playerNum = 1;
+    foreach ($players as $player) {
+        if (sizeof($player) < 1){
+            return $playerNum;
+        }
+        $playerNum++;
+    }
+    return 0;
+
+}
+
+function printWinner($winner){
+    echo '<div class="winDiv">';
+    echo '<img src="win.gif"/ class="winImg">';
+    echo '<span class="winText">PLAYER <strong>'.$winner.'</strong> WINS</span>';
+    echo '<img src="win.gif"/ class="winImg">';
+    echo '</div>';
 }
 
 function sortCards($cardsArray)
