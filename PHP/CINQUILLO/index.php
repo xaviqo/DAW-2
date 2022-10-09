@@ -32,14 +32,13 @@ if (!isset($_SESSION['cinquillo'])) {
     );
 
     $valid_movement = false;
-
-
 }
 // load data
 $turn = $_SESSION['turn'];
 $round = $_SESSION['round'];
 $players = $_SESSION['players'];
 $ingame_cards = $_SESSION['ingame_cards'];
+
 
 if (isset($_REQUEST['suit']) && isset($_REQUEST['fig'])) {
 
@@ -49,19 +48,26 @@ if (isset($_REQUEST['suit']) && isset($_REQUEST['fig'])) {
     $play_result = playCard($_REQUEST['suit'], $_REQUEST['fig'], $player_pos);
 
     if ($play_result > -1) $valid_movement = true;
-
 } elseif (isset($_REQUEST['spend'])) {
     $valid_movement = true;
 }
 
 if ($valid_movement || !isset($_SESSION['cinquillo'])) {
 
-    if (isset($_SESSION['cinquillo'])){
+    if (isset($_SESSION['cinquillo'])) {
         $turn++;
         if ($turn > 4) {
             $turn = 1;
             $round++;
         }
+    }
+
+    foreach (CARD_SUIT as $suit){
+
+        if (sizeof($ingame_cards[$suit])>0){
+            $ingame_cards[$suit] = sortCards($ingame_cards[$suit]);
+        }
+    
     }
 
     $_SESSION['cinquillo'] = true;
@@ -81,7 +87,8 @@ echo
     <style>
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background-color: darkslategray;
+            background-image: url("tablepattern.jpg");
+            background-size: 20%;
             display: flex;
             justify-content: center;
         }
@@ -144,11 +151,11 @@ echo
 echo '<body> 
         <main style="display:flex; justify-content: center; flex-wrap: wrap; max-width: 50%"> 
         <div class="ingameCardsDiv">';
-        printIngameCards($ingame_cards);
-    echo '</div>
+printIngameCards($ingame_cards);
+echo '</div>
         <form action="index.php">
         ';
-        printPlayersFrame($players, $turn);
+printPlayersFrame($players, $turn);
 echo   '<center style="margin-top: 2vh;">
             <input type="submit" value="RESET GAME" name="reset" class="spendBtn" style="color: black; font-size: 20px;">
         </center>
@@ -204,10 +211,10 @@ function printIngameCards($ingame_cards)
 {
 
     foreach (CARD_SUIT as $suit) {
-        echo '<div>
-                <div>'.strtoupper($suit).'</div>
-                <div style="margin-left: 25px;">';
-        foreach($GLOBALS['ingame_cards'][$suit] as $card){
+        echo '<div>';
+        if (sizeof($GLOBALS['ingame_cards'][$suit]) > 0) echo strtoupper($suit);
+        echo '<div style="margin-left: 25px;">';
+        foreach ($GLOBALS['ingame_cards'][$suit] as $card) {
             echo '<img src="baraja/' . $card['suit'] . '-' . numToFigure($card['fig']) . '.gif" class="card" style="margin-left: -20px;">';
         }
         echo '</div>
@@ -262,8 +269,8 @@ function checkIfValid($card)
     if ($fig == 5) {
         $valid = true;
     } else {
-        foreach($GLOBALS['ingame_cards'][$suit] as $checkFig){
-            if ($fig-1 == $checkFig['fig'] || $fig+1 == $checkFig['fig']) $valid = true;
+        foreach ($GLOBALS['ingame_cards'][$suit] as $checkFig) {
+            if ($fig - 1 == $checkFig['fig'] || $fig + 1 == $checkFig['fig']) $valid = true;
         }
     }
 
@@ -291,21 +298,22 @@ function numToFigure($num)
     }
 }
 
-//not using it. 
-function figureToNum($fig)
+function sortCards($cardsArray)
 {
-    switch ($fig) {
-        case 'as':
-            return 1;
-        case 'jota':
-            return 11;
-        case 'reina':
-            return 12;
-        case 'rey':
-            return 13;
-        default:
-            return $fig;
-    }
+
+    for($i=0;$i<count($cardsArray);$i++){
+		$val = $cardsArray[$i]['fig'];
+		$j = $i-1;
+		while($j>=0 && $cardsArray[$j]['fig'] > $val){
+			$cardsArray[$j+1]['fig'] = $cardsArray[$j]['fig'];
+			$j--;
+		}
+		$cardsArray[$j+1]['fig'] = $val;
+	}
+
+    return $cardsArray;
+
 }
+
 
 ?>
