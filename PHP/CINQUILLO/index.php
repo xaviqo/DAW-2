@@ -3,7 +3,7 @@ session_start();
 const ALL_DECK = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
 const CARD_SUIT = ['corazones', 'picas', 'diamantes', 'treboles'];
 const NUM_OF_PLAYERS = 4;
-const BR = '</BR>';
+const BR = '<br/>';
 
 $total_cards = (sizeof(ALL_DECK) * sizeof(CARD_SUIT));
 
@@ -50,6 +50,7 @@ if (isset($_REQUEST['suit']) && isset($_REQUEST['fig'])) {
     $play_result = playCard($_REQUEST['suit'], $_REQUEST['fig'], $player_pos);
 
     if ($play_result > -1) $valid_movement = true;
+
 } elseif (isset($_REQUEST['spend'])) {
     $valid_movement = true;
 }
@@ -222,7 +223,7 @@ function printCard($player, $card, $show)
     }
 }
 
-function printIngameCards($ingame_cards)
+function printIngameCards()
 {
 
     foreach (CARD_SUIT as $suit) {

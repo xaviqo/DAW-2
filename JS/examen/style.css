@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+}
+body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+header {
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 15vh;
+    text-transform: uppercase;
+    border-bottom: 1px solid gainsboro;
+
+}
+header .mainLogo {
+    width: 350px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.mainLogo h1 {
+    font-size: 3.6em;
+}
+.mainLogo h3 {
+    font-size: 1em;
+}
+nav {
+    padding-top: 60px;
+    width: 75vw;
+    text-transform: uppercase;
+}
+ul {
+    display: flex;
+    justify-content: space-around;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+li {
+    font-family: sans-serif;
+    font-size: small;
+    font-weight: bold;
+    padding: 7px;
+}
+li::marker{
+    display: none;
+    content: "";
+}
+.outter {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+.contentSeparator{
+    height: 18vh;
+    width: 75vw;
+    border-top: 1px solid black;
+    border-bottom: 10px solid black;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.contentSeparator h2 {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.underLine {
+    position: absolute;
+    height: 2px;
+    width: 300px;
+    background-color: black;
+}
+
+.sectionOpinion {
+    width: 75vw;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.colOpinion{
+    text-indent: 20px;
+    margin-top: 25px;
+    height: 300px;
+    padding: 0 15px;
+}
+
+.colOpinion h3{
+    font-size: 1.8em;
+    font-weight: bold;
+    padding-bottom: 15px;
+}
+
+.colOpinion span {
+    font-size: 1.3em;
+    color: gray;
+}
+
+.leftSeparatorCol {
+    border-left: 1px solid rgba(128, 128, 128, 0.212);
+}
+
+.editorialTitle {
+    text-transform: uppercase;
+    font-size: small;
+}
+

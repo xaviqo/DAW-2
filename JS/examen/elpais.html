@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Pais</title>
+    <style>
+        * {
+    margin: 0;
+}
+body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+header {
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 15vh;
+    text-transform: uppercase;
+    border-bottom: 1px solid gainsboro;
+
+}
+header .mainLogo {
+    width: 350px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.mainLogo h1 {
+    font-size: 3.6em;
+}
+.mainLogo h3 {
+    font-size: 1em;
+}
+nav {
+    padding-top: 60px;
+    width: 75vw;
+    text-transform: uppercase;
+}
+ul {
+    display: flex;
+    justify-content: space-around;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+li {
+    font-family: sans-serif;
+    font-size: small;
+    font-weight: bold;
+    padding: 7px;
+}
+li::marker{
+    display: none;
+    content: "";
+}
+.outter {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+.contentSeparator{
+    height: 18vh;
+    width: 75vw;
+    border-top: 1px solid black;
+    border-bottom: 10px solid black;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.contentSeparator h2 {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.underLine {
+    position: absolute;
+    height: 2px;
+    width: 300px;
+    background-color: black;
+}
+
+.sectionOpinion {
+    width: 75vw;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.colOpinion{
+    text-indent: 20px;
+    margin-top: 25px;
+    height: 300px;
+    padding: 0 15px;
+}
+
+.colOpinion h3{
+    font-size: 1.8em;
+    font-weight: bold;
+    padding-bottom: 15px;
+}
+
+.colOpinion span {
+    font-size: 1.3em;
+    color: gray;
+}
+
+.leftSeparatorCol {
+    border-left: 1px solid rgba(128, 128, 128, 0.212);
+}
+
+.editorialTitle {
+    text-transform: uppercase;
+    font-size: small;
+}
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="mainLogo">
+            <h1>El Pais</h1>
+            <h3>El Periodico Global</h3>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">Internacional</li></a>
+            <li><a href="#">Opinión</li></a>
+            <li><a href="#">España</li></a>
+            <li><a href="#">Economía</li></a>
+            <li><a href="#">Sociedad</li></a>
+            <li><a href="#">Educación</li></a>
+            <li><a href="#">Medio Ambiente</li></a>
+            <li><a href="#">Ciencia</li></a>
+            <li><a href="#">Salud</li></a>
+            <li><a href="#">Tecnología</li></a>
+            <li><a href="#">Cultura</li></a>
+            <li><a href="#">Babelia</li></a>
+            <li><a href="#">Deportes</li></a>
+            <li><a href="#">Televisión</li></a>
+            <li><a href="#">Gente</li></a>
+            <li><a href="#">El País Semanal</li></a>   
+        </ul>
+    </nav>
+    <div class="contentSeparator">
+        <h2>Opinión</h2>
+        <div class="underLine"></div>
+    </div>
+    <section class="sectionOpinion">
+        <article class="colOpinion">
+            <center>
+                <h4 class="editorialTitle">editorial</h4>
+            </center>
+            <h3>
+                Mantener el fuego a raya
+            </h3>
+            <span>
+                Los bomberos de Castilla y León aciertan en reclamar que no se escatimen medios para prevenir los incendios forestales
+            </span>
+        </article>
+        <article class="colOpinion leftSeparatorCol">
+            <h3>
+                Sobre el indulto a Griñán
+            </h3>
+            <span>
+                “El Gobierno tendrá que adoptar una decisión en un contexto marcado por una profunda división de opiniones que, en buena medida, demuestran una desenfocada comprensión jurídica de este mecanismo”
+            </span>
+        </article>
+        <article class="colOpinion leftSeparatorCol">
+            <h3>
+                ¿Es serio comparar al actual Gobierno de España con el de Italia?
+            </h3>
+            <span>
+                “Si Fernando Savater cree que España ha entrado con este Gobierno en una deriva autoritaria similar a la de varios países gobernados por la extrema derecha, lo debería justificar”
+            </span>
+        </article>
+        <article class="colOpinion leftSeparatorCol">
+            <h3>
+                Relatos europeos que nos vamos contando
+            </h3>
+            <span>
+                “La UE está tomando posiciones partidistas en la política italiana, igual que hizo durante las guerras del Brexit”
+            </span>
+        </article>
+        <article class="colOpinion leftSeparatorCol">
+            <h3>
+                Cuando abucheas a tu propia heroína "indepe"
+            </h3>
+            <span>
+                “El día en que el liberalismo de las luces vuelva a imperar en Cataluña habremos pasado página”
+            </span>
+        </article>
+        <article class="colOpinion leftSeparatorCol">
+            <h3>
+                ¿Se acabó la globalización?
+            </h3>
+            <span>
+                “A pesar de sus costos, problemas y accidentes la integración entre países no ha muerto”
+            </span>
+        </article>
+    </section>
+    <div class="contentSeparator">
+        <h2>Salud</h2>
+        <div class="underLine"></div>
+    </div>
+    <section>
+
+    </section>
+</body>
+</html>

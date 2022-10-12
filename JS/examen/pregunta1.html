@@ -1,0 +1,57 @@
+<html>
+<style>
+    .mainFrame {
+        background-color: #c7c7c7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 400px;
+        height: 125px;
+    }
+
+    .mainFrame:hover .quadre {
+        
+        transform: rotate(360deg);
+        transition: 1s;
+    }
+
+    .quadre {
+        margin: 25px;
+        background-color: #0000ff;
+        width: 50px;
+        height: 50px;
+    }
+
+    .borderColor {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        border: 1px solid #ff0000;
+    }
+
+    .quadre:nth-child(1) {
+        transform-origin: left;
+    }
+
+    .quadre:nth-child(2) {
+        transform-origin: center;
+    }
+
+    .quadre:nth-child(3) {
+        transform-origin: right;
+
+    }
+</style>
+<div class="mainFrame">
+    <div class="quadre">
+        <div class="borderColor"></div>
+    </div>
+    <div class="quadre">
+        <div class="borderColor"></div>
+    </div>
+    <div class="quadre">
+        <div class="borderColor"></div>
+    </div>
+</div>
+
+</html>
