@@ -1,7 +1,9 @@
 <?php
+session_start();
 $cola = [];
 const BR = '<br/>';
 const MAX_COLA = 4;
+
 const COCHES = array(
     array(
         "deposito" => 0,
@@ -31,15 +33,21 @@ $gasolineras = array(
     ),
     array(
         "litros" => 1000,
-        "color" => "azul"
+        "color" => "rojo"
     )
 );
 
+if (isset($_SESSION['cola'])){
+    $cola = $_SESSION['cola'];
+} 
+
+// crear cola coches
 if (sizeof($cola) < MAX_COLA) {
     for ($i=sizeof($cola); $i < MAX_COLA; $i++) { 
         $cola[$i] = generateCar();
     }
 }
+$_SESSION['cola'] = $cola;
 
 
 ?>
@@ -61,16 +69,37 @@ if (sizeof($cola) < MAX_COLA) {
 <body>
     <?php
         foreach ($cola as $coche) {
-            printHtml($coche['color']);
+            echo '<div style="display: inline-block; margin: 10px;">';
+            printHtml($coche['color'],"margin-right: 10px; ");
+            echo '<div>Depósito: '.$coche['deposito'].'/'.$coche['maxDeposito'].'</div>';
+            echo '</div>';
         }
+
+        foreach ($gasolineras as $gas) {
+            echo '<div style="display: inline-block; margin: 20px;">';
+            printHtml('gas-'.$gas['color'],"width: 100px;");
+            echo BR.'<strong>Litros:</strong>: '.$gas['litros'];
+            ?>
+            <form>
+                <?php
+                echo '<input type="hidden" name="gas" value="'.$gas['color'].'">';
+                ?>
+                    <input type="number" name="" style="width: 40px;">€
+                    <input type="button" value="Pagar">
+            </form>
+            <?php
+            echo '</div>';
+        }
+        echo '<img src="/img/camion.png" style="margin-left:15px; width: 200px"></img>'
     ?>
 </body>
 
 </html>
 
 <?php
-    function printHtml($var){
-        echo '<img src="/img/'.$var.'.png" class="coche"></img>';
+
+    function printHtml($var,$style){
+        echo '<img src="/img/'.$var.'.png" style="'.$style.'"></img>';
     }
 
     function generateCar(){
