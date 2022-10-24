@@ -5,117 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
     <title>IQ Test JS</title>
-    <style>
-        :root{
-            --azul-wht: #E0FBFC;
-            --azul-light: #98C1D9;
-            --azul-std: #3D5A80;
-            --azul-marino: #293241;
-            --red-std: #EE6C4D;
-        }
-        * {
-            font-family: monospace;
-            margin: auto;
-            overflow: hidden;
-        }
-        .blueBg {
-            background-color: var(--azul-std);
-        }
-        header {
-            display: flex;
-            justify-content: center;
-        }
-        header .logo{
-            letter-spacing: 15px;
-            font-size: 4.5em;
-            text-align: center;
-            padding: .5% 3%;
-            color: var(--azul-marino);
-            border-radius: 15px;
-            box-shadow: 2px 2px 1px var(--azul-marino);
-            background-image: url(img/titlebg.png);
-            background-size: cover;
-            margin: 10px;
-        }
-        nav {
-            margin-top: 15px;
-            display: flex;
-            justify-content: center;
-            background-color: var(--azul-marino);
-        }
-        nav button{
-            margin: 15px;
-            background-color: var(--azul-light);
-            padding: 10px;
-            border-radius: 15px;
-            border: none;
-            box-shadow: 2px 2px 1px var(--azul-marino);
-            border: 1px solid transparent;
-        }
-        nav button:hover{
-            background-color: var(--azul-wht);
-            transition: 1s;
-            cursor: pointer;
-        }
-        main {
-            display: flex;
-            height: 72vh;
-            justify-content: center;
-            background-color: var(--azul-std);
-        }
-        .preguntaBox {
-            border-radius: 15px;
-            background-color: var(--azul-wht);
-            margin: 45px;
-            height: 50vh;
-            width: 55vw;
-        }
-        footer {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 10vh;
-            width: 100vw;
-            color: var(--azul-wht);
-            background-color: var(--azul-std);
-        }
-        .preguntaTitle {
-            text-align: center;
-            padding: 25px;
-        }
-        .preguntaTitle h2 {
-            color: var(--azul-wht);
-            border-radius: 15px;
-            background-color: var(--azul-marino);
-            padding: 10px;
-        }
-        .preguntaMainDiv ul{
-            padding: 30px 0;
-            display: grid;
-            height: 35vh;
-            grid-template-columns: 1fr;
-        }
-        ul {
-            list-style: none;
-            background-color: var(--azul-marino);
-        }
-        ul li button{
-            margin: 20px;
-            padding: 15px;
-            width: 20vw;
-            border-radius: 15px;
-            border: none;
-        }
-        ul li button:hover{
-            font-weight: bold;
-            cursor: pointer;
-            box-shadow: 2px 2px 2px var(--azul-light);
-        }
-        footer {
-            background-color: var(--azul-marino);
-        }
-    </style>
 </head>
 <body>
     <div class="blueBg">
@@ -125,76 +16,214 @@
             </div>
         </header>
         <nav>
-            <button class="questionBtn">
+            <button class="questionBtn" id="q1">
                 Pregunta 1
             </button>
-            <button class="questionBtn">
+            <button class="questionBtn" id="q2">
                 Pregunta 2
             </button>
-            <button class="questionBtn">
+            <button class="questionBtn" id="q3">
                 Pregunta 3
             </button>
-            <button class="questionBtn">
+            <button class="questionBtn" id="q4">
                 Pregunta 4
             </button>
-            <button class="questionBtn">
+            <button class="questionBtn" id="q5">
                 Pregunta 5
             </button>
-            <button class="questionBtn">
+            <button class="questionBtn" id="q6">
                 Pregunta 6
             </button>
-            <button class="questionBtn">
+            <button class="questionBtn" id="q7">
                 Pregunta 7
             </button>
-            <button class="questionBtn">
+            <button class="questionBtn" id="q8">
                 Pregunta 8
             </button>
-            <button class="questionBtn">
+            <button class="questionBtn" id="q9">
                 Pregunta 9
             </button>
-            <button class="questionBtn">
+            <button class="questionBtn" id="q10">
                 Pregunta 10
             </button>
-            <button class="questionBtn">
+            <button class="questionBtn" id="q11">
                 Pregunta 11
             </button>
-            <button class="questionBtn">
+            <button class="questionBtn" id="q12">
                 Pregunta 12
             </button>
-            <button class="questionBtn">
-                <strong>Resultado</strong>
+            <button class="resultBtn">
+                Resultado
             </button>
         </nav>
     </div>
     <main>
-        <div class="preguntaBox">
+        <div id="responseBox">
+            <span id="correctWrongText"></span>
+        </div>
+        <div class="preguntaBox" id="divPregunta1">
             <div class="preguntaTitle">
                 <h2>Cual es de color rojo?</h2>
             </div>
             <div class="preguntaMainDiv">
                 <ul>
                     <li>
-                        <button style="background-color: pink;">
+                        <button style="background-color: pink;" class="respuestaBtn" id="r1">
                             Amarillo
                         </button>
                     </li>
                     <li>
-                        <button style="background-color: green;">
+                        <button style="background-color: green;" class="respuestaBtn" id="r2">
                             Rosa
                         </button>
                     </li>
                     <li>
-                        <button style="background-color: blueviolet;">
+                        <button style="background-color: blueviolet;" class="respuestaBtn" id="r3">
                             Rojo
                         </button>
                     </li>
                     <li>
-                        <button style="background-color: red;">
+                        <button style="background-color: red;" class="respuestaBtn" id="r4">
                             Verde
+                        </button>
+                    </li>
+                    <li>
+                        <button style="background-color: yellow;" class="respuestaBtn" id="r5">
+                            Azul
                         </button>
                     </li>
                 </ul>
             </div>
+        </div>
+        <div class="preguntaBox" id="divPregunta1">
+            <div class="preguntaTitle">
+                <h2>Cual es de color rojo?</h2>
+            </div>
+            <div class="preguntaMainDiv">
+                <ul>
+                    <li>
+                        <button style="background-color: pink;" class="respuestaBtn" id="r1">
+                            Amarillo
+                        </button>
+                    </li>
+                    <li>
+                        <button style="background-color: green;" class="respuestaBtn" id="r2">
+                            Rosa
+                        </button>
+                    </li>
+                    <li>
+                        <button style="background-color: blueviolet;" class="respuestaBtn" id="r3">
+                            Rojo
+                        </button>
+                    </li>
+                    <li>
+                        <button style="background-color: red;" class="respuestaBtn" id="r4">
+                            Verde
+                        </button>
+                    </li>
+                    <li>
+                        <button style="background-color: yellow;" class="respuestaBtn" id="r5">
+                            Azul
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="preguntaBox" id="divPregunta2">
+            <div class="preguntaTitle">
+                <h2>Sigue la secuencia: 1, 3, 5, 7...</h2>
+            </div>
+            <div class="preguntaMainDiv">
+                <ul>
+                    <li>
+                        <button class="respuestaBtn" id="r1">
+                            7
+                        </button>
+                    </li>
+                    <li>
+                        <button class="respuestaBtn" id="r2">
+                            8
+                        </button>
+                    </li>
+                    <li>
+                        <button class="respuestaBtn" id="r3">
+                            9
+                        </button>
+                    </li>
+                    <li>
+                        <button class="respuestaBtn" id="r4">
+                            10
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="preguntaBox" id="divPregunta3">
+            <div class="preguntaTitle">
+                <h2>A es a C lo que 1 es a...</h2>
+            </div>
+            <div class="preguntaMainDiv">
+                <ul>
+                    <li>
+                        <button class="respuestaBtn" id="r1">
+                            G
+                        </button>
+                    </li>
+                    <li>
+                        <button class="respuestaBtn" id="r2">
+                            3
+                        </button>
+                    </li>
+                    <li>
+                        <button class="respuestaBtn" id="r3">
+                            Número
+                        </button>
+                    </li>
+                    <li>
+                        <button class="respuestaBtn" id="r4">
+                            0
+                        </button>
+                    </li>
+                    <li>
+                        <button class="respuestaBtn" id="r5">
+                            10
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="preguntaBox" id="divPregunta4">
+            <div class="preguntaTitle">
+                <h2>Selecciona la opción correcta</h2>
+            </div>
+            <div class="preguntaMainDiv">
+                <ul>
+                    <li style="margin-top: -15px;">
+                        <div id="imgPregunta4"></div>
+                    </li>
+                    <li>
+                        <button class="respuestaBtn" id="r1">
+                            A
+                        </button>
+                    </li>
+                    <li>
+                        <button class="respuestaBtn" id="r2">
+                            B
+                        </button>
+                    </li>
+                    <li>
+                        <button class="respuestaBtn" id="r3">
+                            C
+                        </button>
+                    </li>
+                    <li>
+                        <button class="respuestaBtn" id="r4">
+                            D
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
         </div>
     </main>
     <footer>

@@ -16,9 +16,6 @@ let getHtmlBtn = (id,obj) => {
             </div>`;
 }
 
-
-border-radius: 15px;
-
 const preguntasHtml = {
     1: {
         q : 'Cual es rojo?',
