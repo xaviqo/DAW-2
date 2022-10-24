@@ -17,6 +17,7 @@ let getHtmlBtn = (id,obj) => {
 }
 
 
+border-radius: 15px;
 
 const preguntasHtml = {
     1: {

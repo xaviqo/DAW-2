@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js"></script>
+    <title>IQ Test JS</title>
+    <style>
+        :root{
+            --azul-wht: #E0FBFC;
+            --azul-light: #98C1D9;
+            --azul-std: #3D5A80;
+            --azul-marino: #293241;
+            --red-std: #EE6C4D;
+        }
+        * {
+            font-family: monospace;
+            margin: auto;
+            overflow: hidden;
+        }
+        .blueBg {
+            background-color: var(--azul-std);
+        }
+        header {
+            display: flex;
+            justify-content: center;
+        }
+        header .logo{
+            letter-spacing: 15px;
+            font-size: 4.5em;
+            text-align: center;
+            padding: .5% 3%;
+            color: var(--azul-marino);
+            border-radius: 15px;
+            box-shadow: 2px 2px 1px var(--azul-marino);
+            background-image: url(img/titlebg.png);
+            background-size: cover;
+            margin: 10px;
+        }
+        nav {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            background-color: var(--azul-marino);
+        }
+        nav button{
+            margin: 15px;
+            background-color: var(--azul-light);
+            padding: 10px;
+            border-radius: 15px;
+            border: none;
+            box-shadow: 2px 2px 1px var(--azul-marino);
+            border: 1px solid transparent;
+        }
+        nav button:hover{
+            background-color: var(--azul-wht);
+            transition: 1s;
+            cursor: pointer;
+        }
+        main {
+            display: flex;
+            height: 72vh;
+            justify-content: center;
+            background-color: var(--azul-std);
+        }
+        .preguntaBox {
+            border-radius: 15px;
+            background-color: var(--azul-wht);
+            margin: 45px;
+            height: 50vh;
+            width: 55vw;
+        }
+        footer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 10vh;
+            width: 100vw;
+            color: var(--azul-wht);
+            background-color: var(--azul-std);
+        }
+        .preguntaTitle {
+            text-align: center;
+            padding: 25px;
+        }
+        .preguntaTitle h2 {
+            color: var(--azul-wht);
+            border-radius: 15px;
+            background-color: var(--azul-marino);
+            padding: 10px;
+        }
+        .preguntaMainDiv ul{
+            padding: 30px 0;
+            display: grid;
+            height: 35vh;
+            grid-template-columns: 1fr;
+        }
+        ul {
+            list-style: none;
+            background-color: var(--azul-marino);
+        }
+        ul li button{
+            margin: 20px;
+            padding: 15px;
+            width: 20vw;
+            border-radius: 15px;
+            border: none;
+        }
+        ul li button:hover{
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 2px 2px 2px var(--azul-light);
+        }
+        footer {
+            background-color: var(--azul-marino);
+        }
+    </style>
+</head>
+<body>
+    <div class="blueBg">
+        <header>
+            <div class="logo">
+                <strong>IQ</strong> Test
+            </div>
+        </header>
+        <nav>
+            <button class="questionBtn">
+                Pregunta 1
+            </button>
+            <button class="questionBtn">
+                Pregunta 2
+            </button>
+            <button class="questionBtn">
+                Pregunta 3
+            </button>
+            <button class="questionBtn">
+                Pregunta 4
+            </button>
+            <button class="questionBtn">
+                Pregunta 5
+            </button>
+            <button class="questionBtn">
+                Pregunta 6
+            </button>
+            <button class="questionBtn">
+                Pregunta 7
+            </button>
+            <button class="questionBtn">
+                Pregunta 8
+            </button>
+            <button class="questionBtn">
+                Pregunta 9
+            </button>
+            <button class="questionBtn">
+                Pregunta 10
+            </button>
+            <button class="questionBtn">
+                Pregunta 11
+            </button>
+            <button class="questionBtn">
+                Pregunta 12
+            </button>
+            <button class="questionBtn">
+                <strong>Resultado</strong>
+            </button>
+        </nav>
+    </div>
+    <main>
+        <div class="preguntaBox">
+            <div class="preguntaTitle">
+                <h2>Cual es de color rojo?</h2>
+            </div>
+            <div class="preguntaMainDiv">
+                <ul>
+                    <li>
+                        <button style="background-color: pink;">
+                            Amarillo
+                        </button>
+                    </li>
+                    <li>
+                        <button style="background-color: green;">
+                            Rosa
+                        </button>
+                    </li>
+                    <li>
+                        <button style="background-color: blueviolet;">
+                            Rojo
+                        </button>
+                    </li>
+                    <li>
+                        <button style="background-color: red;">
+                            Verde
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    <footer>
+        Xavi Quiñones (c) 2022
+    </footer>
+</body>
+</html>
