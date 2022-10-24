@@ -1,11 +1,8 @@
 let array = ['Gatos','Comida','Música','Tecnología'];
 
-for (const iterator of array) {
-    console.log(iterator);
-}
+let array2 = Array.from(array);
 
-for (const key in array) {
-    console.log(array[key]);
-}
+array[0] = "JS";
 
-for
+console.log(array[0]);
+console.log(array2[0]);

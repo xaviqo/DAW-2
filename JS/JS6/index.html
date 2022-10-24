@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test de IQ</title>
+    <style>
+        .outterTitulo {
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .tituloCaja{
+            width: 35vw;
+            margin-bottom: 15px;
+            font-size: x-large;
+            letter-spacing: 2px;
+        }
+        .greyBox {
+            font-family: sans-serif;
+            color: white;
+            height: 10vh;
+            background-color: rgba(128, 128, 128, 0.584);
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .preguntaButton{
+            margin: 5px;
+            padding: 10px;
+            color: black;
+            border: 0px;
+        }
+        .preguntaButton:hover{
+            background-color: black;
+            color: white;
+            transition: 1s;
+            cursor: help;
+        }
+        .colorBtn {
+            background-color: rgba(128, 128, 128, .3);
+            margin: 25px;
+            padding: 8px;
+            text-align: center;
+            font-family: sans-serif;
+            letter-spacing: 1.5px;
+            border: 1px solid grey;
+        }
+        .cajaPreguntas {
+            display: flex;
+            justify-content: center;
+            width: 90vw;
+        }
+    </style>
+</head>
+<body>
+    <div class="outterTitulo">
+        <div class="tituloCaja greyBox">
+            Test de IQ
+        </div>
+    </div>
+    <div id="cajaPreguntas"></div>
+    <div>
+        <div id="tituloPreg"></div>
+        <div id="juegoPreg">
+        </div>
+    </div>
+
+    <script src="iq.js"></script>
+</body>
+</html>

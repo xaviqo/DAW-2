@@ -1,0 +1,179 @@
+:doctype: book
+:toc-title: Taula de continguts
+:figure-caption: Figura
+:table-caption: Taula
+:example-caption: Exemple
+:author: Xavi Quiñones
+:email: mail@xavi.tech
+:revdate: Octubre 10, 2022
+:revnumber: 1.0
+:encoding: utf-8
+:lang: es
+:toc: left
+:toclevels: 3
+:sectnums:
+:icons: font
+
+= Mini-guía de Markdown hecha con Asciidoc
+
+=== Cuando usar Markdown
+
+
+- Markdown es un [underline]#lenguaje de marcado ligero# creado por John Gruber y Aaron Swartz que trata de conseguir [underline]#la máxima legibilidad# y facilidad de publicación tanto en su forma de entrada como de salida.
+
+== Cabeceras
+
+=== Etiquetas principales
+
+[source,markdown]
+
+----
+# H1
+## H2
+### H3
+#### H4
+##### H5
+###### H6
+----
+
+Resultado:
+
+====== Ejemplo de h6
+
+=== Estilo subrayado.
+
+[source,markdown]
+----
+Alt-H1
+======
+
+Alt-H2
+------
+----
+
+== Formatear texto
+
+=== Texto en *negrita*:
+[source,markdown]
+----
+texto __en negrita__
+texto **en negrita**
+----
+=== Texto en _cursiva_:
+[source,markdown]
+----
+texto _en cursiva_
+texto *en cursiva*
+----
+
+=== Párrafos
+
+[NOTE]
+====
+Para crear párrafos simplemente usaremos un espacio en blanco (de una o más líneas de texto).
+====
+
+
+
+== Listas
+
+=== Listas normales:
+
+[source,markdown]
+----
+- Primer elemento
+- Segundo elemento
+- Tercer elemento
+----
+
+=== Listas numeradas:
+
+[source,markdown]
+----
+1. Primer elemento
+2. Segundo elemento
+3. Tercer elemento
+----
+
+== Cuadros de texto
+
+=== Cuadros simples 
+
+- Para hacer un cuadro de texto usaremos el símbolo > delante del párrafo
+
+[source,markdown]
+----
+> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+----
+
+- Si queremos contener multiples párrafos añadiremos > entre los párrafos y al inicio de estos.
+
+[source,markdown]
+----
+> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+>
+> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+----
+
+=== Elementos dentro de cuadros
+
+- Podemos añadir otras etiquetas dentro de nuestros cuadros para darles más formato.
+
+[source,markdown]
+----
+> Lorem ipsum dolor sit amet, consectetur.
+>
+> - Elemento de lista 1
+> - Elemento de lista 2
+----
+
+=== Cuadros con código fuente.
+
+- Si simplemente queremos escapar el código podemos hacerlo con 3 tildes abiertas "`"
+
+[source, markdown]
+-----
+```
+function hello() {
+  console.log("Hello World!");
+}
+```
+-----
+
+- Si quieres resaltar la sintaxis puedes añadir un identificador del lenguaje después de las tres primeras tildes.
+
+[source, markdown]
+-----
+```ruby
+require 'redcarpet'
+markdown = Redcarpet.new("Hello World!")
+puts markdown.to_html
+```
+-----
+
+== Imágenes y enlaces
+
+=== Añadir imágenes
+
+- Usaremos la etiqueta ![_Descripción_](_directorio_/_imagen_._formato_). 
+
+[source, markdown]
+-----
+![Logo](logo.png)
+-----
+
+- O imágenes de internet
+
+[source, markdown]
+-----
+![Wikipedia](http://wikiedia.org/images/logo.gif)
+-----
+
+- Añadir enlaces
+
+[source, markdown]
+-----
+[Enlace externo a Debian.org]](https://www.debian.org/)
+-----
+
+
