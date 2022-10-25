@@ -73,6 +73,10 @@ main {
     border-radius: 15px;
     background-color: var(--azul-std);
     width: 55vw;
+    display:none;
+}
+.preguntaBox:target{
+    display: block;
 }
 footer {
     display: flex;
@@ -132,17 +136,4 @@ footer {
     height: 44px;
     border-radius: 10px;
     background-image: url(/img/q01-300x44.jpg);
-}
-
-#divPregunta1 {
-    display: none;
-}
-#divPregunta2 {
-    display: none;
-}
-#divPregunta3 {
-    display: none;
-}
-#divPregunta4 {
-    display: none;
 }

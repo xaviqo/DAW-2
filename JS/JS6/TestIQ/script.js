@@ -20,11 +20,29 @@ const iqTest = {
         id: 'divPregunta4',
     },
     q5: {
-        correct: 'r4',
+        correct: 'r3',
         result: false,
         id: 'divPregunta5',
+    },
+    q6: {
+        correct: 'r4',
+        result: false,
+        id: 'divPregunta6',
+    },
+    q7 : {
+        correct: 'r4',
+        result: false,
+        id: 'divPregunta7',
+    },
+    q8 : {
+        correct: 'r2',
+        result: false,
+        id: 'divPregunta8',
     }
 }
+
+let question = "";
+let respuesta = "";
 
 window.onload = () => {
     const questionBtn = document.querySelectorAll('.questionBtn');
@@ -32,14 +50,8 @@ window.onload = () => {
     const responseMessage = document.querySelector('#correctWrongText');
     const resultBtn = document.querySelector('.resultBtn');
 
-    let question = "";
-    let respuesta = "";
-    let hideDiv = "";
-
     questionBtn.forEach(q => {
         q.addEventListener('click', event => {
-            changeDivToShow(hideDiv,event.target.id);
-            hideDiv = event.target.id;
             question = event.target.id;
         });
     });
@@ -75,11 +87,6 @@ function showMessage(responseMessage,bool) {
         responseMessage.style.backgroundColor = '#EE6C4D';
     }
     setTimeout(() => responseMessage.style.visibility = 'hidden', 1200);
-}
-
-function changeDivToShow(hide,show){
-    if (hide) document.getElementById(iqTest[hide]['id']).style.display = "none";
-    document.getElementById(iqTest[show]['id']).style.display = "initial"
 }
 
 function evaluateRespuesta(ques,resp){
