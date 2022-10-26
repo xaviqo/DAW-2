@@ -1,0 +1,59 @@
+* {
+    overflow: hidden;
+}
+
+body {
+    margin: 0;
+}
+
+main {
+    background-color: seagreen;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+}
+
+#rouletteDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+}
+
+#rouletteDiv img{
+    padding: 35px;
+    z-index: 2;
+}
+
+#outterArrow {
+    background-color: gold;
+    width: 30px;
+    height: 20px;
+    margin-left: -50px;
+    z-index: 1;
+}
+
+#topArrow {
+    background-color: seagreen;
+    width: 50px;
+    height: 20px;
+    margin-top: -10px;
+    margin-left: -15px;
+    transform: rotate(-10deg);
+    z-index: 1;
+}
+
+#botArrow {
+    background-color: seagreen;
+    width: 50px;
+    height: 20px;
+    margin-bottom: -10px;
+    margin-left: -15px;
+    transform: rotate(10deg);
+    z-index: 1;
+}
+
+#rotateWheelDiv {
+    display: flex;
+    justify-content: center;
+}

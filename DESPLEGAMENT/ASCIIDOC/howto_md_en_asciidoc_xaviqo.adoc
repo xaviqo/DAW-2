@@ -18,7 +18,6 @@
 
 === Cuando usar Markdown
 
-
 - Markdown es un [underline]#lenguaje de marcado ligero# creado por John Gruber y Aaron Swartz que trata de conseguir [underline]#la máxima legibilidad# y facilidad de publicación tanto en su forma de entrada como de salida.
 
 == Cabeceras
@@ -36,20 +35,7 @@
 ###### H6
 ----
 
-Resultado:
-
 ====== Ejemplo de h6
-
-=== Estilo subrayado.
-
-[source,markdown]
-----
-Alt-H1
-======
-
-Alt-H2
-------
-----
 
 == Formatear texto
 
@@ -73,8 +59,6 @@ texto *en cursiva*
 Para crear párrafos simplemente usaremos un espacio en blanco (de una o más líneas de texto).
 ====
 
-
-
 == Listas
 
 === Listas normales:
@@ -86,6 +70,10 @@ Para crear párrafos simplemente usaremos un espacio en blanco (de una o más l�
 - Tercer elemento
 ----
 
+- Primer elemento
+- Segundo elemento
+- Tercer elemento
+
 === Listas numeradas:
 
 [source,markdown]
@@ -94,6 +82,10 @@ Para crear párrafos simplemente usaremos un espacio en blanco (de una o más l�
 2. Segundo elemento
 3. Tercer elemento
 ----
+
+1. Primer elemento
+2. Segundo elemento
+3. Tercer elemento
 
 == Cuadros de texto
 
@@ -106,6 +98,8 @@ Para crear párrafos simplemente usaremos un espacio en blanco (de una o más l�
 > Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 ----
 
+> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
 - Si queremos contener multiples párrafos añadiremos > entre los párrafos y al inicio de estos.
 
 [source,markdown]
@@ -114,6 +108,9 @@ Para crear párrafos simplemente usaremos un espacio en blanco (de una o más l�
 >
 > Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 ----
+> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+>
+> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
 === Elementos dentro de cuadros
 
@@ -126,6 +123,11 @@ Para crear párrafos simplemente usaremos un espacio en blanco (de una o más l�
 > - Elemento de lista 1
 > - Elemento de lista 2
 ----
+
+> Lorem ipsum dolor sit amet, consectetur.
+>
+> - Elemento de lista 1
+> - Elemento de lista 2
 
 === Cuadros con código fuente.
 
@@ -140,6 +142,12 @@ function hello() {
 ```
 -----
 
+```
+function hello() {
+  console.log("Hello World!");
+}
+```
+
 - Si quieres resaltar la sintaxis puedes añadir un identificador del lenguaje después de las tres primeras tildes.
 
 [source, markdown]
@@ -151,29 +159,31 @@ puts markdown.to_html
 ```
 -----
 
+[source, ruby]
+-----
+require 'redcarpet'
+markdown = Redcarpet.new("Hello World!")
+puts markdown.to_html
+-----
+
 == Imágenes y enlaces
 
 === Añadir imágenes
-
-- Usaremos la etiqueta ![_Descripción_](_directorio_/_imagen_._formato_). 
-
-[source, markdown]
------
-![Logo](logo.png)
------
-
-- O imágenes de internet
 
 [source, markdown]
 -----
 ![Wikipedia](http://wikiedia.org/images/logo.gif)
 -----
 
+image::https://logoeps.com/wp-content/uploads/2014/04/48930-wikipedia-logotype-of-earth-puzzle-icon-vector-icon-vector-eps.png[]
+
 - Añadir enlaces
 
 [source, markdown]
 -----
-[Enlace externo a Debian.org]](https://www.debian.org/)
+[Enlace externo a Debian.org](https://www.debian.org/)
 -----
+
+https://www.debian.org[Enlace externo a Debian.org]
 
 
