@@ -4,21 +4,95 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="roulette.js"></script>
+    <script type="module" src="game.js"></script>
     <link rel="stylesheet" href="roulette.css">
     <title>JS Roulette</title>
 </head>
 <body>
     <main>
-        <div id="rouletteDiv">
-            <img src="img/ruleta.png" id="roulette" style="animation-fill-mode: forwards;">
-            <div id="outterArrow">
-                <div id="topArrow"></div>
-                <div id="botArrow"></div>
+        <div class="imagesDiv">
+            <div>
+                <div id="rouletteDiv">
+                    <img src="img/ruleta.png" id="roulette" style="animation-fill-mode: forwards;">
+                    <div id="outterArrow">
+                        <div id="topArrow"></div>
+                        <div id="botArrow"></div>
+                    </div>
+                </div>
+                <div id="rotateWheelDiv">
+                    <button id="rotateBtn">BET</button>
+                </div>
+            </div>
+            <div class="tableDiv">
+                <div>
+                    <div class="winnerNumber">
+
+                    </div>
+                </div>
+                <div class="betsImg">
+                </div>
             </div>
         </div>
-        <div id="rotateWheelDiv">
-            <button id="rotateBtn">Rotate Wheel</button>
+        <div class="selectsDiv">
+            <div>
+                <div><strong>Sencilla</strong></div>
+                <div>
+                    <input type="number" id="sencilla">
+                </div>
+            </div>
+            <div>
+                <div><strong>Falta/Pasa</strong></div>
+                <div>
+                    <select id="falta_pasa">
+                        <option value="falta">Falta</option>
+                        <option value="pasa">Pasa</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <div><strong>Par/Impar</strong></div>
+                <div>
+                    <select id="par_impar">
+                        <option value="par">Par</option>
+                        <option value="impar">Impar</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <div><strong>Rojo/Negro</strong></div>
+                <div>
+                    <select id="rojo_negro">
+                        <option value="rojo">Rojo</option>
+                        <option value="negro">Negro</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <div><strong>Docena</strong></div>
+                <div>
+                    <select id="docena">
+                        <option value="1_12">1/12</option>
+                        <option value="13_24">13/24</option>
+                        <option value="25_36">25/36</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <div><strong>Sextena</strong></div>
+                <div>
+                    <select id="sextena">
+                        <option value=""></option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <div><strong>Columna</strong></div>
+                <div>
+                    <select id="columna">
+                        <option value=""></option>
+                    </select>
+                </div>
+            </div>
         </div>
     </main>
 </body>
