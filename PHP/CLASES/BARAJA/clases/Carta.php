@@ -10,6 +10,10 @@ class Carta {
         $this->figura = $figura;
     }
 
+    public function getImgUrl(){
+        return $this->numero.'_'.$this->figura.'.png';
+    }
+
     public function getNumero()
     {
         return $this->numero;

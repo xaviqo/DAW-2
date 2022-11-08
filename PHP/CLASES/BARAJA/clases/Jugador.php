@@ -2,10 +2,12 @@
 
 class Jugador {
 
+    protected $id;
     protected $baraja;
 
-    public function __construct($baraja)
+    public function __construct($baraja,$id)
     {
+        $this->id = $id;
         $this->baraja = $baraja;
     }
 
@@ -19,5 +21,13 @@ class Jugador {
         $this->baraja = $baraja;
 
         return $this;
+    }
+
+    /**
+     * Get the value of id
+     */ 
+    public function getId()
+    {
+        return $this->id;
     }
 }
