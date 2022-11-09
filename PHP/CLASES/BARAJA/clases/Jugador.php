@@ -1,6 +1,5 @@
 <?php
-
-class Jugador {
+class Jugador{
 
     protected $id;
     protected $baraja;
@@ -11,9 +10,17 @@ class Jugador {
         $this->baraja = $baraja;
     }
 
+    public function removeSelectedCard($pos){
+        return $this->baraja->removeCard($pos);
+    }
+
     public function getBaraja()
     {
         return $this->baraja;
+    }
+
+    public function setCarta($carta){
+        $this->baraja->insertCard($carta);
     }
 
     public function setBaraja($baraja)
@@ -29,5 +36,8 @@ class Jugador {
     public function getId()
     {
         return $this->id;
+    }
+
+    public function pdf(){
     }
 }

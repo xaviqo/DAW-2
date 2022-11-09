@@ -9,6 +9,17 @@ class Baraja {
         $this->cartas = $cartas;
     }
 
+    public function removeCard($pos)
+    {
+        $card = $this->cartas[$pos];
+        unset($this->cartas[$pos]);
+        array_values($this->cartas);
+        return $card;
+    }
+
+    public function insertCard($card){
+        array_push($this->cartas,$card);
+    }
     
     public function getCartas()
     {

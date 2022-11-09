@@ -7,18 +7,28 @@ class Partida {
     protected $cartaEnJuego;
     protected $cartasJugadas;
     protected $turno;
+    protected $pdf;
 
     public function __construct()
     {
         $this->jugadores = [];
         $this->cartas = [];
-        $this->cartaEnJuego = new Carta(null,null);
+        $this->cartaEnJuego = null;
         $this->cartasJugadas = [];
-        $this->turno = 1;
+        $this->turno = 0;
     }
 
     public function start(){
         $this->cartaEnJuego = array_pop($this->cartas);
+        $this->turno = 1;
+    }
+
+    public function checkValidInputCard($card){
+        //if ($this->cartaEnJuego->getFigura() == $card->getFigura()) return true;
+    }
+
+    public function getCurrentPlayer(){
+        return $this->jugadores[$this->getTurno()-1];
     }
 
     public function getTurno(){
@@ -26,12 +36,12 @@ class Partida {
     }
 
     public function nextTurno(){
-        $this->turno++;
+        if ($this->turno <= 3) $this->turno++;
+        else $this->turno = 1;
     }
 
-
     public function robar() {
-        return array_pop($cartas);
+        return array_pop($this->cartas);
     }
 
     public function crearBaraja(){
@@ -102,6 +112,26 @@ class Partida {
     public function setCartaEnJuego($cartaEnJuego)
     {
         $this->cartaEnJuego = $cartaEnJuego;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of pdf
+     */ 
+    public function getPdf()
+    {
+        return $this->pdf;
+    }
+
+    /**
+     * Set the value of pdf
+     *
+     * @return  self
+     */ 
+    public function setPdf($pdf)
+    {
+        $this->pdf = $pdf;
 
         return $this;
     }
