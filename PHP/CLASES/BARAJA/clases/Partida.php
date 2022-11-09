@@ -24,7 +24,10 @@ class Partida {
     }
 
     public function checkValidInputCard($card){
-        //if ($this->cartaEnJuego->getFigura() == $card->getFigura()) return true;
+        return ($this->cartaEnJuego->getFigura() == $card->getFigura()
+        || $this->cartaEnJuego->getNumero()-1 == $card->getNumero() 
+        || $this->cartaEnJuego->getNumero()+1 == $card->getNumero()
+        || $this->cartaEnJuego->getNumero() == $card->getNumero());
     }
 
     public function getCurrentPlayer(){

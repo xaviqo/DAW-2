@@ -49,11 +49,16 @@ if (isset($_SESSION['partida']) && (isset($_REQUEST['carta']) || isset($_REQUEST
 
     if (isset($_REQUEST['carta'])){
         $opcion_usuario = $_REQUEST['carta'];
-        $removed_card = $_SESSION['partida']->getCurrentPlayer()->removeSelectedCard($opcion_usuario);
+        $selected_card = $_SESSION['partida']->getCurrentPlayer()->removeSelectedCard($opcion_usuario);
 
-        
+        if ($_SESSION['partida']->checkValidInputCard($selected_card)){
+            echo 'si';
+        } else {
+            echo 'no';
+        }
 
-        $_SESSION['partida']->setCartaEnJuego($removed_card);
+        $_SESSION['partida']->setCartaEnJuego($selected_card);
+
     } 
 
     //SI NO ES NULL Y NO HA PASADO TURNO
@@ -175,10 +180,6 @@ echo 'TURNO: <b>'.$_SESSION['partida']->getTurno().'</b><br/>';
     </main>
     <div style="margin-top: 5vh;">
         <center>
-            <form action="index.php" method="get">
-                <input type="submit" value="REINICIAR">
-            </form>
-            <center>
             <form action="pdf.php" method="get">
                 <input type="submit" value="REINICIAR">
             </form>
