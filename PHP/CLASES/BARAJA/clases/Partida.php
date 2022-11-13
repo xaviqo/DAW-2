@@ -13,7 +13,7 @@ class Partida {
     {
         $this->jugadores = [];
         $this->cartas = [];
-        $this->cartaEnJuego = null;
+        $this->cartaEnJuego = new Carta(null,null);
         $this->cartasJugadas = [];
         $this->turno = 0;
     }

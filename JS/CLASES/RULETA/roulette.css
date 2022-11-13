@@ -1,0 +1,147 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+main {
+    background-color: seagreen;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+}
+
+.applyFlex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.topDiv {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+/* ROULETTE IMG */
+
+.leftTopTable{
+    width: 100%;
+    margin-top: 10%;
+}
+
+#roulette {
+    z-index: 2;
+}
+
+/* ARROW */
+
+#outterArrow {
+    background-color: gold;
+    width: 30px;
+    height: 20px;
+    z-index: 1;
+    margin-left: -15px;
+}
+
+#topArrow {
+    background-color: seagreen;
+    width: 50px;
+    height: 20px;
+    margin-top: -10px;
+    margin-left: -15px;
+    transform: rotate(-10deg);
+    z-index: 1;
+}
+
+#botArrow {
+    background-color: seagreen;
+    width: 50px;
+    height: 20px;
+    margin-bottom: -10px;
+    margin-left: -15px;
+    transform: rotate(10deg);
+    z-index: 1;
+}
+
+/* NUMBER and TABLE */
+
+.rightTopTable {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 0.5fr 2fr;
+}
+
+.numberAndSpin {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 1fr;
+}
+
+.winnerNumber {
+    border: 3px dotted green;
+    background-color: grey;
+    color: white;
+    width: 100px;
+    height: 100px;
+    font-size: xxx-large;
+
+}
+
+.betsTable{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.spinBtn {
+    font-size: x-large;
+    letter-spacing: 5px;
+    color: white;
+    background-color: crimson;
+    border: 1px dotted green;
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 15px;
+    box-shadow: 1px 2px 2px black;
+}
+
+.spinBtn:hover {
+    background-color: black;
+    box-shadow: 1px 2px 2px seagreen;
+    transition: 1s;
+}
+
+/* INFO DIV */
+
+.infoDiv {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+/* SELECTS */
+
+.selectsDiv {
+    margin: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.selectsDiv > div{
+    margin: 1em;
+    border-radius: 15px;
+    padding: 2%;
+    background-color: palegreen;
+}
+
+input {
+    background-color: burlywood;
+    width: 95%;
+    border-radius: 15px;
+}
+
+select{
+    background-color: burlywood;
+    width: 100%;
+    border-radius: 15px;
+}

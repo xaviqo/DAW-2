@@ -52,12 +52,12 @@ if (isset($_SESSION['partida']) && (isset($_REQUEST['carta']) || isset($_REQUEST
         $selected_card = $_SESSION['partida']->getCurrentPlayer()->removeSelectedCard($opcion_usuario);
 
         if ($_SESSION['partida']->checkValidInputCard($selected_card)){
-            echo 'si';
+            $_SESSION['partida']->setCartaEnJuego($selected_card);
         } else {
-            echo 'no';
+            $_SESSION['partida']->getCurrentPlayer()->setCarta($selected_card);
+            $_SESSION['partida']->getCurrentPlayer()->setCarta($_SESSION['partida']->robar());
         }
 
-        $_SESSION['partida']->setCartaEnJuego($selected_card);
 
     } 
 
@@ -161,11 +161,6 @@ echo 'TURNO: <b>'.$_SESSION['partida']->getTurno().'</b><br/>';
                                     echo '<button class="pasarTurno">PASAR TURNO</button>';
                                     if ($count_turno == $_SESSION['partida']->getTurno()) echo '</a>';
                                     echo '<br/>';
-                                    if ($count_turno == $_SESSION['partida']->getTurno()){
-                                        echo '<a href="pdf.php?player='.$count_turno.'">';
-                                        echo '<button class="pasarTurno">PDF</button>';
-                                        echo '</a>';
-                                    }
                                 ?>
                                 </center>
                             </div>
@@ -180,7 +175,7 @@ echo 'TURNO: <b>'.$_SESSION['partida']->getTurno().'</b><br/>';
     </main>
     <div style="margin-top: 5vh;">
         <center>
-            <form action="pdf.php" method="get">
+            <form action="index.php" method="get">
                 <input type="submit" value="REINICIAR">
             </form>
         </center>
