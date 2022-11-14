@@ -1,0 +1,17 @@
+TABLERO {
+	intents[]
+	seqCorrecta()
+	inici()
+}
+
+RESULTAT {
+	colorPosicion;
+	soloColor;
+	print() --> HTML
+]
+
+SEQUENCIA {
+	fichas[];
+}
+
+
