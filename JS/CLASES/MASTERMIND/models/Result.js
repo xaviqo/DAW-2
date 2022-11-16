@@ -20,8 +20,7 @@ export default class Result{
         return this._colorPosition;
     }
 
-    print(where){
-
+    print(){
     }
 
 }
