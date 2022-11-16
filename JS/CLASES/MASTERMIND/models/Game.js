@@ -1,3 +1,5 @@
+import Result from "./Result.js";
+
 export default class Game {
 
     _tries;
@@ -6,8 +8,7 @@ export default class Game {
     _seq_HTML;
     _num_HTML;
     _res_HTML;
-    _colors;
-    _colorPieces_HTML;
+    _colorPiecesMap;
     _emptyHole_HTML;
 
     constructor(seq_HTML,num_HTML,res_HTML,colorPieces_HTML,emptyHole_HTML){
@@ -18,8 +19,7 @@ export default class Game {
         this._seq_HTML = seq_HTML;
         this._num_HTML = num_HTML;
         this._res_HTML = res_HTML;
-        this._colors = new Array();
-        this._colorPieces_HTML = colorPieces_HTML;
+        this._colorPiecesMap = new Map();
         this._emptyHole_HTML = emptyHole_HTML;
 
         for (let i = 10; i > 0; i--) {
@@ -37,16 +37,16 @@ export default class Game {
         this.seq_HTML.remove();
         this.res_HTML.remove();
 
+
+        colorPieces_HTML.forEach(piece => {
+            this._colorPiecesMap.set(this.pieceColor(piece),piece)
+        });
+
     }
 
     activateListeners(){
 
-        const piecesMap = new Map();
-
-        this.colorPieces_HTML.forEach(piece => {
-
-            piecesMap.set(this.pieceColor(piece), piece.cloneNode(true));
-            this.colors.push(this.pieceColor(piece));
+        this.colorPiecesMap.forEach(piece => {
     
             piece.addEventListener('click', ev => {
         
@@ -57,7 +57,7 @@ export default class Game {
     
                     this.newSequence.setPiece(
                         this.pieceColor(ev.target)+'-'+this.newSequence.holeNumber(),
-                        piecesMap.get(this.pieceColor(ev.target)).cloneNode(true)
+                        this.colorPiecesMap.get(this.pieceColor(ev.target)).cloneNode(true)
                     );
     
                 }
@@ -90,15 +90,11 @@ export default class Game {
         return this._colors;
     }
     set colors(value) {
-        this._colors = value;
+        this._colors += value;
     }
 
-    get colorPieces_HTML() {
-        return this._colorPieces_HTML;
-    }
-
-    set colorPieces_HTML(value) {
-        this._colorPieces_HTML = value;
+    get colorPiecesMap() {
+        return this._colorPiecesMap;
     }
 
     get res_HTML() {
@@ -130,7 +126,7 @@ export default class Game {
     }
 
     set tries(value){
-        this._tries = value;
+        this._tries += value;
     }
 
     get winnerSequence() {
@@ -138,6 +134,14 @@ export default class Game {
     }
     set winnerSequence(value) {
         this._winnerSequence = value;
+    }
+
+    pieceHTML(color){
+        return this._colorPieces_HTML[color];
+    }
+
+    resultFromSequence(){
+        return new Result(this.newSequence,this.winnerSequence);
     }
     
     isSequenceReady(){
