@@ -25,11 +25,13 @@ window.onload = () => {
   const winnerSequence = new Sequence();
 
   for (let k = 0; k < 4; k++) {
-    const color = colors[Math.floor(Math.random() * piecesMap.size)];
-    winnerSequence.setPiece(color, piecesMap.get(color));
+    const color = [...game.colorPiecesMap.keys()][Math.floor(Math.random() * 8)];
+    winnerSequence.setPiece(color+"_"+k, game.colorPiecesMap.get(color));
   }
 
   game.winnerSequence = winnerSequence;
+
+  console.log(game.winnerSequence);
 
   game.activateListeners();
   game.newSequence = new Sequence();
