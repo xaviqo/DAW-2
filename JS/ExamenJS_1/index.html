@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen M06 UF1 22-23</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="main.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="contingut">
+
+
+        <header class="banner">
+            <h1>Examen M06 UF1 22-23</h1>
+        </header>
+        <nav class="menu">
+            <ul>
+                <li><a href="#acl">Aclaracions</a></li>
+                <li><a href="#ex1">Exercici 1</a></li>
+                <li><a href="#ex2">Exercici 2</a></li>
+                <li><a href="#ex3">Exercici 3</a></li>
+                <li><a href="#ex4">Exercici 4</a></li>
+                <li><a href="#ex5">Exercici 5</a></li>
+                <li><a href="#ex6">Exercici 6</a></li>
+            </ul>
+        </nav>
+        <main>
+            <article id="acl">
+                <header>
+                    <h2>Aclaracions i apunts</h2>
+                </header>
+                <h2>Aclaracions</h2>
+                <p>
+                    L'accés a internet està prohibit, abans de començar s'ha de tenir el cable de xarxa desconnectat o
+                    el
+                    wifi desactivat.
+                </p>
+                <p>
+                    Totes les funcions que demana crear en els diferents exercicis s'han de crear amb el nom exacte i
+                    acceptar el paràmetres que demana l'exercici.
+                </p>
+                <p>
+                    Només es pot fer servir el visual studio i un navegador, al navegador evitar tenir més d'una
+                    pestanya oberta.
+                </p>
+                <p>
+                    Al visual studio només es pot tenir obert la carpeta de l'examen, no es pot mirar activitats
+                    anteriors ni tenir apunts oberts.
+                </p>
+                <h2>Apunts</h2>
+                <p>
+                    Condicionals
+                <pre>
+                    <code>
+    //simple condition
+    if (hour < 18) {
+        greeting = "Good day";
+    } 
+    // else statement
+    if (hour < 18) {
+        greeting = "Good day";
+        } else {
+        greeting = "Good evening";
+        }
+    // elseif statement
+    if (time < 10) {
+        greeting = "Good morning";
+        } else if (time < 20) {
+        greeting = "Good day";
+        } else {
+        greeting = "Good evening";
+        }
+                    </code>
+                </pre>
+                </p>
+                <p>
+                    Bucles
+                <pre>
+                    <code>
+    //for statement
+    for (let step = 0; step < 5; step++) {
+        // Se ejecuta 5 veces, con valores del paso 0 al 4.
+        console.log('Camina un paso hacia el este');
+        }
+    //while statement
+    let n = 0;
+    let x = 0;
+    while (n < 3) {
+        n++;
+        x += n;
+    }
+    //for in
+    for (let i in array) {
+        result += array[i] 
+    }
+    //for of
+    for (let i in array) {
+        result += i 
+    }
+                    </code>
+                </pre>
+                </p>
+                <pre>
+    <p>Accés al DOM
+        Obtenir un element:
+        <code>
+            let element = document.getElementById('para');   
+        </code>
+        Modificar el seu contingut:
+        <code>
+            let element = document.getElementById('para');
+            element.innerHTML = "I have changed!";
+        </code>
+        Modificar la seva classe:
+        <code>
+            let element = document.getElementById('para');
+            element.className = "cssClass";
+        </code>
+    </p>
+    <p>
+        Obtenir un valor random
+        <code>
+            // Returns a random integer from 0 to 9:<br>
+            Math.floor(Math.random() * 10);
+        </code>
+
+    </p>
+</pre>
+                <p>
+                    Classes i herencia
+                <pre>
+    //Class definition
+    class Animal {
+        constructor(name) {
+          this.speed = 0;
+          this.name = name;
+        }
+        run(speed) {
+          this.speed = speed;
+          alert(`${this.name} runs with speed ${this.speed}.`);
+        }
+        stop() {
+          this.speed = 0;
+          alert(`${this.name} stands still.`);
+        }
+      }
+      let animal = new Animal("My animal");
+      
+      //herencia
+      class Rabbit extends Animal {
+        hide() {
+          alert(`${this.name} hides!`);
+        }
+      }
+
+
+                </pre>
+                </p>
+            </article>
+            <article id="ex1">
+                <header>
+                    <h2>Joc de memòria (2 punts)</h2>
+                    <p>Crea una funció amb el nom cercarParella(array) on li passarem com a paràmetre una matriu.
+                        La funció ha de retornar on en quines posicions es troben els dos elements repetits.
+                    <p>
+                        A baix d'aquesta plana hi ha el botó cercar que crida a la funció cercaEx1 i un div amb el id
+                        resultatEx1. Dins d'aquesta funció s'ha de crear una matriu i passar-la com a paràmetre a la
+                        funció cercarParella(array) s'ha de guardar el retorn de la funció i imprimir-ho al div
+                        resultatEx1.
+                    </p>
+                    Ex:<br>
+                    <code>
+                        [[1,5,8,10,2],<br>
+                        [22,12,3,<span  style="color: red;">9</span>,11],<br>
+                        [78,34,4,15,20],<br>
+                        [<span style="color: red;">9</span>,0,32,18,64],<br>
+                        [6,52,14,38,77]]<br>
+                        <br>
+                        Retorna: [[1,3],[3,0]]
+                       </code>
+
+                    </p>
+                    <strong class="important">
+                        No pots fer servir funcions predefinides de cerca per els array.<br>
+                    </strong>
+                    <button onclick="cercarEx1()">Cercar</button>
+                    <div id="resultatEx1"><span class="exemple">Ej: [[1,5],[3,2]]</span></div>
+                </header>
+            </article>
+            <article id="ex2">
+                <header>
+                    <h2>Pedra paper tisores &#9994; &#9995; &#9996; (1 punts)</h2>
+                </header>
+                <p>En aquest exercici s'ha d'implementar el joc de pedra paper tisores. L'usuari ha de poder seleccionar
+                    una de les 3 opcions i poder donar a comprovar. Un cop s'ha fet clic a comprovar s'ha de mostrar en
+                    grant la selecció del usuari i l'opció a l'atzar de l'ordinador. Mostra amb un alert qui és el
+                    guanyador o si hi ha empat.</p>
+
+                <div class="resultatPedra" id="resultatUsuari"></div>
+                <div class="resultatPedra" id="resultatPc"></div>
+                <div class="resultatPedra" style="font-size:2em;">
+                    <input type="radio" id="pedra" name="joc" value="Pedra">
+                    <label for="pedra">&#9994;</label><br>
+                    <input type="radio" id="paper" name="joc" value="Paper">
+                    <label for="paper">&#9995;</label><br>
+                    <input type="radio" id="tisores" name="joc" value="Tisores">
+                    <label for="tisores">&#9996;</label><br>
+                    <button onclick="jugarEx2();">Jugar</button>
+                </div>
+
+            </article>
+            <article id="ex3">
+                <header>
+                    <h2>Pila de colors (2 punts)</h2>
+                </header>
+                <p>
+                    En aquest exercici s'ha d'implementar una pila de com a màxim 6 colors els quals no es poden repetir
+                    dins de la pila.<br>
+                    Fen clic en un color ha de passar a la pila si aquest no està ja en aquesta.<br>
+                    Fen clic al botó Pop s'ha de treure l'últim element afegit.
+
+                </p>
+                <div class="inline">
+                    <table class="select">
+                        <tr>
+                            <td class="pink" onclick="colors('pink')"></td>
+                            <td class="purple" onclick="colors('purple')"></td>
+                            <td class="yellow" onclick="colors('yellow')"></td>
+                            <td class="aquamarine" onclick="colors('aquamarine')"></td>
+                            <td class="red" onclick="colors('red')"></td>
+                            <td class="orange" onclick="colors('orange')"></td>
+                            <td class="blue" onclick="colors('blue')"></td>
+                            <td class="fuchsia" onclick="colors('fuchsia')"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="inline"> --><br>--></div>
+                <div class="inline">
+                    <table class="select">
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="inline"> --><button>Pop</button><br>--></div>
+
+            </article>
+
+            <article id="ex4">
+                <header>
+                    <h2>Contrasenya segura (2 punts)</h2>
+                </header>
+                <p>
+                    S'ha de comprovar el nivell de seguretat de la contrasenya que introdueix l'usuari. S'ha d'indicar
+                    quines característiques no compleix, a més de dir la qualitat de la contrasenya.
+                    Els nivells de seguretat són:
+                </p>
+                Nivells de seguretat:
+                <ol>
+                    <li>Dolenta (vermell)</li>
+                    <li>Poc segura (taronja)</li>
+                    <li>Segura (verd)</li>
+                    <li>Molt segura (morada)</li>
+                </ol>
+                <p>
+                    Per passar de dolenta a qualsevol altre nivell s'ha de complir la característica 1. Per passar al
+                    seguent nivell ha de complir la primera més una altra característica i per a l'últim nivell ha de
+                    complir la primera i dues característiques.
+                </p>
+                <p>Característiques:
+                <ol>
+                    <li>Més de 7 caràcters.</li>
+                    <li>Contenir lletres en majúscules i minúscules.</li>
+                    <li>Contenir els següents caràcters especials , . - ! $ % & / ( )</li>
+                    <li>Contenir espais</li>
+                </ol>
+                </p>
+                <p>
+                    Cada nivell de seguretat té un color, fes que el text del nivell sigui del color del nivell. Pots
+                    afegir css si creus que és necessari.
+                </p>
+                <strong class="important">
+                    No pots fer servir funcions de cerca al text només pots repassar el text fent un bucle.
+                </strong>
+
+
+                <input id="passwordEx4" type="password" placeholder="Password" onchange="checkPassword()">
+                <div>
+                    <div class="caracteristiquesPassword">
+                        <!-- Dolenta, Poc segura, Segura, Molt segura -->
+                    </div>
+                    <div class="colorPassword">
+                        <!-- No compleix les següents caracteristiques:
+                    Contenir lletres en majuscules i minuscules
+                    Contenir espais
+                    --> </span>
+                    </div>
+            </article>
+            <article id="ex5">
+                <header>
+                    <h2>Buscar en un text (1 punts)</h2>
+                </header>
+                Crea una funció searchText(text,startMark,endMark).
+                Aquesta funció ha de busca un text que està entre les marques que passen per paràmetre.
+                i retornar aquest text.<br>
+                <strong class="important">
+                    No pots fer servir funcions de cerca al text només pots repassar el text fent un bucle.
+                </strong>
+                <div class="cerca">
+                    <div style="text-align: center;">Cerca</div>
+                    <label for="textCerca">Text de cerca</label>
+                    <input type="text" id="textCerca">
+                    <label for="marcaIncial">Marca inicial</label>
+                    <input type="text" id="marcaIncial">
+                    <label for="marcaFinal">Marca final</label>
+                    <input type="text" id="marcaFinal">
+                    <button onclick="searchText()">Cercar</button>
+                </div>
+
+
+            </article>
+            <article id="ex6">
+                <h2>Rutes (2 punts)</h2>
+
+                Crea una classe Conductor amb les propietats origen, destí i kms.
+                Una altre classe Vehicle amb un constructor al qual es passarà per paràmetre al conductor).
+                Vehicle té el mètode avança().
+                Hi han 3 tipus de vehicles:
+                <ol>
+                    <li>Moto: avança 15km i descansa un torn cada 60km</li>
+                    <li>Cotxe: avança 10km i descansa un torn cada 80km</li>
+                    <li>Camió: avança 8km i descansa un torn cada 120km</li>
+                </ol>
+                Cada cop que fem clic al botó avançar els 3 vehicles els avancen els kms que indica.
+                Mostra en un div el recorregut que fa cada vehicle en el següent format.
+                <br>
+
+                <code>
+                    [Moto](Barcelona)-------------------------(Tarragona)(40 torns)<br>
+                    [Cotxe](Tarragona)---------.......................... (Girona)<br>
+                    [Camió](Lleida)--------------------......(Mataró)<br>
+                </code>
+
+                <p>
+                    Quan arribi a destí ha de indicar quant torns ha necessitat.
+                </p>
+                <p>
+                    Les dades d'origen i destí de cada vehicle las ha d'informar l'usuari en els següents input.
+                </p>
+                <div class="veicle">
+                    <div style="text-align: center;">Moto</div>
+                    <label for="origenMoto">Origen</label>
+                    <input type="text" id="origenMoto" value="Caldes de Montbui">
+                    <label for="destiMoto">Destí</label>
+                    <input type="text" id="destiMoto" value="Soria">
+                    <label for="kmsMoto">Destí</label>
+                    <input type="number" id="kmsMoto" value="20">
+                </div>
+                <div class="veicle">
+                    <div style="text-align: center;">Cotxe</div>
+                    <label for="origenCotxe">Origen</label>
+                    <input type="text" id="origenCotxe" value="Tarragona">
+                    <label for="destiCotxe">Destí</label>
+                    <input type="text" id="destiCotxe" value="Girona">
+                    <label for="kmsCotxe">Destí</label>
+                    <input type="number" id="kmsCotxe" value="80">
+                </div>
+                <div class="veicle">
+                    <div style="text-align: center;">Camió</div>
+                    <label for="origenCamio">Origen</label>
+                    <input type="text" id="origenCamio" value="Poland">
+                    <label for="destiCamio">Destí</label>
+                    <input type="text" id="destiCamio" value="Germany">
+                    <label for="kmsCamio">Destí</label>
+                    <input type="number" id="kmsCamio" value="120">
+                </div>
+                <div id="resultatEx5">
+                    <div id="moto"></div>
+                    <div id="cotxe"></div>
+                    <div id="camio"></div>
+                </div>
+                <button onclick="go()">Avançar</button>
+                <button onclick="start()">Iniciar</button>
+            </article>
+
+            <article>
+                5.(10min)Busca un text que està entre les marques que passen per parametre. searchText(text,startMark,
+                endMark)
+                6.(10min)Afegeix un post-it a la llista de tasques amb el text del imput i la data en la que ha afegit
+                el post-it amb el següent format.
+            </article>
+        </main>
+    </div>
+</body>
+
+</html>
