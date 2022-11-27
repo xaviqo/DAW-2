@@ -1,4 +1,5 @@
 import Result from "./Result.js";
+import Sequence from "./Sequence.js";
 
 export default class Game {
 
@@ -56,7 +57,7 @@ export default class Game {
                 if (this.newSequence.pieces.size < 4){
     
                     this.newSequence.setPiece(
-                        this.pieceColor(ev.target)+'-'+this.newSequence.holeNumber(),
+                        this.pieceColor(ev.target)+'_'+this.newSequence.holeNumber(),
                         this.colorPiecesMap.get(this.pieceColor(ev.target)).cloneNode(true)
                     );
     
@@ -134,6 +135,10 @@ export default class Game {
     }
     set winnerSequence(value) {
         this._winnerSequence = value;
+    }
+
+    printResult(){
+        this._tries[this._tries.length-1].print(this.whereToPrint()-1);
     }
 
     pieceHTML(color){

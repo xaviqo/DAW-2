@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-11-22 20:05:01
-  from '/home/xavi/Desktop/TRABAJOS/DAW2/PHP/CLASES/TRENES2/template.tpl' */
+/* Smarty version 4.2.1, created on 2022-11-27 18:14:07
+  from '/home/xavi/Desktop/TRABAJOS/DAW-2/PHP/CLASES/TRENES2/template.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_637d1d5d1467c5_56354482',
+  'unifunc' => 'content_63839adfdf3b59_96049852',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'a33fbb0ea707940b162e9ff064e29c239e5c0124' => 
+    '0b163806162d1f2f3feb73245dba5778860cad72' => 
     array (
-      0 => '/home/xavi/Desktop/TRABAJOS/DAW2/PHP/CLASES/TRENES2/template.tpl',
-      1 => 1669142565,
+      0 => '/home/xavi/Desktop/TRABAJOS/DAW-2/PHP/CLASES/TRENES2/template.tpl',
+      1 => 1669568833,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_637d1d5d1467c5_56354482 (Smarty_Internal_Template $_smarty_tpl) {
+function content_63839adfdf3b59_96049852 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>

@@ -24,7 +24,7 @@ window.onload = () => {
 
   const winnerSequence = new Sequence();
 
-  for (let k = 0; k < 4; k++) {
+  for (let k = 1; k < 5; k++) {
     const color = [...game.colorPiecesMap.keys()][Math.floor(Math.random() * 8)];
     winnerSequence.setPiece(color+"_"+k, game.colorPiecesMap.get(color));
   }
@@ -38,7 +38,9 @@ window.onload = () => {
 
   CHECK_BTN.addEventListener("click", () => {
     if (game.isSequenceReady()) {
-      game.tries = game.sequenceResult();
+      game.tries.push(game.resultFromSequence());
+      game.newSequence = new Sequence();
+      game.printResult();
     } else {
       alert("Your sequence is not ready.");
     }
