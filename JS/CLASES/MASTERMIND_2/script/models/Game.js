@@ -5,14 +5,16 @@ export default class Game {
     _colorPieces_HTML;
     _checkButton_HTML;
     _userSequences_HTML;
+    _msg_box_HTML;
     _winnerSequence;
     _trySequence;
     _tries;
 
-    constructor(colorPieces_HTML,checkButton_HTML,userSequences_HTML) {
+    constructor(colorPieces_HTML,checkButton_HTML,userSequences_HTML,msg_box_HTML) {
         this._colorPieces_HTML = colorPieces_HTML;
         this._checkButton_HTML = checkButton_HTML;
         this._userSequences_HTML = userSequences_HTML;
+        this._msg_box_HTML = msg_box_HTML;
         this._tries = [];
         this._winnerSequence = new Sequence();
         this._trySequence = null;
@@ -32,9 +34,16 @@ export default class Game {
 
         this.checkButton_HTML.addEventListener('click', () => {
             if (this.isTrySequenceReady()){
-
+                this.msg_box_HTML.innerHTML = '';
+            } else {
+                 this.messageBox('⚠️Your sequence is not ready ⚠️');
             }
         })
+    }
+
+    messageBox(msg){
+        this.msg_box_HTML.innerHTML = msg;
+        setTimeout(() => this.msg_box_HTML.innerHTML = '',1000 );
     }
 
     printSequence(seq){
@@ -63,6 +72,13 @@ export default class Game {
         return (this.trySequence.pieces.length === 4);
     }
 
+    get msg_box_HTML() {
+        return this._msg_box_HTML;
+    }
+
+    set msg_box_HTML(value) {
+        this._msg_box_HTML = value;
+    }
 
     get userSequences_HTML() {
         return this._userSequences_HTML;
