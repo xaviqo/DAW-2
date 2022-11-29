@@ -1,44 +1,55 @@
 import Sequence from "./Sequence.js";
+import Result from "./Result.js";
 
 export default class Game {
 
     _colorPieces_HTML;
     _checkButton_HTML;
     _userSequences_HTML;
+    _results_HTML;
     _msg_box_HTML;
     _winnerSequence;
     _trySequence;
     _tries;
 
-    constructor(colorPieces_HTML,checkButton_HTML,userSequences_HTML,msg_box_HTML) {
+    constructor(colorPieces_HTML,checkButton_HTML,userSequences_HTML,results_HTML,msg_box_HTML) {
         this._colorPieces_HTML = colorPieces_HTML;
         this._checkButton_HTML = checkButton_HTML;
         this._userSequences_HTML = userSequences_HTML;
+        this._results_HTML = results_HTML;
         this._msg_box_HTML = msg_box_HTML;
         this._tries = [];
         this._winnerSequence = new Sequence();
-        this._trySequence = null;
+        this._trySequence = new Sequence();
         this.eventListeners();
         this.generateWinnerSequence();
-        console.log(this._userSequences_HTML);
+        console.log(this.winnerSequence.pieces);
     }
 
     eventListeners(){
         this.colorPieces_HTML.forEach( el => {
         el.addEventListener('click', ev => {
-            if (this.trySequence == null) this.trySequence = new Sequence();
             this.trySequence.setPiece(this.getEventColor(ev));
             this.printSequence(this.trySequence);
             });
         })
 
         this.checkButton_HTML.addEventListener('click', () => {
+            console.log(this.results_HTML);
             if (this.isTrySequenceReady()){
-                this.msg_box_HTML.innerHTML = '';
+                this.printResult(new Result(this.winnerSequence,this.trySequence));
             } else {
-                 this.messageBox('⚠️Your sequence is not ready ⚠️');
+                 this.messageBox('⚠️ Your sequence is not ready ⚠️');
             }
         })
+    }
+
+    get results_HTML() {
+        return this._results_HTML;
+    }
+
+    set results_HTML(value) {
+        this._results_HTML = value;
     }
 
     messageBox(msg){
@@ -50,6 +61,13 @@ export default class Game {
         seq.pieces.forEach( (color,index) => {
             this.userSequences_HTML[this.getTryPosition()].children[index].className = `piece ${color}`;
         })
+    }
+
+    printResult(res){
+        const iterations = (res.colorPosition + res.colorOnly);
+        for (let i = 0; i < iterations; i++) {
+            //this.results_HTML[this.getTryPosition()].
+        }
     }
 
     getTryPosition(){
