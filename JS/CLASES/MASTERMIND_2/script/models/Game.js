@@ -35,9 +35,10 @@ export default class Game {
         })
 
         this.checkButton_HTML.addEventListener('click', () => {
-            console.log(this.results_HTML);
             if (this.isTrySequenceReady()){
-                this.printResult(new Result(this.winnerSequence,this.trySequence));
+                const result = new Result(this.winnerSequence,this.trySequence);
+                this.printResult(result);
+                this.tries = result;
             } else {
                  this.messageBox('⚠️ Your sequence is not ready ⚠️');
             }
@@ -64,9 +65,17 @@ export default class Game {
     }
 
     printResult(res){
-        const iterations = (res.colorPosition + res.colorOnly);
-        for (let i = 0; i < iterations; i++) {
-            //this.results_HTML[this.getTryPosition()].
+        console.log(res);
+        //debugger;
+        const white = 4 - (res.colorPosition + res.colorOnly);
+        for (let i = 0; i < res.colorPosition; i++) {
+            this.results_HTML[this.getTryPosition()].children[i].className = `resultHoleGreen`;
+        }
+        for (let k = res.colorPosition; k < (res.colorPosition + res.colorOnly); k++) {
+            this.results_HTML[this.getTryPosition()].children[k].className = `resultHoleWhite`;
+        }
+        for (let j = (res.colorPosition + res.colorOnly); j < white; j++) {
+            this.results_HTML[this.getTryPosition()].children[j].className = `resultHole`;
         }
     }
 
@@ -119,7 +128,7 @@ export default class Game {
     }
 
     set tries(value) {
-        this._tries = value;
+        this._tries.push(value);
     }
 
     get trySequence() {
