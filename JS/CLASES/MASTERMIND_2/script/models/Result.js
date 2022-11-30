@@ -14,14 +14,14 @@ export default class Result {
     }
 
     check(){
+        //debugger;
         for (let i = 0; i < this.trySequence.pieces.length; i++) {
             const winColor = this.winnerSequence.pieces[i];
             for (let j = 0; j < this.trySequence.pieces.length; j++) {
                 const tryColor = this.trySequence.pieces[j];
-                if (winColor === tryColor){
+                if (winColor === tryColor && ((this.colorPosition+this.colorOnly)<4)){
                     if (i === j){
                         this.colorPosition+=1;
-                        this.winnerSequence.pieces[i] = null;
                     } else {
                         this.colorOnly+=1;
                     }
