@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Ejercicio 15 - Informaci�n sobre eventos</title>
+
+<style type="text/css">
+body {font-family: arial, helvetica;}
+#info {width:160px; border:thin solid silver; padding:.5em; position:fixed;}
+#info h1 {margin: 0;}
+</style>
+
+<script type="text/javascript">
+    window.onmousemove=capturaEvento
+    window.onkeydown=capturaEvento;
+
+function capturaEvento(e) {
+    let msg = [];
+    switch (e.type) {
+        case 'mousemove':
+            msg[0] = "Mueves el mouse";
+            msg[1] = `X ${e.x}`;
+            msg[2] = `Y ${e.y}`;
+            msg[3] = `Page X ${e.pageX}`;
+            msg[4] = `Page Y ${e.pageY}`;
+            msg[5] = `Client X ${e.clientX}`;
+            msg[6] = `Client Y ${e.clientY}`;
+            msg[7] = `Screen X ${e.screenX}`;
+            msg[8] = `Screen Y ${e.screenY}`;
+            break;
+        case 'keydown':
+            msg[0] = `Pulsaste la tecla ${e.key}`;
+            msg[1] = `KeyCode: ${e.keyCode}`;
+            msg[2] = `TimeStamp: ${e.timeStamp}`;
+            msg[3] = `ShiftKey: ${e.shiftKey}`;
+            msg[9] = e.keyCode;//switchColor(e.key)
+            break;
+    }
+
+        muestraInformacion(msg);
+}
+
+function switchColor(key) {
+    switch (key) {
+        case 'r':
+            return 'red';
+        case 'w':
+            return 'white';
+        case 'g':
+            return 'green';
+        case 'y':
+            return 'yellow';
+        case 'b':
+            return 'brown';
+    }
+}
+
+function muestraInformacion(mensaje) {
+
+    if (mensaje[9]) document.getElementById("info").style.background = '#1'+mensaje[9];
+
+    console.log(document.getElementById("info").style.backgroundColor);
+    console.log(mensaje[9]);
+
+	document.getElementById("info").innerHTML = '<h1>'+mensaje[0]+'</h1>';
+	for(var i=1; i<mensaje.length; i++) {
+		document.getElementById("info").innerHTML += '<p>'+mensaje[i]+'</p>';
+	}
+}
+</script>
+</head>
+
+<body>
+
+<div id="info"></div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+</body></html>
