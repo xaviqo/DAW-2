@@ -66,7 +66,6 @@ export default class Game {
 
     printResult(res){
         console.log(res);
-        //debugger;
         const white = 4 - (res.colorPosition + res.colorOnly);
         for (let i = 0; i < res.colorPosition; i++) {
             this.results_HTML[this.getTryPosition()].children[i].className = `resultHoleGreen`;
@@ -77,6 +76,7 @@ export default class Game {
         for (let j = (res.colorPosition + res.colorOnly); j < white; j++) {
             this.results_HTML[this.getTryPosition()].children[j].className = `resultHole`;
         }
+        this.trySequence = new Sequence();
     }
 
     getTryPosition(){
@@ -85,10 +85,16 @@ export default class Game {
 
     generateWinnerSequence(){
         for (let i = 0; i < 4; i++) {
-            const randomPiece = Math.floor(Math.random() * this.colorPieces_HTML.length);
-            const color = this.colorPieces_HTML[randomPiece].classList[2];
-            this.winnerSequence.setPiece(color);
+            //const randomPiece = Math.floor(Math.random() * this.colorPieces_HTML.length);
+            //const color = this.colorPieces_HTML[randomPiece].classList[2];
+            //this.winnerSequence.setPiece();
         }
+        const testSeq = new Sequence();
+        testSeq.setPiece("green");
+        testSeq.setPiece("green");
+        testSeq.setPiece("lilac");
+        testSeq.setPiece("orange");
+        this.winnerSequence = testSeq;
     }
 
     getEventColor(piece){
