@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+        fieldset {
+            margin: 10px;
+        }
+        fieldset:nth-child(1){
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+        }
+        div p {
+            margin-bottom: 0;
+        }
+        .genero {
+            display: flex;
+            flex-direction: column;
+        }
+        input[type="radio"] {
+            margin-top: 10px;
+            margin-left: -2px;
+        }
+        input {
+            height: 10px;
+        }
+        input[type="file"] {
+            height: 22px;
+            width: 45vw;
+            border: 1px solid rgba(0, 0, 0, 0.51);
+            padding: 5px;
+            border-radius: 10px;
+        }
+        .direccion {
+            display: flex;
+            flex-direction: row;
+        }
+        .direccion > div:nth-child(1) > input:nth-child(2){
+            width: 50vw
+        }
+        .direccion > div > select {
+            height: 20px;
+            width: 35vw;
+        }
+        .direccion > div:nth-child(2){
+            margin-left: 36px;
+        }
+        .fileTop {
+            display: flex;
+            flex-direction: row;
+        }
+        .fileType {
+            font-size: small;
+            margin-left: 10px;
+        }
+        textarea {
+            resize: none;
+            width: 99%;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>Datos Personales</legend>
+        <div>
+            <div><p>DNI</p> <input type="text"> - <input type="text" style="width: 15px"></div>
+            <div><p>NOMBRE</p> <input type="text"></div>
+            <div><p>APELLIDOS</p> <input type="text"></div>
+            <div><p>EMAIL</p> <input type="text"></div>
+        </div>
+        <div>
+            <p>GÉNERO</p>
+            <div class="genero">
+                <div>
+                    <input type="radio" name="genero" value="hombre"> <label for="hombre">hombre</label>
+                </div>
+                <div>
+                    <input type="radio" name="genero" value="mujer"> <label for="mujer">mujer</label>
+                </div>
+                <div>
+                    <input type="radio" name="genero" value="otro"> <label for="otro">otro</label>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+<fieldset>
+    <legend>Dirección</legend>
+    <div>
+        <div><p>CALLE</p><input type="text" style="width: 90vw"></div>
+    </div>
+    <div>
+        <div>
+            <div>
+
+            </div>
+            <div class="direccion">
+                <div>
+                    <p>POBLACIÓN</p><input type="text">
+                </div>
+                <div>
+                    <p>PROVINCIA</p>
+                    <select name="provincia" id="provincia">
+                        <option>Barcelona</option>
+                        <option>Almeria</option>
+                        <option>Santander</option>
+                        <option>Oviedo</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</fieldset>
+<fieldset>
+    <legend>Práctica</legend>
+    <div class="fileTop">
+        <div>
+            <input type="file" name="file" id="file">
+        </div>
+        <div class="fileType">
+            <div>
+                <input type="checkbox" name="zip" id="zip">
+                <label for="zip">Archivo Comprimido</label>
+            </div>
+            <div>
+                <input type="checkbox" name="crp" id="crp">
+                <label for="crp">Archivo Cifrado</label>
+            </div>
+        </div>
+    </div>
+    <div>
+        <p>
+            DESCRIPCIÓN
+        </p>
+        <div>
+            <textarea name="descripcion" id="" rows="10">
+
+            </textarea>
+        </div>
+    </div>
+</fieldset>
+</body>
+</html>
