@@ -5,57 +5,66 @@ export default class Game {
 
     _colorPieces_HTML;
     _checkButton_HTML;
+    _resetButton_HTML;
     _userSequences_HTML;
     _results_HTML;
     _msg_box_HTML;
     _winnerSequence;
     _trySequence;
     _tries;
+    _win;
 
-    constructor(colorPieces_HTML,checkButton_HTML,userSequences_HTML,results_HTML,msg_box_HTML) {
+    constructor(colorPieces_HTML,checkButton_HTML,resetButton_HTML,userSequences_HTML,results_HTML,msg_box_HTML) {
         this._colorPieces_HTML = colorPieces_HTML;
         this._checkButton_HTML = checkButton_HTML;
+        this._resetButton_HTML = resetButton_HTML;
         this._userSequences_HTML = userSequences_HTML;
         this._results_HTML = results_HTML;
         this._msg_box_HTML = msg_box_HTML;
         this._tries = [];
         this._winnerSequence = new Sequence();
         this._trySequence = new Sequence();
+        this._win = false;
         this.eventListeners();
         this.generateWinnerSequence();
-        console.log(this.winnerSequence.pieces);
     }
 
     eventListeners(){
+
         this.colorPieces_HTML.forEach( el => {
         el.addEventListener('click', ev => {
-            this.trySequence.setPiece(this.getEventColor(ev));
-            this.printSequence(this.trySequence);
+            if (!this.win){
+                this.trySequence.setPiece(this.getEventColor(ev));
+                this.printSequence(this.trySequence);
+            }
             });
-        })
+        });
 
         this.checkButton_HTML.addEventListener('click', () => {
-            if (this.isTrySequenceReady()){
-                const result = new Result(this.winnerSequence,this.trySequence);
-                this.printResult(result);
-                this.tries = result;
-            } else {
-                 this.messageBox('⚠️ Your sequence is not ready ⚠️');
+            if (!this.win) {
+                if (this.isTrySequenceReady()){
+                    const result = new Result(this.winnerSequence,this.trySequence);
+                    this.printResult(result);
+                    this.setTry(result);
+                } else {
+                    this.messageBox('⚠️ Your sequence is not ready ⚠️');
+                }
             }
-        })
+        });
+
+        console.log(this.resetButton_HTML)
+        this.resetButton_HTML.addEventListener('click', () => {
+            window.location.reload();
+        });
     }
 
     get results_HTML() {
         return this._results_HTML;
     }
 
-    set results_HTML(value) {
-        this._results_HTML = value;
-    }
-
     messageBox(msg){
         this.msg_box_HTML.innerHTML = msg;
-        setTimeout(() => this.msg_box_HTML.innerHTML = '',1000 );
+        setTimeout(() => this.msg_box_HTML.innerHTML = '',4000 );
     }
 
     printSequence(seq){
@@ -65,7 +74,6 @@ export default class Game {
     }
 
     printResult(res){
-        console.log(res);
         const white = 4 - (res.colorPosition + res.colorOnly);
         for (let i = 0; i < res.colorPosition; i++) {
             this.results_HTML[this.getTryPosition()].children[i].className = `resultHoleGreen`;
@@ -76,7 +84,11 @@ export default class Game {
         for (let j = (res.colorPosition + res.colorOnly); j < white; j++) {
             this.results_HTML[this.getTryPosition()].children[j].className = `resultHole`;
         }
+        this.win = res.win;
         this.trySequence = new Sequence();
+        if (this.win){
+            this.messageBox('🥳 Awesome! You got the sequence right 🥳');
+        }
     }
 
     getTryPosition(){
@@ -85,16 +97,11 @@ export default class Game {
 
     generateWinnerSequence(){
         for (let i = 0; i < 4; i++) {
-            //const randomPiece = Math.floor(Math.random() * this.colorPieces_HTML.length);
-            //const color = this.colorPieces_HTML[randomPiece].classList[2];
-            //this.winnerSequence.setPiece();
+            const randomPiece = Math.floor(Math.random() * this.colorPieces_HTML.length);
+            const color = this.colorPieces_HTML[randomPiece].classList[2];
+            this.winnerSequence.setPiece(color);
         }
-        const testSeq = new Sequence();
-        testSeq.setPiece("green");
-        testSeq.setPiece("green");
-        testSeq.setPiece("lilac");
-        testSeq.setPiece("orange");
-        this.winnerSequence = testSeq;
+        console.log(this.winnerSequence)
     }
 
     getEventColor(piece){
@@ -103,6 +110,22 @@ export default class Game {
 
     isTrySequenceReady(){
         return (this.trySequence.pieces.length === 4);
+    }
+
+    get win() {
+        return this._win;
+    }
+
+    set win(value) {
+        this._win = value;
+    }
+
+    get resetButton_HTML() {
+        return this._resetButton_HTML;
+    }
+
+    set resetButton_HTML(value) {
+        this._resetButton_HTML = value;
     }
 
     get msg_box_HTML() {
@@ -133,7 +156,7 @@ export default class Game {
         return this._tries;
     }
 
-    set tries(value) {
+    setTry(value) {
         this._tries.push(value);
     }
 

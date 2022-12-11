@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Formulari JS</title>
     <style>
         body {
             font-family: sans-serif;
@@ -66,34 +66,52 @@
             resize: none;
             width: 99%;
         }
+        .fa-check {
+          color: darkseagreen;
+        }
+        .fa-ban {
+            color: orangered;
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
-    <script src="checkform.js"></script>
+    <script src="checker.js"></script>
 </head>
 <body>
-    <fieldset>
-        <legend>Datos Personales</legend>
+<fieldset>
+    <legend>Datos Personales</legend>
+    <div>
         <div>
-            <div><p>DNI</p> <input type="text" id="dni"> - <input type="text" style="width: 15px" id="letra-dni"></div>
-            <div><p>NOMBRE</p> <input type="text" id="nombre"></div>
-            <div><p>APELLIDOS</p> <input type="text" id="apellidos"></div>
-            <div><p>EMAIL</p> <input type="text" id="email"></div>
+            <p>DNI</p>
+            <input type="text" id="dni"> - <input type="text" style="width: 15px" id="letra-dni">
         </div>
         <div>
-            <p>GÉNERO</p>
-            <div class="genero">
-                <div>
-                    <input type="radio" name="genero" value="hombre"> <label for="hombre">hombre</label>
-                </div>
-                <div>
-                    <input type="radio" name="genero" value="mujer"> <label for="mujer">mujer</label>
-                </div>
-                <div>
-                    <input type="radio" name="genero" value="otro"> <label for="otro">otro</label>
-                </div>
+            <p>NOMBRE</p>
+            <input type="text" id="nombre">
+        </div>
+        <div>
+            <p>APELLIDOS</p>
+            <input type="text" id="apellidos">
+        </div>
+        <div>
+            <p>EMAIL</p>
+            <input type="text" id="email">
+        </div>
+    </div>
+    <div>
+        <p>GÉNERO</p>
+        <div class="genero">
+            <div>
+                <input type="radio" name="genero" value="hombre"> <label for="hombre">hombre</label>
+            </div>
+            <div>
+                <input type="radio" name="genero" value="mujer"> <label for="mujer">mujer</label>
+            </div>
+            <div>
+                <input type="radio" name="genero" value="otro"> <label for="otro">otro</label>
             </div>
         </div>
-    </fieldset>
+    </div>
+</fieldset>
 <fieldset>
     <legend>Dirección</legend>
     <div>
@@ -129,21 +147,22 @@
         </div>
         <div class="fileType">
             <div>
-                <input type="checkbox" name="zip" id="zip">
+                <input type="checkbox" name="zip" id="file-zip">
                 <label for="zip">Archivo Comprimido</label>
             </div>
             <div>
-                <input type="checkbox" name="crp" id="crp">
+                <input type="checkbox" name="crp" id="file-crp">
                 <label for="crp">Archivo Cifrado</label>
             </div>
         </div>
     </div>
     <div>
         <p>
-            DESCRIPCIÓN
+            DESCRIPCIÓN -
+            Letras restantes: <span id="descripcion-letras"></span>
         </p>
         <div>
-            <textarea name="descripcion" id="" rows="10">
+            <textarea name="descripcion" id="descripcion" rows="10">
 
             </textarea>
         </div>

@@ -4,30 +4,36 @@ export default class Result {
     _colorPosition;
     _winnerSequence;
     _trySequence;
+    _win;
 
     constructor(winnerSequence, trySequence) {
         this._winnerSequence = winnerSequence;
         this._trySequence = trySequence;
         this._colorPosition = 0;
         this._colorOnly = 0;
+        this._win = false;
         this.check();
     }
 
     check(){
         //debugger;
         for (let i = 0; i < this.trySequence.pieces.length; i++) {
-            const winColor = this.winnerSequence.pieces[i];
-            for (let j = 0; j < this.trySequence.pieces.length; j++) {
-                const tryColor = this.trySequence.pieces[j];
-                if (winColor === tryColor && ((this.colorPosition+this.colorOnly)<4)){
-                    if (i === j){
-                        this.colorPosition+=1;
-                    } else {
+            if (this.winnerSequence.pieces[i] === this.trySequence.pieces[i]){
+                this.colorPosition+=1;
+            } else {
+                for (let j = 0; j < this.trySequence.pieces.length; j++) {
+                    if (this.winnerSequence.pieces[i] === this.trySequence.pieces[j]) {
                         this.colorOnly+=1;
+                        break;
                     }
                 }
             }
         }
+        this._win = (this.colorPosition === 4);
+    }
+
+    get win() {
+        return this._win;
     }
 
     get colorOnly() {
