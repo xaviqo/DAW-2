@@ -1,4 +1,4 @@
-import { Move, game } from './database.js';
+import {Move, Figure, game, wallChecks} from './database.js';
 
 window.onload = () => {
     createBoard();
@@ -7,9 +7,11 @@ window.onload = () => {
     document.querySelectorAll('.cell').forEach(cell => {
         cell.addEventListener('click', e => {
 
+            if (game.movement === Move.Pick) return;
+
             const player = game.player;
             const movingFigure = game.movingFigure;
-            const figure = document.querySelector(`[player="${player}"][figure="${movingFigure}"]`);
+            const figure = document.querySelector(`.figure[player="${player}"][figure="${movingFigure}"]`);
             const oldPosition = {
                 x: parseInt(figure.getAttribute('x')),
                 y: parseInt(figure.getAttribute('y'))
@@ -18,7 +20,7 @@ window.onload = () => {
                 x: parseInt(e.target.getAttribute('x')),
                 y: parseInt(e.target.getAttribute('y'))
             }
-            const newCell = document.querySelector(`[x="${newPosition.x}"][y="${newPosition.y}"]`);
+            const newCell = document.querySelector(`.cell[x="${newPosition.x}"][y="${newPosition.y}"]`);
 
             if (game.movement === Move.Shoot && checkMovementLimits(oldPosition,newPosition,null)){
 
@@ -26,6 +28,7 @@ window.onload = () => {
                 newCell.classList.add('wall');
                 changeCellBackground(oldPosition.x,oldPosition.y,Move.Shoot,false);
                 game.player = (player==='one')?'two':'one';
+                checkAllFiguresStatus();
                 game.movement = Move.Pick;
             }
 
@@ -61,6 +64,33 @@ window.onload = () => {
     });
 }
 
+function checkAllFiguresStatus() {
+    document.querySelectorAll('.figure').forEach( fig => {
+        if (checkFigureFreedom(fig)) {
+            const player = fig.getAttribute('player');
+            fig.classList.remove(Figure.Amazon);
+            fig.classList.add(Figure.Dead);
+            fig.removeAttribute('figure');
+            fig.removeAttribute('player');
+            game.lives[player]--;
+            if (game.lives[player] < 1) alert(`Player ${(player==='one')?'two':'one'} won the game!`)
+        }
+    });
+}
+
+function checkFigureFreedom(fig){
+    const figX = fig.getAttribute('x');
+    const figY = fig.getAttribute('y');
+    let aroundWalls = 0;
+    for (let i = 0; i < 8; i++) {
+        const xCheck = figX-wallChecks[i][0];
+        const yCheck = figY-wallChecks[i][1];
+        const checkingCell = document.querySelector(`.cell[x="${xCheck}"][y="${yCheck}"]`);
+        if (checkingCell != null && checkingCell.classList.contains('.wall')) aroundWalls++;
+    }
+    return (aroundWalls > 7);
+}
+
 function checkMovementLimits(oldPos,newPos,lastOffset){
     //debugger;
     const nextOffset = {
@@ -74,7 +104,7 @@ function checkMovementLimits(oldPos,newPos,lastOffset){
 
         const nextXpos = (oldPos.x+nextOffset.x);
         const nextYpos = (oldPos.y+nextOffset.y);
-        const nodeToCheck = document.querySelector(`[x="${nextXpos}"][y="${nextYpos}"]`);
+        const nodeToCheck = document.querySelector(`.cell[x="${nextXpos}"][y="${nextYpos}"]`);
 
         if (!nodeToCheck.hasChildNodes()){
             return checkMovementLimits({
@@ -120,7 +150,7 @@ function createAmazons() {
 
 function createFigure(boardPosition,playerId,figureId){
     const figure = document.createElement('i');
-    figure.classList.add('fa-solid','fa-chess-queen','figure');
+    figure.classList.add('fa-solid',Figure.Amazon,'figure');
     figure.classList.add(playerId);
     figure.setAttribute('player',playerId);
     figure.setAttribute('figure',figureId);
@@ -157,18 +187,7 @@ function createBoard() {
 }
 
 function changeCellBackground(x,y,css,colorize){
-    const cell = document.querySelector(`[x="${x}"][y="${y}"]`);
+    const cell = document.querySelector(`.cell[x="${x}"][y="${y}"]`);
     if (colorize) cell.classList.add(css);
     else cell.classList.remove(css);
 }
-
-/*
- x bajar - y igual ( -1 / o )
- x bajar - y subir ( -1 / +1 )
- x igual - y subir ( 0 / +1 )
- x subir - y subir ( +1 / +1 )
- x subir - y igual ( +1 / 0 )
- x subir - y bajar ( +1 / -1 )
- x igual - y bajar ( 0 / -1 )
- x bajar - y bajar ( -1 / -1 )
- */
