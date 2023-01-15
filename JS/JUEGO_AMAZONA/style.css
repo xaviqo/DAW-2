@@ -1,0 +1,32 @@
+.row {
+    display: flex;
+}
+
+.cell {
+    width: 30px;
+    height: 30px;
+    padding: 20px;
+    border: solid 1px black;
+}
+
+.whitebg {
+    background-color: wheat;
+}
+
+.blackbg {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.figure {
+    text-shadow: 1px 1px 1px black;
+    font-size: xx-large;
+    cursor: crosshair;
+}
+
+.whitefig{
+    color: springgreen;
+}
+
+.blackfig {
+    color: lightcoral;
+}
