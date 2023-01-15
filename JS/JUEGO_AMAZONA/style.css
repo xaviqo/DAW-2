@@ -1,3 +1,43 @@
+@keyframes bgPickColor {
+    0% {
+        background-color: #ffffff
+    }
+
+    50% {
+        background-color: #000000
+    }
+}
+
+@keyframes bgShootColor {
+    0% {
+        background-color: #ffffff
+    }
+
+    50% {
+        background-color: tomato;
+    }
+}
+
+.wall {
+    background-image: url("pattern.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.pick {
+    -webkit-animation: bgPickColor 2s infinite;
+    animation: bgPickColor 2s infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+}
+
+.shoot {
+    -webkit-animation: bgShootColor 2s infinite;
+    animation: bgShootColor 2s infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+}
+
 .row {
     display: flex;
 }
@@ -7,6 +47,11 @@
     height: 30px;
     padding: 20px;
     border: solid 1px black;
+    cursor: pointer;
+}
+.cell:hover {
+    border: solid 1px greenyellow;
+    transition: 0.4s;
 }
 
 .whitebg {
@@ -23,10 +68,10 @@
     cursor: crosshair;
 }
 
-.whitefig{
+.one{
     color: springgreen;
 }
 
-.blackfig {
+.two {
     color: lightcoral;
 }
