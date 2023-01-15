@@ -3,7 +3,7 @@ import {Move, Figure, game, wallChecks} from './database.js';
 window.onload = () => {
     createBoard();
     createAmazons();
-    document.getElementById('turn').innerText = game.player;
+    changeTurn();
     document.querySelectorAll('.cell').forEach(cell => {
         cell.addEventListener('click', e => {
 
@@ -29,6 +29,7 @@ window.onload = () => {
                 changeCellBackground(oldPosition.x,oldPosition.y,Move.Shoot,false);
                 game.player = (player==='one')?'two':'one';
                 checkAllFiguresStatus();
+                changeTurn();
                 game.movement = Move.Pick;
             }
 
@@ -65,7 +66,7 @@ window.onload = () => {
 }
 
 function checkAllFiguresStatus() {
-    document.querySelectorAll('.figure').forEach( fig => {
+    Array.from(document.querySelectorAll('.figure')).forEach( fig => {
         if (checkFigureFreedom(fig)) {
             const player = fig.getAttribute('player');
             fig.classList.remove(Figure.Amazon);
@@ -86,13 +87,12 @@ function checkFigureFreedom(fig){
         const xCheck = figX-wallChecks[i][0];
         const yCheck = figY-wallChecks[i][1];
         const checkingCell = document.querySelector(`.cell[x="${xCheck}"][y="${yCheck}"]`);
-        if (checkingCell != null && checkingCell.classList.contains('.wall')) aroundWalls++;
+        if (checkingCell != null && checkingCell.classList.contains('wall')) aroundWalls++;
     }
     return (aroundWalls > 7);
 }
 
 function checkMovementLimits(oldPos,newPos,lastOffset){
-    //debugger;
     const nextOffset = {
         x: findNextMovement(oldPos.x,newPos.x),
         y: findNextMovement(oldPos.y,newPos.y)
@@ -131,9 +131,9 @@ function createAmazons() {
 
     //<i className="fa-solid fa-chess-queen"></i>
     const figuresId = { 'one': 1, 'two': 1 };
-    const outterBoard = document.getElementById("outterBoard");
+    const board = document.getElementById("board");
 
-    outterBoard.childNodes.forEach((row, i) => {
+    board.childNodes.forEach((row, i) => {
         row.childNodes.forEach((cell, k) => {
             if (setFigure(i,k)){
                 const playerId = (i > 4)?'two':'one';
@@ -182,8 +182,12 @@ function createBoard() {
             cell.setAttribute('status',true)
             row.appendChild(cell);
         }
-        document.getElementById("outterBoard").appendChild(row);
+        document.getElementById("board").appendChild(row);
     }
+}
+
+function changeTurn() {
+    document.getElementById('turn').innerText = game.player;
 }
 
 function changeCellBackground(x,y,css,colorize){
