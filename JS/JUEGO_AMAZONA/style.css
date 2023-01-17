@@ -41,6 +41,10 @@ body {
     grid-template-rows: 1fr 30fr;
 }
 
+.canMove {
+    background-color: rgba(0, 255, 0, .6) !important;
+}
+
 #outterBoard {
     width: 100vw;
     height: 85vh;
