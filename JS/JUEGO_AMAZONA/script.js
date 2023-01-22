@@ -45,6 +45,7 @@ window.onload = () => {
                 game.movement = Move.Shoot;
             }
 
+            console.log(game.movement);
         });
     });
     document.querySelectorAll('.figure').forEach( fig => {
@@ -59,10 +60,29 @@ window.onload = () => {
             if (game.movement === Move.Pick){
                 game.movingFigure = figure;
                 changeCellBackground(x,y,Move.Pick,true);
-                setTimeout(()=> game.movement = Move.Move,1);
+                setTimeout(() => game.movement = Move.Move,1);
             }
+
         });
     });
+}
+
+function paintAvailableCells(fig) {
+    debugger;
+    const figX = fig.getAttribute('x');
+    const figY = fig.getAttribute('y');
+    let keepCheckingArray = [true,true,true,true,true,true,true,true];
+
+    while (!keepCheckingArray.every(Boolean)){
+        for (let i = 0; i < 8; i++) {
+            const xCheck = figX-wallChecks[i][0];
+            const yCheck = figY-wallChecks[i][1];
+            const cell = document.querySelector(`.cell[x="${xCheck}"][y="${yCheck}"]`);
+            if (!cell.hasChildNodes() && keepCheckingArray[i]) cell.classList.add('canMove');
+            else keepCheckingArray[i] = false;
+        }
+    }
+
 }
 
 function checkAllFiguresStatus() {
@@ -83,11 +103,12 @@ function checkFigureFreedom(fig){
     const figX = fig.getAttribute('x');
     const figY = fig.getAttribute('y');
     let aroundWalls = 0;
+
     for (let i = 0; i < 8; i++) {
         const xCheck = figX-wallChecks[i][0];
         const yCheck = figY-wallChecks[i][1];
         const checkingCell = document.querySelector(`.cell[x="${xCheck}"][y="${yCheck}"]`);
-        if (checkingCell != null && checkingCell.classList.contains('wall')) aroundWalls++;
+        if (checkingCell == null || checkingCell.classList.contains('wall')) aroundWalls++;
     }
     return (aroundWalls > 7);
 }
@@ -107,6 +128,7 @@ function checkMovementLimits(oldPos,newPos,lastOffset){
         const nodeToCheck = document.querySelector(`.cell[x="${nextXpos}"][y="${nextYpos}"]`);
 
         if (!nodeToCheck.hasChildNodes()){
+            //nodeToCheck.classList.add('canMove');
             return checkMovementLimits({
                 x: nextXpos,
                 y: nextYpos

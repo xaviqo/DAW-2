@@ -14,6 +14,7 @@ use App\Http\Controllers\BookController;
 |
 */
 
+<<<<<<< HEAD:PHP/COMPOSER/daw2crud/routes/web.php
 Route::get('/', function () {
     return view('welcome');
 });
@@ -29,3 +30,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+=======
+Route::get('/', [\App\Http\Controllers\ControllerProducto::class,'getAllProductos']);
+>>>>>>> 14fdf4c50d0bdbe88c219c265ecdb8cc5f5b3e6f:PHP/COMPOSER/test/routes/web.php
