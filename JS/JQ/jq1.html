@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<style>
+    button {
+        padding: 15px;
+        margin-right: 15px;
+    }
+</style>
+<body>
+    <button class="boton">Botón 1</button>
+    <div class="tooltip" style="display: none;">Tooltip 1</div>
+    
+    <button class="boton">Botón 2</button>
+    <div class="tooltip" style="display: none;">Tooltip 2</div>
+    
+    <button class="boton">Botón 3</button>
+    <div class="tooltip" style="display: none;">Tooltip 3</div>
+    
+  <script>
+    $(document).ready(function(){
+    $(".boton").hover(function(){
+        console.log(this);
+        $(this).next(".tooltip").fadeIn();
+    }, function(){
+        $(this).next(".tooltip").fadeOut();
+    });
+    });
+  </script>
+</body>
+</html>

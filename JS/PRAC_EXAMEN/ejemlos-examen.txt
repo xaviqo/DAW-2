@@ -1,0 +1,7 @@
+forms:
+
+no estigui buit
+patron (dni,matricula,main)
+contador de chars
+
+juego tipo 4 en ralla   
