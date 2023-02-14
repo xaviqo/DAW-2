@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen M06 UF3 22-23</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="main.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="contingut">
+
+
+        <header class="banner">
+            <h1>Examen M06 UF3 22-23</h1>
+        </header>
+        <nav class="menu">
+            <ul>
+                <li><a href="#acl">Aclaracions</a></li>
+                <li><a href="#ex1">Exercici 1</a></li>
+                <li><a href="#ex2">Exercici 2</a></li>
+                <li><a href="#ex3">Exercici 3</a></li>
+                <li><a href="#ex4">Exercici 4</a></li>
+            </ul>
+        </nav>
+        <main>
+            
+            <article id="acl">
+                <p>
+                </p>
+                <header>
+                    <h2>Aclaracions i apunts</h2>
+                </header>
+                <h2>Aclaracions</h2>
+                <p>
+                    L'accés a internet està prohibit, abans de començar s'ha de tenir el cable de xarxa desconnectat o el
+                    wifi desactivat.
+                </p>
+                <p>
+                    Totes les funcions que demana crear en els diferents exercicis s'han de crear amb el nom exacte i
+                    acceptar el paràmetres que demana l'exercici.
+                </p>
+                <p>
+                    Només es pot fer servir el visual studio i un navegador, al navegador evitar tenir més d'una
+                    pestanya oberta.
+                </p>   
+                <p>
+                    Al visual studio només es pot tenir obert la carpeta de l'examen, no es pot mirar activitats
+                    anteriors ni tenir apunts oberts.
+                </p>
+            <h2>Apunts</h2>
+            <p>
+                Condicionals
+                <pre>
+                    <code>
+    //simple condition
+    if (hour < 18) {
+        greeting = "Good day";
+    } 
+    // else statement
+    if (hour < 18) {
+        greeting = "Good day";
+        } else {
+        greeting = "Good evening";
+        }
+    // elseif statement
+    if (time < 10) {
+        greeting = "Good morning";
+        } else if (time < 20) {
+        greeting = "Good day";
+        } else {
+        greeting = "Good evening";
+        }
+                    </code>
+                </pre>
+            </p>
+            <p>
+                Bucles
+                <pre>
+                    <code>
+    //for statement
+    for (let step = 0; step < 5; step++) {
+        // Se ejecuta 5 veces, con valores del paso 0 al 4.
+        console.log('Camina un paso hacia el este');
+        }
+    //while statement
+    let n = 0;
+    let x = 0;
+    while (n < 3) {
+        n++;
+        x += n;
+    }
+    //for in
+    for (let i in array) {
+        result += array[i] 
+    }
+    //for of
+    for (let i in array) {
+        result += i 
+    }
+                    </code>
+                </pre>
+            </p>
+<pre>
+    <p>Accés al DOM
+        Obtenir un element:
+        <code>
+            let element = document.getElementById('para');   
+        </code>
+        Modificar el seu contingut:
+        <code>
+            let element = document.getElementById('para');
+            element.innerHTML = "I have changed!";
+        </code>
+        Modificar la seva classe:
+        <code>
+            let element = document.getElementById('para');
+            element.className = "cssClass";
+        </code>
+    </p>
+    <p>
+        Obtenir un valor random
+        <code>
+            // Returns a random integer from 0 to 9:<br>
+            Math.floor(Math.random() * 10);
+        </code>
+
+    </p>
+    <p>Recorre el DOM</p>
+    <code>
+        for(let j; j < element.children.length; j++){
+            console.log(element.children[j])
+        }    
+    </code>
+    <code>
+        let parent = element.parent
+    </code>
+    <p>Llegir i modificar classes d'elements</p>
+    <code>
+        if(div.classList.contains("oneclass")) {
+
+        }
+        div.classList.remove("foo");
+        div.classList.add("anotherclass");
+        div.classList.toggle("visible")
+    </code>
+</pre>
+            <p>
+                Classes i herencia
+                <pre>
+    //Class definition
+    class Animal {
+        constructor(name) {
+          this.speed = 0;
+          this.name = name;
+        }
+        run(speed) {
+          this.speed = speed;
+          alert(`${this.name} runs with speed ${this.speed}.`);
+        }
+        stop() {
+          this.speed = 0;
+          alert(`${this.name} stands still.`);
+        }
+      }
+      let animal = new Animal("My animal");
+      
+      //herencia
+      class Rabbit extends Animal {
+        hide() {
+          alert(`${this.name} hides!`);
+        }
+      }
+
+
+                </pre>
+            </p>
+        <p>
+            Establir un delay:
+            <code>
+                setTimeout(() => {
+                    console.log("Delayed for 1 second.");
+                  }, 1000)                  
+            </code>
+        </p>
+            </article>
+            <article id="ex1">
+                <header>
+                    <h2>Validació formulari reserva parking (2,5 punts)</h2>
+                    <p>Crea una funció amb el nom de checkParking() que estarà enllaçat al event click del botó 
+                        Reservar.
+                    <p>
+                        Verifica que:
+                        <ol>
+                            <li>(1p) Els camps nom i cognoms només conté lletres es a dir no pot contenir números 
+                                ni els següents símbols especials 
+                                ('!','"','·','$','%','&','/','(',')','=','?','¿','*','_','-').</li>
+                            <li>(1p) El camp matricula cotxe té que contenir 4 digits i 3 lletres que no siguin vocals.</li>
+                        </ol>
+                        
+                        Si hi ha algun camp que no compleix amb alguns d'aquests requisits demanats fes que el 
+                        color de la vora de l'input es posi de color vermell fent servir la classe 'error'.
+                        Si tot és correcte i tots els camps estan informats mostra en el div <code>'resultatEx1'</code> el text 'reserva confirmada'(0,25p).
+                    </p>
+                    <strong>No es pot fer servir expressions regulars per validar el contingut. Els mètodes de natius de javascript si estan permesos.</strong>
+                    <p>
+                        <form name="parking" id="parking">
+                            <label for="pname">Nom:</label><br>
+                            <input type="text" id="pname" name="pname"><br>
+                            <label for="plastname">Cognoms:</label><br>
+                            <input type="text" id="plastname" name="plastname"><br>
+                            <label for="licensePlate">Matricula cotxe:</label><br>
+                            <input type="text" id="licensePlate" name="licensePlate"><br>
+                            <input type="button" onclick="checkParking();" value="Reservar"></input><br>
+                        </form>
+                    </p>
+                    <div id="resultatEx1"><span class="exemple">Ex: Reservat :)</span></div>
+                </header>
+            </article>
+            <article id="ex2">
+                <header>
+                    <h2>Validació de la targeta sanitaria individual(TIS)(3 punts)</h2>
+                    <p>Crea una funció amb el nom de checkSanitari() que estarà enllaçat al event keyup del botó 
+                        Verificar.
+                    <p>
+                        Verifica que:
+                        <ol>
+                            <li>(0,25p) Els camps nom, primer cognoms i segon cognom només poden contenir lletres, es a dir no pot contenir números 
+                                ni els següents símbols especials 
+                                ('!','"','·','$','%','&','/','(',')','=','?','¿','*','_','-').</li>
+                            <li>(1p) El codi de la targeta comença amb 4 caràcters que són els dos primers caràcters del primer cognom seguits dels dos primers caracters del segon en majúscules.</li>
+                            <li>(0.25p) Si el segon cognom no està informat els 4 primers caràcters del codi és els dos primers caràcters del cognom repetit dues vegades.</li>
+                            <li>(1p) El codi de la targeta són 4 caràcters seguits de 10 números. Indica en tot moment els caràcters que falten al div resultatEx2(1p) i no deixis que pugin escriure més caràcters.</li>
+                            <li>(0.5p) El els dos últims digits són un codi de comprovació del mòdul 15 de la suma dels 8 anteriors.</li>
+                        </ol>
+                         Al div resultatEx2 ha d'aparèixer els caràcters que falten i indicar quines validacions no es compleixen.
+                    </p>
+                    <strong>No es pot fer servir expressions regulars per validar el contingut. Els mètodes de natius de javascript si estan permesos.</strong>
+                    <p>
+                        Exemple:
+                        Pere Gutierrez Alma -> GUAL2975684313
+                        Marie Johnson -> JOJO8652321505
+                    </p>
+                    <p>
+                        <form name="sanitari" id="sanitari">
+                            <label for="sname">Nom:</label><br>
+                            <input type="text" id="sname" name="sname"><br>
+                            <label for="slastname">Cognoms:</label><br>
+                            <input type="text" id="slastname" name="lastname"><br>
+                            <label for="tsi">Codi TSI:</label><br>
+                            <input type="text" id="tsi" name="tsi" oninput="return checkSanitari(event);"><br>
+                            <div id="resultatEx2">Falten X caràcters</div>
+                            <br>
+                        </form>
+                    </p>
+                    
+                </header>
+            </article>
+            <article id="ex3">
+                <header>
+                    <h2>Reprodueix la seqüència (2p)</h2>
+                </header>
+                <p>
+                    Fes que l'usuari pugui fer clic als diferents colors guardant la seqüència en 
+                    el que ha clicat aquests colors (la funció clicEx3 està enllaçat a l'event clic 
+                    dels diferents colors.) 
+                </p>
+                <p>
+                    Quan l'usuari premi el botó 'reproduir', afegeix la 
+                    classe 'seleccionat' als colors en la seqüència feta per l'usuari. Fes que 
+                    canvií d'elemenent cada segon fent servir la funció setTimeout().
+                </p>
+                
+                <div class="inline">
+                    <table id="reproduir" class="select">
+                        <tr>
+                            <td class="green" onclick="clicEx3(this)"></td>
+                            <td class="red" onclick="clicEx3(this)"></td>
+                        <tr>
+                            <td class="yellow" onclick="clicEx3(this)"></td>
+                            <td class="blue" onclick="clicEx3(this)"></td>
+                        </tr>
+                    </table>
+                </div><br>
+                <input type="button" onclick="reproduirEx3();" value="Reproduir"></input><br>
+                
+            </article>
+
+            <article id="ex4">
+                <header>
+                    <h2>Suma al voltant (2p)</h2>
+                </header>
+                <p>
+                    Donat el següent tauler, fes un algoritme per calcular el valor de les caselles blaves. El valor de cada casella blava és
+                    la suma de les 8 caselles que té al seu voltant. Introdueix el valor dins de la casella substituint
+                    l'interrognat.
+                </p>
+                <p>
+                    El botó 'Calcular' està enllaçat a la funció 'CalcularEx4' implementa l'algoritme en aquesta funció.
+                </p>
+                <table class="board">
+                    <tr>
+                        <td class="blue">?</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td></td>
+                        <td></td>
+                        <td>4</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>5</td>
+                        <td>0</td>
+                        <td></td>
+                        <td></td>
+                        <td>1</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td></td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td></td>
+                        <td></td>
+                        <td>1</td>
+                        <td>4</td>
+                        <td>2</td>
+                        <td></td>
+                        <td></td>
+                        <td>1</td>
+                        <td>3</td>
+                        <td></td>
+                        <td></td>
+                        <td>2</td>
+                        <td></td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td></td>
+                        <td>4</td>
+                        <td></td>
+                        <td>1</td>
+                        <td></td>
+                        <td>0</td>
+                        <td class="blue">?</td>
+                        <td></td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td></td>
+                        <td>2</td>
+                        <td></td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td></td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td></td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td></td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td class="blue">?</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td></td>
+                        <td>1</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>2</td>
+                        <td class="blue">?</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td></td>
+                        <td></td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td></td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>1</td>
+                        <td></td>
+                        <td>1</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td class="blue">?</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>2</td>
+                        <td></td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>3</td>
+                        <td></td>
+                        <td>2</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>2</td>
+                        <td></td>
+                        <td>0</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td></td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td></td>
+                        <td>4</td>
+                        <td>1</td>
+                        <td></td>
+                        <td>1</td>
+                        <td class="blue">?</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td></td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>2</td>
+                        <td></td>
+                        <td></td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td></td>
+                        <td>3</td>
+                        <td>0</td>
+                        <td class="blue">?</td>
+                        <td></td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td></td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td></td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td></td>
+                        <td>0</td>
+                        <td></td>
+                        <td>2</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td></td>
+                        <td></td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td></td>
+                        <td>2</td>
+                        <td></td>
+                        <td class="blue">?</td>
+                        <td>0</td>
+                        <td></td>
+                        <td></td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td></td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td></td>
+                        <td>2</td>
+                        <td></td>
+                        <td>0</td>
+                        <td></td>
+                        <td>2</td>
+                        <td></td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td></td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td></td>
+                        <td>4</td>
+                        <td>0</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td></td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td></td>
+                        <td></td>
+                        <td>2</td>
+                        <td>?</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>0</td>
+                        <td></td>
+                        <td>3</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td class="blue">?</td>
+                        <td></td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td></td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td></td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td></td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td></td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td></td>
+                        <td>1</td>
+                        <td>3</td>
+                        <td></td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td></td>
+                        <td>2</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td >1</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td></td>
+                        <td></td>
+                        <td>4</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>5</td>
+                        <td>0</td>
+                        <td></td>
+                        <td></td>
+                        <td>1</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td></td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td class="blue">?</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td></td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td></td>
+                        <td></td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td></td>
+                        <td></td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td></td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td></td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td></td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="blue">?</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td></td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td></td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td></td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>5</td>
+                        <td></td>
+                        <td></td>
+                        <td>2</td>
+                        <td></td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>0</td>
+                        <td></td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td></td>
+                        <td>2</td>
+                        <td></td>
+                        <td>1</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td></td>
+                        <td>3</td>
+                        <td>5</td>
+                        <td></td>
+                        <td>1</td>
+                        <td></td>
+                        <td></td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td></td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td></td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td></td>
+                        <td></td>
+                        <td>1</td>
+                        <td></td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td >1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td></td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td></td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td></td>
+                        <td>2</td>
+                        <td class="blue">?</td>
+                        <td>1</td>
+                        <td></td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td></td>
+                        <td>1</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>1</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td></td>
+                        <td></td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td></td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td></td>
+                        <td>1</td>
+                        <td></td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td></td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td class="blue">?</td>
+                        <td></td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td >1</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td></td>
+                        <td></td>
+                        <td>4</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>5</td>
+                        <td>0</td>
+                        <td></td>
+                        <td></td>
+                        <td>1</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td></td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="blue">?</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td></td>
+                        <td></td>
+                        <td>4</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>5</td>
+                        <td>0</td>
+                        <td></td>
+                        <td></td>
+                        <td>1</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td></td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="blue">?</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td></td>
+                        <td></td>
+                        <td>4</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>5</td>
+                        <td>0</td>
+                        <td></td>
+                        <td></td>
+                        <td>1</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td></td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td></td>
+                        <td></td>
+                        <td>1</td>
+                        <td>4</td>
+                        <td>2</td>
+                        <td></td>
+                        <td></td>
+                        <td>1</td>
+                        <td>3</td>
+                        <td></td>
+                        <td></td>
+                        <td>2</td>
+                        <td></td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td></td>
+                        <td>4</td>
+                        <td></td>
+                        <td>1</td>
+                        <td></td>
+                        <td>0</td>
+                        <td class="blue">?</td>
+                        <td></td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td></td>
+                        <td>2</td>
+                        <td></td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td></td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td></td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td></td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td class="blue">?</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td></td>
+                        <td>1</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>2</td>
+                        <td class="blue">?</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td></td>
+                        <td></td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td></td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>1</td>
+                        <td></td>
+                        <td>1</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>2</td>
+                        <td></td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>3</td>
+                        <td></td>
+                        <td>2</td>
+                        <td class="blue">?</td>
+                    </tr>
+                </table>
+                <input type="button" onclick="CalcularEx4();" value="Calcular"></input><br>                
+                <div>
+                    <div class="resultatEx4"><!-- Dolenta, Poc segura, Segura, Molt segura --></div>
+                    <div class="resultatEx4"><!-- No compleix les següents caracteristiques:
+                    Contenir lletres en majuscules i minuscules
+                    Contenir espais
+                    --> </span>
+                </div>
+            </article>
+        </main>
+    </div>
+</body>
+
+</html>
