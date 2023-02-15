@@ -12,10 +12,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         .logo {
-            font-size: xxx-large;
+            font-size: xx-large;
+        }
+        .nav-bar-border{
+            border: 1px solid black !important;
         }
         .top-cards-container{
-            margin-top: 100px;
             display: flex;
             justify-content: space-between;
         }
@@ -23,6 +25,18 @@
             width: 50vw;
             margin-top: 10px;
             margin-bottom: 10px;
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+        }
+        .card-image{
+            margin: 5px;
+        }
+        .card-image img{
+            max-width: 220px;
+        }
+        .card-header {
+            background-color: white !important;
+            border-bottom: 1px solid black;
         }
         .info-card:nth-child(1){
             margin-left: 10px;
@@ -36,17 +50,19 @@
         }
         .product-image {
             border: 1px solid black;
+            max-width: 150px;
         }
     </style>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar navbar-expand-lg navbar-light bg-light nav-bar-border">
     <div class="container-fluid">
-        <i class="fa-solid fa-wave-square logo" style="margin-right: 25px"></i><a class="navbar-brand" href="#">SIGNAL</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fa-solid fa-wave-square logo" style="margin-right: 15px"></i>
+        <a class="navbar-brand" href="#">signal</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarColor01">
+        <div class="collapse navbar-collapse" id="navbarColor03">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
                     <a class="nav-link active" href="#">Home
@@ -90,26 +106,26 @@
                 <a href="#" class="card-link">More Info</a>
                 <a href="#" class="card-link">Buy Tickets</a>
             </div>
-        </div>
-        <div class="card-image">
-
+            <div class="card-image">
+                <img src="images/cupid.jpg" alt="">
+            </div>
         </div>
         <div class="card border-primary info-card">
             <div class="card-body">
-                <h4 class="card-title">Deftones @ Sala Salamandra</h4>
+                <h4 class="card-title">Erykah Badu @ Sala Salamandra</h4>
                 <h6 class="card-subtitle mb-2 text-muted">L'HOSPITALET - 14/02/2024</h6>
                 <p class="card-text">Experience the magic of live music like never before, as soaring vocals, electrifying guitar solos, and thunderous drums transport you to another world. Whether you're a diehard fan or a first-time attendee, you'll be swept away by the energy and passion of this one-of-a-kind event.</p>
                 <a href="#" class="card-link">More Info</a>
                 <a href="#" class="card-link">Buy Tickets</a>
             </div>
             <div class="card-image">
-
+                <img src="images/erykah.jpg" alt="">
             </div>
         </div>
     </div>
     <div class="owl-carousel owl-theme product-carousel">
         <div class="card border-primary mb-3">
-            <div class="card-header ">Vinyl - 60$</div>
+            <div class="card-header">Vinyl - 60$</div>
             <div class="card-body">
                 <h4 class="card-title">Booker T - Onions</h4>
                 <img src="images/booker-t-onions.jpg" class="product-image">
