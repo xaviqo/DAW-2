@@ -14,10 +14,10 @@
             height: 75px;
             border: 1px solid black;
         }
-        .p1 {
+        .red {
             background: red;
         }
-        .p2 {
+        .green {
             background: forestgreen;
         }
     </style>
@@ -26,15 +26,40 @@
     window.onload = () => {
         const cell = document.querySelectorAll('.cell');
         for (let i = 0; i < cell.length; i++) {
-            if (Math.random().toFixed(2) > 0.4 && i%2 != 0) cell[i].classList.add('p1');
+            if (Math.random().toFixed(2) > 0.4 && i%2 != 0) cell[i].classList.add('red');
         }
         const tablero = document.getElementById('tablero');
+        // primero abajo segundo derecha
+
+
+        for (let i = 0; i < tablero.children.length; i++) {
+                for (let j = 0; j < tablero.children[i].children.length; j++) {
+                    const result = check4(tablero,i,j);
+                    console.log(result);
+                    if ((result.top && result.bot) || (result.left && result.right) ){
+                        tablero.classList.remove('red');
+                        tablero.classList.add('green');
+                    }
+
+            }
+
+        }
+
     }
-/*    cell.forEach( c => {
-        c.addEventListener('clicl', (ev) => {
-            ev.target.classList.add('')
-        })
-    });*/
+    function check4(tab,i,j) {
+        let top = false, right = false, bot = false, left = false;
+        if (tab.children[i-1]) {
+            top = tab.children[i-1].children[j] && tab.children[i-1].children[j].classList.contains('red');
+        }
+        if (tab.children[i]) {
+            right = tab.children[i].children[j+1] && tab.children[i].children[j+1].classList.contains('red');
+            left = tab.children[i].children[j-1] && tab.children[i].children[j-1].classList.contains('red');
+        }
+        if (tab.children[i+1]) {
+            bot = tab.children[i+1].children[j] && tab.children[i+1].children[j].classList.contains('red');
+        }
+        return { top, right, bot, left };
+    }
 </script>
 <body>
     <main id="tablero">
@@ -99,5 +124,9 @@
             <div class="cell"></div>
         </div>
     </main>
+    <br>
+    <button id="check">
+        CHECK
+    </button>
 </body>
 </html>
