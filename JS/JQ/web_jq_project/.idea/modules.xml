@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/web_jq.iml" filepath="$PROJECT_DIR$/.idea/web_jq.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../web_jq_project/.idea/web_jq.iml" filepath="$PROJECT_DIR$/../web_jq_project/.idea/web_jq.iml" />
     </modules>
   </component>
 </project>
