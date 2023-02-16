@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web con JQuery</title>
     <link rel="stylesheet" href="https://bootswatch.com/5/lux/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- OWL CARUSEL -->
+<!--
+    <link rel="stylesheet" href="https://kit.fontawesome.com/690c686dd5.css" crossorigin="anonymous">    &lt;!&ndash; OWL CARUSEL &ndash;&gt;
+-->
+    <script src="https://kit.fontawesome.com/690c686dd5.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
@@ -53,6 +55,56 @@
         .product-body {
             display: grid;
             grid-template-columns: repeat(2,1fr);
+        }
+        .mid-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+        }
+        .shop-place {
+            margin: 0 13.4px;
+            margin-bottom: 9px;
+            height: 31vh;
+        }
+        .shop-info {
+            margin-bottom: 9px;
+            margin-right: 12px;
+            display: grid;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+        }
+        .info-grid div {
+            padding: 15px;
+        }
+        .shop-img{
+            background-image: url("images/shop.png");
+            background-position: center;
+            background-size: cover;
+            margin: 20px;
+            height: 85%;
+            border: solid 1px black;
+        }
+        .rounded-pill{
+            background-color: white !important;
+            color: black;
+            border: solid black 1px;
+            padding-top: 6px;
+        }
+        .rounded-pill:hover{
+            cursor: pointer;
+            background-color: black !important;
+            color: white;
+            border: solid transparent 1px;
+            padding-top: 6px;
+            transition: 1s;
+        }
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
         }
     </style>
 </head>
@@ -105,8 +157,9 @@
                 <h4 class="card-title">CUPID AND THE STUPIDS @ THE MUG</h4>
                 <h6 class="card-subtitle mb-2 text-muted">BARCELONA - 09/09/2023</h6>
                 <p class="card-text">So don't miss out on your chance to be part of history. Get your tickets now and join the thousands of music lovers who will be rocking. See you at the concert! Rock on with the concert of the century, as legendary performers take the stage for an unforgettable evening of music and entertainment.</p>
-                <a href="#" class="card-link">More Info</a>
-                <a href="#" class="card-link">Buy Tickets</a>
+                <span class="badge bg-primary rounded-pill">
+                    MORE INFO
+                </span>
             </div>
             <div class="card-image">
                 <img src="images/cupid.jpg" alt="">
@@ -117,8 +170,9 @@
                 <h4 class="card-title">Erykah Badu @ Sala Salamandra</h4>
                 <h6 class="card-subtitle mb-2 text-muted">L'HOSPITALET - 14/02/2024</h6>
                 <p class="card-text">Experience the magic of live music like never before, as soaring vocals, electrifying guitar solos, and thunderous drums transport you to another world. Whether you're a diehard fan or a first-time attendee, you'll be swept away by the energy and passion of this one-of-a-kind event.</p>
-                <a href="#" class="card-link">More Info</a>
-                <a href="#" class="card-link">Buy Tickets</a>
+                <span class="badge bg-primary rounded-pill">
+                    MORE INFO
+                </span>
             </div>
             <div class="card-image">
                 <img src="images/erykah.jpg" alt="">
@@ -129,11 +183,44 @@
                 <h4 class="card-title">2MANYDJS @ RAZZMATAZZ</h4>
                 <h6 class="card-subtitle mb-2 text-muted">BARCELONA - 29/11/2024</h6>
                 <p class="card-text">The legendary DJs who's about to take the stage! This is it, the moment we've all been waiting for. With his hands on the decks and the beat dropping, he's going to take us on a musical journey we'll never forget.</p>
-                <a href="#" class="card-link">More Info</a>
-                <a href="#" class="card-link">Buy Tickets</a>
+                <span class="badge bg-primary rounded-pill">
+                    MORE INFO
+                </span>
             </div>
             <div class="card-image">
                 <img src="images/2manydjs.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="mid-container">
+        <div class="card border-primary shop-place">
+            <div class="card-body">
+                <h4 class="card-title">Visit our physical store</h4>
+                <h6 class="card-subtitle mb-2 text-muted">Carrer de la música, 123</h6>
+                <div class="map-and-history">
+                    <div>
+                        <iframe
+                                width="580"
+                                height="220"
+                                frameborder="0"
+                                scrolling="no"
+                                marginheight="0"
+                                marginwidth="0"
+                                src="https://www.openstreetmap.org/export/embed.html?bbox=2.1800056099891667%2C41.39746335527937%2C2.183546125888825%2C41.39935463897054&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card border-primary shop-info">
+            <div class="card-body">
+                <h4 class="card-title">Our history: Signal: The Legendary Music Store at the Heart of Barcelona</h4>
+            </div>
+            <div class="info-grid">
+                <div>In its early years, Signal focused on selling rock and punk vinyl and cassettes imported from around the world. The store quickly gained a reputation as a place to find rarities and limited editions not available anywhere else in Spain.</div>
+                <div>Signal's knowledgeable staff, many of whom are musicians and artists, have always been willing to share their expertise with customers, helping to solidify the store's reputation as a place to get expert advice.</div>
+                <div class="shop-img">
+                </div>
+                <div>Today, the store is still owned by its original founders and is run by a second generation of employees, many of whom have worked there for decades. At Signal, music remains the soul of everything we do.</div>
             </div>
         </div>
     </div>
@@ -141,7 +228,9 @@
         <div class="card border-primary mb-3 product-card">
             <div class="card-header d-flex justify-content-between">
                 Booker T - Green Onions
-                <span class="badge bg-primary rounded-pill">CD</span>
+                <span class="badge bg-primary rounded-pill">
+                  BUY NOW
+                </span>
             </div>
             <div class="card-body product-body">
                 <img src="images/booker-t-onions.jpg" class="product-image">
@@ -153,7 +242,9 @@
         <div class="card border-primary mb-3 product-card">
             <div class="card-header d-flex justify-content-between">
                 Sonic Youth - The Nurse
-                <span class="badge bg-primary rounded-pill">CAS</span>
+                <span class="badge bg-primary rounded-pill">
+                    BUY NOW
+                </span>
             </div>
             <div class="card-body product-body">
                 <img src="images/sonic-youth.jpg" class="product-image">
@@ -165,7 +256,9 @@
         <div class="card border-primary mb-3 product-card">
             <div class="card-header d-flex justify-content-between">
                 Belako - Render Me Numb
-                <span class="badge bg-primary rounded-pill">VIN</span>
+                <span class="badge bg-primary rounded-pill">
+                   BUY NOW
+                </span>
             </div>
             <div class="card-body product-body">
                 <img src="images/belako.jpg" class="product-image">
@@ -177,7 +270,9 @@
         <div class="card border-primary mb-3 product-card">
             <div class="card-header d-flex justify-content-between">
                 Rufus T Firefly - Kosmos Trip
-                <span class="badge bg-primary rounded-pill">VIN</span>
+                <span class="badge bg-primary rounded-pill">
+                    BUY NOW
+                </span>
             </div>
             <div class="card-body product-body">
                 <img src="images/rufus-t-firelfy.jpg" class="product-image">
@@ -189,7 +284,9 @@
         <div class="card border-primary mb-3 product-card">
             <div class="card-header d-flex justify-content-between">
                 The Stranglers - Something
-                <span class="badge bg-primary rounded-pill">CAS</span>
+                <span class="badge bg-primary rounded-pill">
+                    BUY NOW
+                </span>
             </div>
             <div class="card-body product-body">
                 <img src="images/the-stranglers.jpg" class="product-image">
@@ -201,7 +298,9 @@
         <div class="card border-primary mb-3 product-card">
             <div class="card-header d-flex justify-content-between">
                 Jethro Tull - Best Of
-                <span class="badge bg-primary rounded-pill">CD</span>
+                <span class="badge bg-primary rounded-pill">
+                    BUY NOW
+                </span>
             </div>
             <div class="card-body product-body">
                 <img src="images/jethro-tull.jpg" class="product-image">
@@ -212,6 +311,11 @@
         </div>
     </div>
 </main>
+<div class="navbar navbar-expand-lg navbar-light bg-light nav-bar-border footer">
+    <div class="container-fluid d-flex justify-content-around">
+        © 2023 Signal. All rights reserved
+    </div>
+</div>
 <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
 <!-- OWL CARUSEL -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
