@@ -97,7 +97,7 @@
     </div>
 </nav>
 <main>
-    <div class="top-cards-container">
+    <div class="owl-carousel owl-theme top-cards-container ticket-carousel">
         <div class="card border-primary info-card">
             <div class="card-body">
                 <h4 class="card-title">CUPID AND THE STUPIDS @ THE MUG</h4>
@@ -120,6 +120,18 @@
             </div>
             <div class="card-image">
                 <img src="images/erykah.jpg" alt="">
+            </div>
+        </div>
+        <div class="card border-primary info-card">
+            <div class="card-body">
+                <h4 class="card-title">2MANYDJS @ RAZZMATAZZ</h4>
+                <h6 class="card-subtitle mb-2 text-muted">BARCELONA - 29/11/2024</h6>
+                <p class="card-text">The legendary DJs who's about to take the stage! This is it, the moment we've all been waiting for. With his hands on the decks and the beat dropping, he's going to take us on a musical journey we'll never forget.</p>
+                <a href="#" class="card-link">More Info</a>
+                <a href="#" class="card-link">Buy Tickets</a>
+            </div>
+            <div class="card-image">
+                <img src="images/2manydjs.jpg" alt="">
             </div>
         </div>
     </div>
@@ -173,13 +185,32 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 <script>
-    $('.owl-carousel').owlCarousel({
+    $('.ticket-carousel').owlCarousel({
+        loop:true,
+        margin:10,
+        nav:false,
+        autoplay:true,
+        autoplayTimeout:4000,
+        autoplayHoverPause:true,
+        dots: false,
+        rtl:true,
+        responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:2
+            }
+        }
+    });
+    $('.product-carousel').owlCarousel({
         loop:true,
         margin:10,
         nav:false,
         autoplay:true,
         autoplayTimeout:2000,
         autoplayHoverPause:true,
+        dots: false,
         responsive:{
             0:{
                 items:1
