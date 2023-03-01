@@ -1,0 +1,36 @@
+.dialog{
+    border: 1px solid black;
+    background-color: white;
+ /*   width: 50vh;
+    height: 50vh; */
+    border: 5px solid black;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.scroll{
+    overflow: hidden;
+}
+
+.backgroundModal{
+   /* background-color: rgba(0, 0, 0, 0.1);*/
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center ;
+    align-items: center;
+}
+
+.modal-content{
+    width: 34% !important;
+}
+
+button{
+    margin: 2%;
+}

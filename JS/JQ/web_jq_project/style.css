@@ -103,3 +103,6 @@
 .ui-dialog-titlebar-close {
     visibility: hidden;
 }
+#ui-datepicker-div{
+    background-color: white !important;
+}
