@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen M06 UF3 22-23</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="jquery.min.js"></script>
+    <script src="main.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="contingut">
+        <header class="banner">
+            <h1>Examen M06 UF3 22-23</h1>
+        </header>
+        <nav class="menu">
+            <ul>
+                <li><a href="#acl">Aclaracions</a></li>
+                <li><a href="#ex1">Exercici 1</a></li>
+                <li><a href="#ex2">Exercici 2</a></li>
+            </ul>
+        </nav>
+        <main>
+
+            <article id="acl">
+                <p>
+                </p>
+                <header>
+                    <h2>Aclaracions i apunts</h2>
+                </header>
+                <h2>Aclaracions</h2>
+                <p>
+                    L'accés a internet està prohibit, abans de començar s'ha de tenir el cable de xarxa desconnectat o
+                    el
+                    wifi desactivat.
+                </p>
+                <p>
+                    Totes les funcions que demana crear en els diferents exercicis s'han de crear amb el nom exacte i
+                    acceptar el paràmetres que demana l'exercici.
+                </p>
+                <p>
+                    Només es pot fer servir el visual studio i un navegador, al navegador evitar tenir més d'una
+                    pestanya oberta.
+                </p>
+                <p>
+                    Al visual studio només es pot tenir obert la carpeta de l'examen, no es pot mirar activitats
+                    anteriors ni tenir apunts oberts.
+                </p>
+                <h2>Apunts</h2>
+                <p>
+                    jQuery selector
+                    <pre>
+                        <code>
+                           //jQuery permet selecionar un o diferents elements fent servir la funció $.
+                           $( "p" ) // retorna un objecte jQuery amb tots els elements p del document.
+                           $('.youClass') // retorna un objecte jQuery amb tots els elements amb la classe yourClass.
+                           $('#youId') // retorna un objecte jQuery amb el element amb l'id youId.
+                        </code>
+                    </pre>
+                </p>
+                <p>
+                    jQuery mètodes
+                    <pre>
+                        <code>
+                            //El mètode css modifica les propietats css dels elements seleccionats.
+                            $(this).css("color","green");
+                            $(this).css({
+                                "background-color": "yellow",
+                                "font-weight": "bolder"
+                              });
+                            //El mètode html retona el contingut html d'un element.
+$( "div.demo-container" ).html();
+                            //Si es passa un string amb html modifica el contigut de l'element per contingut passat per paràmetre.
+                            //addClass, removeClass i toggleClass ens permet afegir esborrar o alternar una classe de css al elements seleccionats
+                            $( "div.demo-container" ).html( "<p>All new content. <em>You bet!</em></p>" );
+                            $( "p" ).addClass( "myClass yourClass" );
+                            $( "p" ).removeClass( "myClass noClass" );
+                            $( this ).toggleClass( "highlight" );
+                        </code>
+                    </pre>
+                </p>
+                <p>
+                    jQuery animacions
+                    <pre>
+                        <code>
+                             	
+
+$( ".target" ).show(); //Mostra un element que esta a display none.
+$( ".target" ).hide(); //Amaga un element fent que display sigui none.
+// fadein ens permet mostrar un element amagat amb una animació el primer paràmetre configura el temps de l'animació el segon (opcional) executa la funció quan acabi l'animació.
+$( "a" ).click(function() {
+    $( "div" ).fadeIn( 3000, function() {
+      $( "span" ).fadeIn( 100 );
+    });
+// fadeout amaga un element amb una animació acepta els mateixos paràmetres que fadein.
+    $( "#book" ).fadeOut( "slow", function() {
+        // Animation complete.
+      });
+    return false;
+  });
+                        </code>
+                    </pre>
+                </p>
+                <p>
+                    jQuery events
+                    <pre>
+                        <code>
+                            // Afegeix la funció per paràmetre a un event de clic.
+                            $("p").click(function(){
+                                // action goes here!!
+                              }); 
+                            // Dispara l'event quan el ratolí entra dins l'element.
+                              $("#p1").mouseenter(function(){
+                                alert("You entered p1!");
+                              });
+                              // Dispara l'event quan el ratolí surt de dins de l'element.
+                              $("#p1").mouseleave(function(){
+                                alert("Bye! You now leave p1!");
+                              });
+                        </code>
+                    </pre>
+                </p>
+                <p>
+                    jQuery plugins
+                    <pre>
+                        <code>
+                            // Exemple de creació d'un plugin per a jQuery.
+                            jQuery.fn.desaparece = function() {///Plugin para hacer desaparecer elementos de la web.
+                                this.each(function(){
+                                    elem = $(this);
+                                    elem.css("display", "none");
+                                });
+                                return this;
+                            };
+                            // Exemple de creació d'un plugin per a jQuery amb pàrametres.
+                            jQuery.fn.miPlugin = function(cualquierCosa, opciones) { //opciones por defecto
+                                var configuracion = {
+                                    dato1: "lo que sea",
+                                    dato2: 78
+                                }
+                                jQuery.extend(configuracion, opciones);//combinar
+                                    //resto del plugin
+                                }
+                            }
+                            ...
+                            $("#elemento).miPlugin({ //invocar al plugin pasando opciones
+                                dato1: "Hola amigos!",
+                                dato2: true });
+                        </code>
+                    </pre>
+                </p>
+
+                <p>
+                    Condicionals
+                <pre>
+                    <code>
+    //simple condition
+    if (hour < 18) {
+        greeting = "Good day";
+    } 
+    // else statement
+    if (hour < 18) {
+        greeting = "Good day";
+        } else {
+        greeting = "Good evening";
+        }
+    // elseif statement
+    if (time < 10) {
+        greeting = "Good morning";
+        } else if (time < 20) {
+        greeting = "Good day";
+        } else {
+        greeting = "Good evening";
+        }
+                    </code>
+                </pre>
+                </p>
+                <p>
+                    Bucles
+                <pre>
+                    <code>
+    //for statement
+    for (let step = 0; step < 5; step++) {
+        // Se ejecuta 5 veces, con valores del paso 0 al 4.
+        console.log('Camina un paso hacia el este');
+        }
+    //while statement
+    let n = 0;
+    let x = 0;
+    while (n < 3) {
+        n++;
+        x += n;
+    }
+    //for in
+    for (let i in array) {
+        result += array[i] 
+    }
+    //for of
+    for (let i in array) {
+        result += i 
+    }
+                    </code>
+                </pre>
+                </p>
+                <pre>
+    <p>Accés al DOM
+        Obtenir un element:
+        <code>
+            let element = document.getElementById('para');   
+        </code>
+        Modificar el seu contingut:
+        <code>
+            let element = document.getElementById('para');
+            element.innerHTML = "I have changed!";
+        </code>
+        Modificar la seva classe:
+        <code>
+            let element = document.getElementById('para');
+            element.className = "cssClass";
+        </code>
+    </p>
+    <p>
+        Obtenir un valor random
+        <code>
+            // Returns a random integer from 0 to 9:<br>
+            Math.floor(Math.random() * 10);
+        </code>
+
+    </p>
+    <p>Recorre el DOM</p>
+    <code>
+        for(let j; j < element.children.length; j++){
+            console.log(element.children[j])
+        }    
+    </code>
+    <code>
+        let parent = element.parent
+    </code>
+    <p>Llegir i modificar classes d'elements</p>
+    <code>
+        if(div.classList.contains("oneclass")) {
+
+        }
+        div.classList.remove("foo");
+        div.classList.add("anotherclass");
+        div.classList.toggle("visible")
+    </code>
+</pre>
+                <p>
+                    Classes i herencia
+                <pre>
+    //Class definition
+    class Animal {
+        constructor(name) {
+          this.speed = 0;
+          this.name = name;
+        }
+        run(speed) {
+          this.speed = speed;
+          alert(`${this.name} runs with speed ${this.speed}.`);
+        }
+        stop() {
+          this.speed = 0;
+          alert(`${this.name} stands still.`);
+        }
+      }
+      let animal = new Animal("My animal");
+      
+      //herencia
+      class Rabbit extends Animal {
+        hide() {
+          alert(`${this.name} hides!`);
+        }
+      }
+
+
+                </pre>
+                </p>
+                <p>
+                    Establir un delay:
+                    <code>
+                setTimeout(() => {
+                    console.log("Delayed for 1 second.");
+                  }, 1000)                  
+            </code>
+                </p>
+            </article>
+            <article id="ex1">
+                <header>
+                    <h2>Reserva de butaques al cinema (5 punts)</h2>
+                </header>
+                <p>Al carregar la pàgina web fes que apliqui les següents funcionalitats:
+                </p>
+
+                <ol>
+                    <li>(0.5p) Ressaltar les butaques que són prèmium amb el color #9196f3.</li>
+                    <li>(0.5p) Al anat fent clic a diferents butaques ressaltar aquestes amb la classe 'reserved'. No es
+                        poden reservar les butaques que ja estan reservades. </li>
+                    <li>(1p) Quan es fa clic a diferents butaques ja reservades treure la classe 'reserved' </li>
+                    <li>(1p) Quan es fa clic a diferents butaques, s'ha de mostrar el total de l'import per reservar
+                        les butaques reservades al div 'ex1Resultat'.</li>
+                    <li>(1p) Al posar-se a sobre de la butaca mostrar dins d'aquesta la seva filera (A,B,C,D,E) i número
+                        de butaca (1-8)</li>
+                </ol>
+                <p>Fes que s'executi al carregar/iniciar la pàgina.</p>
+                <strong>S'ha de fer ús de mètodes de jQuery, si no es fan servir en un dels punts anteriors, puntuarà la meitat del seu valor.</strong>
+                <p>Preus del cinema:
+                <ul>
+                    <li>butaca normal: 5€</li>
+                    <li>butaca prèmium: 8€</li>
+                </ul>
+                </p>
+                </p>
+                <p>
+                <div class="cinema-seats">
+                    <div class="screen"></div>
+                    <div data-row="A" class="row">
+                        <div class="aisle"></div>
+                        <div data-seat="1" class="seat"></div>
+                        <div data-seat="2" class="seat"></div>
+                        <div data-seat="3" class="seat"></div>
+                        <div data-seat="4" class="seat"></div>
+                        <div class="aisle"></div>
+                    </div>
+                    <div data-row="B" class="row">
+                        <div data-seat="1" class="aisle"></div>
+                        <div data-seat="2" class="seat"></div>
+                        <div data-seat="3" class="seat"></div>
+                        <div data-seat="4" class="seat"></div>
+                        <div data-seat="5" class="seat occupied"></div>
+                        <div class="aisle"></div>
+                    </div>
+                    <div data-row="C" class="row">
+                        <div data-seat="1" class="seat"></div>
+                        <div data-seat="2" class="seat"></div>
+                        <div class="aisle"></div>
+                        <div data-seat="3" class="seat premium"></div>
+                        <div data-seat="4" class="seat premium"></div>
+                        <div data-seat="5" class="seat occupied premium"></div>
+                        <div data-seat="6" class="seat premium"></div>
+                        <div class="aisle"></div>
+                        <div data-seat="7" class="seat"></div>
+                        <div data-seat="8" class="seat"></div>
+                    </div>
+                    <div data-row="D" class="row">
+                        <div data-seat="1" class="seat"></div>
+                        <div data-seat="2" class="seat"></div>
+                        <div class="aisle"></div>
+                        <div data-seat="3" class="seat"></div>
+                        <div data-seat="4" class="seat"></div>
+                        <div data-seat="5" class="seat"></div>
+                        <div data-seat="6" class="seat"></div>
+                        <div class="aisle"></div>
+                        <div data-seat="7" class="seat"></div>
+                        <div data-seat="8" class="seat"></div>
+                    </div>
+                    <div data-row="E" class="row">
+                        <div data-seat="1" class="seat"></div>
+                        <div data-seat="2" class="seat"></div>
+                        <div class="aisle"></div>
+                        <div data-seat="3" class="seat occupied"></div>
+                        <div data-seat="4" class="seat"></div>
+                        <div data-seat="5" class="seat"></div>
+                        <div data-seat="6" class="seat"></div>
+                        <div class="aisle"></div>
+                        <div data-seat="7" class="seat"></div>
+                        <div data-seat="8" class="seat"></div>
+                    </div>
+                </div>
+                </p>
+                <div id="ex1Resultat"><span class="exemple">Ex: Preu: 13€</span></div>
+
+            </article>
+            <article id="ex2">
+                <header>
+                    <h2>Plugin per als moviments bancaris.</h2>
+                    <p>
+                        Un banc vol fer un plugin per mostrar diferents moviments bancaris a diferents parts de la seva
+                        web.
+                        Aquest plugin s'ha de passar un json amb les dades dels moviments de l'usuari. Tens un exemple del json a fer servir a 'movimentsBanc.json'.
+                    <p>
+                        Aquest plugin ha de fer:
+                    <ol>
+                        <li>(2p) Fent la crida a $('#resultatEx2').movimentsCC(jsonData) ha de mostrar en una llista
+                            tots els registres passats per json a la seva crida. S'han de mostrar els camps de: data,
+                            concepte, tipus import i saldo.</li>
+                        <li>(1p) Fent la crida a $('#resultatEx2').addMovimentsCC(jsonData) ha de afegir al final de la
+                            llista tots els registres passats per json.
+                        <li>(1p) Quan faci clic a un registre mostrar a sota del registre el camp de detall.</li>
+                        <li>(1p) En fer la crida $('#resultatEx2').movimentsCC(jsonData, {typeFilter: true}) Afegir un
+                            selector per filtrar segons el tipus de moviments.</li>
+                    </ol>
+                    <strong>S'ha de fer ús de mètodes de jQuery, si no es fan servir en un dels punts anteriors, puntuarà la meitat del seu valor.</strong>
+                    
+                    <div id="resultatEx2">DIV resultatEx2</div>
+                </header>
+            </article>
+        </main>
+    </div>
+</body>
+
+</html>
