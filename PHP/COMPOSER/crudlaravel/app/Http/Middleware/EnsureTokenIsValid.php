@@ -21,7 +21,7 @@ class EnsureTokenIsValid
     {
 
         // Esta key esta en el archiv .env
-        $key = env('JWT_KEY');
+        $key = $request->bearerToken();
         $token = env('JWT_TOKEN'); //Hay que sacarlo del request headers
 
         try {

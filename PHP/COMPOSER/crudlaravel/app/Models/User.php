@@ -13,6 +13,30 @@ class User extends Authenticatable
     use HasApiTokens, HasFactory, Notifiable;
 
     /**
+     * @var mixed
+     */
+    public $name;
+    /**
+     * @var mixed
+     */
+    public $phone;
+    /**
+     * @var mixed
+     */
+    public $street;
+    /**
+     * @var mixed
+     */
+    public $email;
+    /**
+     * @var mixed|string
+     */
+    public $password;
+
+    public $timestamps = false;
+
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
@@ -21,6 +45,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'phone',
+        'street',
     ];
 
     /**
