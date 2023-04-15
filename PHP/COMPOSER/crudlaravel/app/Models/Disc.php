@@ -10,11 +10,16 @@ class Disc extends Model
     use HasFactory;
 
     protected $fillable = [
-        'id',
         'year',
         'name',
         'description',
         'genre',
-        'image'
+        'image',
+        'price'
     ];
+
+    /**
+     * @param string[] $fillable
+     */
+
 }

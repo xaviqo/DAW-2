@@ -15,11 +15,12 @@ class CreateDiscsTable extends Migration
     {
         Schema::create('discs', function (Blueprint $table) {
             $table->id();
-            $table->year('year');
+            $table->string('year');
             $table->string('name');
             $table->text('description');
             $table->string('genre');
             $table->string('image');
+            $table->double('price');
             $table->timestamps();
         });
     }

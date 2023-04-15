@@ -1,0 +1,48 @@
+= M08-UF1 PROVA PRACTICA (XAVIER QO)
+
+== PART 1
+
+image::img/1.png[]
+
+image::img/2.png[]
+
+image::img/3.png[]
+
+image::img/4.png[]
+
+image::img/5.png[]
+
+image::img/6.png[]
+
+== PART 2
+
+image::img/openssl.png[]
+
+image::img/7.png[]
+
+====
+a2ensite shinra-ssl.conf
+====
+
+image::img/8.png[]
+
+image::img/9.png[]
+
+
+== PART 3
+
+image::img/10.png[]
+
+image:img/11.png[]
+
+image::img/13.png[]
+
+image::img/12.png[]
+
+image::img/14.png[]
+
+image::img/15.png[]
+
+image::img/16.png[]
+
+image::img/17.png[]

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Disc;
+use App\Models\Globals;
 use App\Models\User;
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
@@ -37,6 +38,7 @@ class UserController extends Controller
         $user->setAttribute('street',$street);
         $user->setAttribute('email',$email);
         $user->setAttribute('password',Hash::make($password)); // Recuerda encriptar la contraseña
+        $user->setAttribute('role',Globals::$USER_ROLE);
 
         // No existe un usuario con ese correo electrónico, guardar el nuevo usuario
         $user->save();
@@ -50,13 +52,19 @@ class UserController extends Controller
 
         $email = $request->input('email');
         $password = $request->input('password');
+        $admin = $request->input('admin');
 
-        $db_user_values = DB::table('users')->select('id', 'password')
+        $db_user_values = DB::table('users')
+            ->select('id', 'password','role')
             ->where('email', $email)
             ->first();
 
+        if ($admin && $db_user_values->role != 'ADMIN') {
+            return new JsonResponse(['message' => 'El usuario no es administrador'], 401);
+        }
+
         if ($db_user_values == null){
-            return new JsonResponse(['message' => 'El usuario con email '.$email.' no existe'], 403);
+            return new JsonResponse(['message' => 'Email incorrecto'], 403);
         }
 
         if (!Hash::check($password,$db_user_values->password)){
@@ -67,14 +75,19 @@ class UserController extends Controller
             'iat' => time(),
             'nbf' => time(),
             'exp' => (new \DateTime())->add(new \DateInterval("P1D"))->getTimestamp(),
-            'sub' => $db_user_values->id
+            'sub' => $db_user_values->id,
+            'rol' => $db_user_values->role
         ];
 
         // Generamos el token
         $jwt = JWT::encode($payload, env('JWT_KEY'), 'HS256');
 
         // En caso de login correcto
-        return new JsonResponse(['token' => $jwt]);
+        return new JsonResponse([
+            'token' => $jwt,
+            'mail' => $email,
+            'role' => $db_user_values->role
+        ]);
 
     }
 
