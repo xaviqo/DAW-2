@@ -1,0 +1,2 @@
+- LDAP: Que es una Unidad Organizativa (OU) en un directorio LDAP? 
+- DNS: Que es el dominio de nivel superior (TLD) en un Fully Qualified Domain Name (FQND)?
