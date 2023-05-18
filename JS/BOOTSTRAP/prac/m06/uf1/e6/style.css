@@ -1,0 +1,278 @@
+/* FONTS */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap');
+
+* {
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+header {
+    background-image: url(img/head.jpg);
+    background-size: cover;
+    height: 30vh;
+    border-bottom: solid 25px rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+}
+
+/* MENU DISCO */
+
+.iconLogo {
+    margin-left: -5px;
+}
+
+.logo {
+    position: absolute;
+    top: 10vh;
+    left: 5vw;
+    font-size: 5rem;
+    font-family: 'Courier New', Courier, monospace;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.30);
+    letter-spacing: 0.3em;
+    color: white;
+}
+
+.citaHead {
+    position: absolute;
+    top: 11vh;
+    left: 60vw;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 2rem;
+    color: rgba(255, 255, 255, 0.85);
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.30);
+}
+
+/* MENU DISCO */
+
+ul {
+    position: relative;
+    top: 21vh;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    overflow: hidden;
+    background-image: url(img/disk_bg1.png);
+    background-size: 200px 200px;
+    border: 3px solid rgba(0, 0, 0, .3);
+}
+
+ul li {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    transform-origin: bottom right;
+    font-size: xx-large;
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 1px 1px rgb(17, 17, 17);
+}
+
+ul li:hover{
+    background-color: rgba(215, 221, 190, .06);
+    color: white;
+    cursor: pointer;
+    transition: 0.5s;
+    text-shadow: 3px 3px rgb(17, 17, 17);
+}
+
+.icon{
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    transform: rotate(-45deg);
+}
+
+ul li:nth-child(2){
+    transform: rotate(90deg);
+}
+ul li:nth-child(3){
+    transform: rotate(180deg);
+}
+ul li:nth-child(4){
+    transform: rotate(270deg);
+}
+
+/* ############ */
+
+/* DISCOS */
+
+.discGroup {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    color: white
+}
+
+.discGroup > div {
+    padding: 30px;
+}
+
+.discGroup div img {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    box-shadow: 3px 3px 3px rgba(128, 128, 128, 0.5);
+}
+
+.discTitle {
+    margin-top: -1%;
+    display: flex;
+    align-items: center;
+    max-width: 400px;
+    min-height: 4vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    height: 1vh;
+    border: 1px solid black;
+    box-shadow: 3px 3px 2px rgba(128, 128, 128, 0.5);
+}
+
+.titleOdd{
+    transform: rotate(1deg);
+}
+
+.titleOdd:hover{
+    transform: rotate(-1deg);
+}
+
+.titleEven{
+    transform: rotate(-1deg);
+}
+
+.titleEven:hover{
+    transform: rotate(1deg);
+}
+
+.discTitle span{
+    padding: 15px;
+}
+
+/* INFO */
+
+.info {
+    background-color: rgba(0, 0, 0, 0.9);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding: 6%;
+    color: white;
+}
+
+.infoText {
+    padding-left: 5%;
+    line-height: 2em;
+}
+
+.info div h1 {
+    margin-bottom: 0.6em;
+}
+
+.info div img {
+    transform: rotate(-1deg);
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.street {
+    margin: -15px;
+    float: right;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+
+}
+
+div.infoText > div {
+    margin-top: 1%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.infoButtons{
+    background-color: white;
+    color: black;
+    padding: 15px;
+    margin-right: 10px;
+}
+
+.infoButtons:hover{
+    background-color: rgba(0, 0, 0, 0.3);
+    transition: all 0.5s;
+    color: white;
+}
+
+/* LIVES */
+
+.lives {
+    margin-top: 2vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.live {
+    margin: 5%;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 3px 3px 3px rgba(128, 128, 128, 0.5);
+}
+
+.liveImg {
+    height: 420px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.liveBoxes {
+    color: white;
+    padding: 1%;
+    padding-left: 2%;
+    display: flex;
+    align-items: center;
+    min-height: 5vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    height: 1vh;
+    font-size: 1.4em;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.groupName {
+    margin-top: -15px;
+    margin-left: 10px;
+    transform: rotate(-0.8deg);
+    float: left;
+    max-width: 325px;
+}
+
+.outerLiveDate {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: inherit;
+}
+
+.liveDate {
+    width: 20vw;
+    float: left;
+    r
+    transform: rotate(0.8deg);
+
+}
+
+.leftLive {
+    background-image: url(img/lives/lilsmz.jpg);
+}
+
+.centerLive {
+    background-image: url(img/lives/belako.jpg);
+}
+
+.rightLive {
+    background-image: url(img/lives/lmnc.jpg);
+}
+
+.liveText {
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+}

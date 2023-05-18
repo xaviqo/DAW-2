@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a79f4419-9185-4224-ad3a-9439115e552b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/css/moduls.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/figuras2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/m06.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/m09.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mastermindbs.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/MASTERMIND_2/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/MASTERMIND_2/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/MASTERMIND_2/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/MASTERMIND_2/img/button.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/MASTERMIND_2/img/pattern.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/MASTERMIND_2/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/MASTERMIND_2/script/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/MASTERMIND_2/script/models/Game.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/MASTERMIND_2/script/models/Result.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/MASTERMIND_2/script/models/Sequence.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/MASTERMIND_2/style/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/canvas/fig.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/canvas/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/canvas/luchador/025_010.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/canvas/luchador/Frame0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/canvas/luchador/Frame1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/canvas/luchador/Frame2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/canvas/luchador/Frame3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/canvas/luchador/Frame4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/canvas/luchador/Frame5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/canvas/luchador/Frame6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/canvas/luchador/MetalSlug.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/canvas/luchador/img.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/canvas/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/canvas/test.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/canvas/test1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/canvas/video/canvas.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/canvas/video/lights.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/canvas/video/poster.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/canvas/video/video.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/sitejq/datatables.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/sitejq/images/2manydjs.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/sitejq/images/belako.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/sitejq/images/booker-t-onions.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/sitejq/images/cupid.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/sitejq/images/drop-ninteens.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/sitejq/images/erykah.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/sitejq/images/jethro-tull.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/sitejq/images/los-bitchos.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/sitejq/images/mills.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/sitejq/images/rufus-t-firelfy.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/sitejq/images/shop.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/sitejq/images/sonic-youth.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/sitejq/images/tab.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/sitejq/images/the-stranglers.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/sitejq/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/sitejq/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/tooltipjq/jq1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/JUEGO_AMAZONA/brick.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/JUEGO_AMAZONA/database.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/JUEGO_AMAZONA/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/JUEGO_AMAZONA/pattern.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/JUEGO_AMAZONA/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/JUEGO_AMAZONA/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/TestIQ/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/TestIQ/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/TestIQ/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/e3/clock.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/e3/clock.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/e3/form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/e5/bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/e5/font.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/e5/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/e5/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/e6/img/disc/billymn.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/e6/img/disc/blur.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/e6/img/disc/dropnineteens.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/e6/img/disc/gorillaz.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/e6/img/disc/kasabian.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/e6/img/disc/kraftwerk.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/e6/img/disc/tab.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/e6/img/disk_bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/e6/img/disk_bg1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/e6/img/head.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/e6/img/lives/analog.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/e6/img/lives/belako.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/e6/img/lives/lilsmz.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/e6/img/lives/littlesimz.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/e6/img/lives/lmnc.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/e6/img/shopImg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/e6/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/e6/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/e7/img/g1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/e7/img/g10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/e7/img/g11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/e7/img/g12.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/e7/img/g13.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/e7/img/g14.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/e7/img/g15.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/e7/img/g16.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/e7/img/g17.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/e7/img/g18.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/e7/img/g19.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/e7/img/g2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/e7/img/g20.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/e7/img/g21.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/e7/img/g22.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/e7/img/g23.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/e7/img/g24.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/e7/img/g26.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/e7/img/g3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/e7/img/g4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/e7/img/g5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/e7/img/g6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/e7/img/g7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/e7/img/g8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/e7/img/g9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/e7/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/e7/internet_logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/e7/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/helloworld.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/jse1/index.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/roulette/clases/Apuesta.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/roulette/clases/Ruleta.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/roulette/clases/VermellNegre.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/roulette/game.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/roulette/img/bets.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/roulette/img/ruleta.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/roulette/img/table.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/roulette/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prac/m06/uf1/roulette/roulette.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CANVA/test4.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CANVA/video/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Entrega1/taula.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Entrega2/ElPais.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Entrega6/test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Entrega7/2022-10-24_17-37.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Entrega7/GALERIA_XAVI_QO.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JUEGO_AMAZONA/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../JUEGO_AMAZONA/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JUEGO_AMAZONA/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/../JUEGO_AMAZONA/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JUEGO_AMAZONA/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/../JUEGO_AMAZONA/style.css" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="2Pgb7aOtOktDO3Khd03TrJl9XFH" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/xavi/Desktop/TRABAJOS/DAW2/JS/BOOTSTRAP/prac/m06/canvas&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/prac/m06/canvas" />
+      <recent name="$PROJECT_DIR$/prac/m06" />
+      <recent name="$PROJECT_DIR$/prac/m06/sitejq" />
+      <recent name="$PROJECT_DIR$/prac/m06/tooltipjq" />
+      <recent name="$PROJECT_DIR$/prac/m06/uf1/roulette" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/prac" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a79f4419-9185-4224-ad3a-9439115e552b" name="Changes" comment="" />
+      <created>1683881506082</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1683881506082</updated>
+      <workItem from="1683881507086" duration="26365000" />
+      <workItem from="1683982822027" duration="15000" />
+      <workItem from="1683998306396" duration="7326000" />
+      <workItem from="1684006695471" duration="300000" />
+      <workItem from="1684049163104" duration="60000" />
+      <workItem from="1684249617180" duration="1845000" />
+      <workItem from="1684262592752" duration="3000" />
+      <workItem from="1684262714983" duration="10000" />
+      <workItem from="1684267957952" duration="2092000" />
+      <workItem from="1684344173968" duration="1674000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

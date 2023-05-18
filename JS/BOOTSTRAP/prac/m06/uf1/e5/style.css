@@ -1,0 +1,90 @@
+@font-face {
+    font-family: 'fuente';
+    src: url('font.ttf');
+}
+
+* {
+    margin: 0;
+    font-family: 'fuente';
+}
+
+body {
+    display: grid;
+    grid-template-areas:
+        "h h h h"
+        "a b c d"
+        "a b c d"
+        "a b c d"
+        "f f f f";
+    grid-template-rows: 0.02fr 1fr;
+}
+
+body div p {
+    height: 80vh;
+    overflow: scroll;
+}
+
+div img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+}
+
+header {
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    grid-column-start: 1;
+    grid-column-end: 8;
+    color: white;
+    font-size: 2.8em;
+}
+
+.div1 {
+    grid-area: a;
+    background-color: #A7C957;
+}
+
+.div2 {
+    grid-area: b;
+    background-color: #BCEBCB;
+}
+
+.div3 {
+    grid-area: c;
+    background-color: #87D68D;
+}
+
+.div4 {
+    grid-area: d;
+    background-color: #93B48B;
+}
+
+footer {
+    height: 5vh;
+    grid-area: f;
+    background-color: yellowgreen;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(48, 33, 33);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

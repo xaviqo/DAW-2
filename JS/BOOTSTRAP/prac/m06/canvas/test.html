@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            margin-top: 100px;
+        }
+        canvas {
+            border: 2px solid black;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <main style="width: 100vw; height: 100vh;">
+        <canvas id="myCanvas1" width="200" height="200">
+            Este texto se muestra para los navegadores no compatibles con
+            canvas.<br> Por favor, utiliza Firefox, Chrome, Safari u Opera.
+        </canvas>
+        <canvas id="myCanvas2" width="200" height="200">
+            Este texto se muestra para los navegadores no compatibles con
+            canvas.<br> Por favor, utiliza Firefox, Chrome, Safari u Opera.
+        </canvas>
+        <canvas id="myCanvas3" width="200" height="200">
+            Este texto se muestra para los navegadores no compatibles con
+            canvas.<br> Por favor, utiliza Firefox, Chrome, Safari u Opera.
+        </canvas>
+    </main>
+    <script>
+        window.onload = () => {
+            // obtenemos el canvas
+            const canvas = document.getElementById("myCanvas1");
+            // accedemos a "2D". El contexto que tiene los métodos de dibujo
+            // y comprobamos que se puede dibujar
+            if (canvas && canvas.getContext){
+                const context = canvas.getContext("2d");
+                if (context){
+                    context.fillRect(0,0,160,90);
+                    context.fillStyle = 'red';
+                    context.fillRect(10,10,100,60);
+                    context.fillStyle = 'blue';
+                    context.fillRect(70,120,100,60);
+                }
+            }
+
+            const canvas2 = document.getElementById("myCanvas2");
+            // accedemos a "2D". El contexto que tiene los métodos de dibujo
+            // y comprobamos que se puede dibujar
+            if (canvas2 && canvas2.getContext){
+                const context2 = canvas2.getContext("2d");
+                if (context2) {
+                    context2.fillStyle = 'blue';
+                    context2.fillRect(10,10,50,50);
+                    context2.fillStyle = 'yellow';
+                    context2.fillRect(40,40,50,50);
+                }
+            }
+
+            const canvas3 = document.getElementById("myCanvas3");
+            // accedemos a "2D". El contexto que tiene los métodos de dibujo
+            // y comprobamos que se puede dibujar
+            if (canvas3 && canvas2.getContext){
+                const context3 = canvas3.getContext("2d");
+                if (context3) {
+                    context3.fillStyle = 'aquamarine';
+                    for (let i = 0; i <= 100; i+=10) {
+                        context3.fillRect(i,i,5,5);
+                    }
+                    context3.strokeStyle = 'purple';
+                    for (let i = 0; i <= 100; i+=10) {
+                        context3.strokeRect(i,100-i,5,5);
+                    }
+                    //context3.strokeStyle = 'aquamarine';
+                    //for (let i = 0; i <= 100; i+=10) {
+                    //    context3.strokeRect(i,i,5,5);
+                    //}
+                }
+            }
+        }
+    </script>
+</body>
+</html>

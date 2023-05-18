@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulari</title>
+    <style>
+        * {
+            color: white
+        }
+        input, select, textarea{
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div style="width: 40vw; background-color: black; padding: 10px;">
+        <form action="">
+            <div style="display:grid; grid-template-columns: 3fr 2fr; margin-bottom: 8px;">
+                <div>
+                    Tu nombre:
+                    <input style="width: 80%" type="text">
+                </div>
+                <div>
+                    Tu clave:
+                    <input type="password">
+                </div>
+            </div>
+            <div style="display:flex; margin-bottom: 8px;">
+                <div>
+                    <b>Archivos a enviar:</b>
+                </div>
+                <div style="display:flex; justify-content: space-around; width: 75%;">
+                    <label for="man-html">
+                        <input type="checkbox" id="man-html">
+                        Manual HTML
+                    </label>
+                    <label for="sft-map">
+                        <input type="checkbox" id="sft-map">
+                        Programa Mapthis
+                    </label>
+                    <label for="fil-help">
+                        <input type="checkbox" id="fil-help">
+                        Archivo ayuda
+                    </label>
+                </div>
+            </div>
+            <div style="display:flex;">
+                <div>
+                    <b>Tu edad:</b>
+                </div>
+                <div style="display:flex; justify-content: space-around; width: 75%; margin-bottom: 8px;">
+                    <div>
+                        <input type="radio" id="20" name="edad">
+                        <label for="20">Menos de 20 años</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="2040" name="edad">
+                        <label for="2040">Entre 20 y 40 años</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="40" name="edad" >
+                        <label for="40">Más de 40 años<label>
+                    </div>
+                </div>
+            </div>
+            <div style="display:flex;  width: 100%; margin-bottom: 8px;">
+                <div>
+                    <b>Como conociste mi página:</b>
+                </div>
+                <div style="margin-left: 5px">
+                    <select>
+                        <option selected color="black">De casualidad</option>
+                        <option color="black">No me acuerdo</option>
+                    </select>
+                </div>
+            </div>
+            <div style="width: 100%;">
+                <div>
+                    <b>Tus Comentarios:</b>
+                </div>
+                <div>
+                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                </div>
+            </div>
+            <div>
+                <button style="color:black" id="enviar" onclick="alert('Gracias!')">Enviar</button>
+                <button style="color:black">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

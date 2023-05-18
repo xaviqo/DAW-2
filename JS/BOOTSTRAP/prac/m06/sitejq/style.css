@@ -1,0 +1,108 @@
+.logo {
+    font-size: xx-large;
+}
+.nav-bar-border{
+    border: 1px solid black !important;
+}
+.top-cards-container{
+    display: flex;
+    justify-content: space-between;
+    width: 99vw;
+    margin-left: 6px;
+}
+.info-card{
+    width: 49vw;
+    margin: 14px 0;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+.card-image{
+    margin: 5px;
+}
+.card-image img{
+    max-width: 220px;
+}
+.card-header {
+    background-color: white !important;
+    border-bottom: 1px solid black;
+}
+.product-carousel{
+    margin-left: 10px;
+    width: 98.8vw;
+}
+.product-card {
+    margin: 3px
+}
+.product-image {
+    border: 1px solid black;
+    max-width: 150px;
+}
+.product-body {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+.mid-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+}
+.shop-place {
+    margin: 0 13.4px;
+    margin-bottom: 9px;
+    height: 31vh;
+}
+.shop-info {
+    margin-bottom: 9px;
+    margin-right: 12px;
+    display: grid;
+}
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+.info-grid div {
+    padding: 15px;
+}
+.shop-img{
+    background-image: url("images/shop.png");
+    background-position: center;
+    background-size: cover;
+    margin: 20px;
+    height: 85%;
+    border: solid 1px black;
+}
+.rounded-pill{
+    background-color: white !important;
+    color: black;
+    border: solid black 1px;
+    padding-top: 6px;
+}
+.rounded-pill:hover{
+    cursor: pointer;
+    background-color: black !important;
+    color: white;
+    border: solid transparent 1px;
+    padding-top: 6px;
+    transition: 1s;
+}
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+.modal-dialog > * {
+    background: white !important;
+    z-index: 9 !important;
+}
+.modal-dialog{
+}
+.modal-header {
+    background: white !important;
+}
+.ui-dialog-titlebar-close {
+    visibility: hidden;
+}
+#ui-datepicker-div{
+    background-color: white !important;
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    main {
+        width: 100vw;
+        height: 100vh;
+    }
+    body {
+        background-color: #1736d3;
+    }
+</style>
+<body>
+    <main>
+        <canvas id="img">
+        </canvas>
+        <br>
+        <canvas id="ms">
+        </canvas>
+        <canvas id="nade">
+        </canvas>
+        <canvas id="pkm">
+        </canvas>
+    </main>
+    <script>
+       const ctx = document.getElementById('img').getContext('2d');
+        const img = new Image();
+
+        let i = 0;
+        setInterval(() => {
+            img.src = `Frame${i}.png`;
+            img.onload = function() {
+                ctx.clearRect(0,0,150,150)
+                ctx.drawImage(img,10,10)
+            }
+            i++
+            if (i > 6) i = 0;
+        },50);
+
+        const ctxMs = document.getElementById('ms').getContext('2d');
+        const imgMs = new Image();
+        imgMs.src = 'MetalSlug.png';
+
+            let imgX = 10; const imgY = 460;
+            const imgAncho = 80; const imgAlto = 80;
+            const lienzoX = 0; const lienzoY = 0;
+            const lienzoAncho = 100; const lienzoAlto = 100;
+            setInterval( function(){
+                ctxMs.drawImage(
+                    imgMs,
+                    imgX,imgY,
+                    imgAncho,imgAlto,
+                    lienzoX,lienzoY,
+                    lienzoAncho,lienzoAlto
+                )
+                imgX+=143;
+                if (imgX > 500) {
+                    imgX = 10;
+                }
+            },100);
+
+       const ctxNade = document.getElementById('nade').getContext('2d');
+       const imgNade = new Image();
+
+       imgNade.src = 'MetalSlug.png';
+
+       let imgXn = 10; const imgYn = 1615;
+       const imgAnchon = 40; const imgAlton = 40;
+       const lienzoXn = 0; const lienzoYn = 0;
+       const lienzoAnchon = 40; const lienzoAlton = 40;
+
+       setInterval( function(){
+           ctxNade.drawImage(
+               imgNade,
+               imgXn,imgYn,
+               imgAnchon,imgAlton,
+               lienzoXn,lienzoYn,
+               lienzoAnchon,lienzoAlton
+           )
+           imgXn+=44.1;
+           if (imgXn > 400) {
+               imgXn = 10;
+           }
+       },60);
+
+       const ctxPmk = document.getElementById('pkm').getContext('2d');
+       const imgPkm = new Image();
+
+       imgPkm.src = '025_010.png';
+
+       let imgXp = 220; let imgYp = 30;
+       const imgAnchop = 20; const imgAltop = 20;
+       const lienzoXp = 0; const lienzoYp = 0;
+       const lienzoAnchop = 20; const lienzoAltop = 20;
+
+       setInterval( function(){
+           ctxPmk.drawImage(
+               imgPkm,
+               imgXp,imgYp,
+               imgAnchop,imgAltop,
+               lienzoXp,lienzoYp,
+               lienzoAnchop,lienzoAltop
+           )
+           //ctxPmk.clearRect(0,0,150,150)
+           imgYp+=20;
+           if (imgYp > 200) {
+               imgYp = 10;
+           }
+       },550);
+    </script>
+</body>
+</html>

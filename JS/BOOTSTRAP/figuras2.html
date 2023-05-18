@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xavi Quiñones Portfolio</title>
+    <link href="https://bootswatch.com/5/quartz/bootstrap.min.css" rel="stylesheet" >
+    <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        canvas {
+            border: 2px solid black;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container" id="m06">
+    <div class="row vh-100" >
+        <div class="col">
+            <header class="d-flex flex-wrap justify-content-center pt-4 pb-2">
+                <a href="/" class="d-none d-md-block d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                    <span class="fs-4"><i class="fa-solid fa-folder"></i> - Portfolio de Xavier Quiñones</span>
+                </a>
+            </header>
+            <div class="d-flex justify-content-center align-content-center mt-5">
+                <div>
+                    <a class="dropdown-item" href="m09.html">
+                        <button type="button" class="btn btn-light">Volver a M09</button>
+                    </a>
+                </div>
+            </div>
+           <div class="container row mt-5">
+               <div class="col">
+                   <div class="card border-secondary mb-3">
+                       <div class="card-header">
+                           Figuras 1
+                       </div>
+                       <div class="card-body d-flex justify-content-center">
+                           <canvas id="myCanvas1" width="200" height="200">
+                               Este texto se muestra para los navegadores no compatibles con
+                               canvas.<br> Por favor, utiliza Firefox, Chrome, Safari u Opera.
+                           </canvas>
+                       </div>
+                   </div>
+               </div>
+               <div class="col">
+                   <div class="card border-secondary mb-3">
+                       <div class="card-header">
+                           Figura 2
+                       </div>
+                       <div class="card-body d-flex justify-content-center">
+                           <canvas id="myCanvas2" width="200" height="200">
+                               Este texto se muestra para los navegadores no compatibles con
+                               canvas.<br> Por favor, utiliza Firefox, Chrome, Safari u Opera.
+                           </canvas>
+                       </div>
+                   </div>
+               </div>
+               <div class="col">
+                   <div class="card border-secondary mb-3">
+                       <div class="card-header">
+                           Figura 3
+                       </div>
+                       <div class="card-body d-flex justify-content-center">
+                           <canvas id="myCanvas4" width="200" height="200">
+                               Este texto se muestra para los navegadores no compatibles con
+                               canvas.<br> Por favor, utiliza Firefox, Chrome, Safari u Opera.
+                           </canvas>
+                       </div>
+                   </div>
+               </div>
+           </div>
+        </div>
+    </div>
+</div>
+<script>
+    window.onload = () => {
+        const canvas = document.getElementById('myCanvas1');
+        if (canvas && canvas.getContext){
+            const context = canvas.getContext("2d");
+            const square = 20;
+            const max = 200;
+            if (context){
+                for (let i = 0; i < max; i+=square) {
+                    for (let k = 0; k < max; k+=square) {
+                        context.fillStyle = getRandomColor();
+                        context.fillRect((k+i),(i),square,square);
+                        context.fillStyle = getRandomColor();
+                        context.fillRect((i),(k+i),square,square);
+                    }
+                }
+            }
+        }
+        const canvas2 = document.getElementById('myCanvas2');
+        if (canvas2 && canvas2.getContext) {
+            const context2 = canvas2.getContext("2d");
+            const w = 20;
+            const h = 200;
+            if (context2) {
+                context2.fillStyle = getRandomColor();
+                context2.fillRect(0,0,w,h)
+                for (let i = 0; i <= 200; i+=w) {
+                    context2.fillStyle = getRandomColor();
+                    context2.fillRect((i+w),0,w,h)
+                }
+            }
+        }
+        const canvas3 = document.getElementById('myCanvas3');
+        if (canvas3 && canvas3.getContext){
+            const context3 = canvas3.getContext("2d");
+            if (context3) {
+                context3.beginPath();
+                context3.moveTo(50, 10);
+                context3.lineTo(80, 80);
+                context3.lineTo(20, 80);
+                context3.closePath();
+                context3.fill();
+                context3.beginPath();
+                context3.moveTo(20, 80);
+                context3.lineTo(80, 80);
+                context3.lineTo(50, 150);
+                context3.closePath();
+                context3.fill();
+
+                context3.beginPath();
+                context3.moveTo(50, 10);
+                context3.lineTo(80, 80);
+                context3.lineTo(20, 80);
+                context3.closePath();
+                context3.fill();
+                context3.beginPath();
+                context3.moveTo(20, 80);
+                context3.lineTo(80, 80);
+                context3.lineTo(50, 140);
+                context3.closePath();
+                context3.fill();
+
+
+                context3.beginPath();
+                context3.moveTo(130,10);
+                context3.lineTo(160,80);
+                context3.lineTo(100,80);
+                context3.closePath();
+                context3.fill();
+
+                context3.fillRect(120,80,20,100);
+            }
+        }
+        // x - -----------------
+        // y - |||||||||||||||||
+        const canvas4 = document.getElementById('myCanvas4');
+        if (canvas4 && canvas4.getContext){
+            const context4 = canvas4.getContext("2d");
+            context4.beginPath();
+            let x = 20;
+            let y = 20;
+            context4.moveTo(x,y);
+            for (let i = 0; i < 16; i++) {
+                (i % 2 === 0) ? x+=20 : y+=20 ;
+                context4.lineTo(x,y);
+            }
+            x = 20;
+            context4.lineTo(x,y);
+            y = 20;
+            context4.lineTo(x,y);
+            context4.fill();
+        }
+    }
+
+    function getRandomColor() {
+        // Genera una cadena de 6 caracteres aleatorios en hexadecimal
+        const randomHex = Math.floor(Math.random() * 16777215).toString(16);
+        // Agrega un símbolo "#" al inicio de la cadena
+        return "#" + randomHex;
+    }
+</script>
+</body>
+</html>

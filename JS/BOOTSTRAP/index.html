@@ -3,24 +3,230 @@
 <head>
     <meta charset="UTF-8">
     <title>Xavi Quiñones Portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link href="https://bootswatch.com/5/quartz/bootstrap.min.css" rel="stylesheet" >
+    <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
-<div class="container">
-    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-            <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-            <span class="fs-4">Xavi QO</span>
-        </a>
-        <ul class="nav nav-pills">
-            <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-        </ul>
-    </header>
+<div class="container" id="landing">
+    <div class="row vh-100">
+        <div class="col">
+            <header class="d-flex flex-wrap justify-content-center pt-4 pb-2">
+                <a href="/" class="d-none d-md-block d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                    <span class="fs-4"><i class="fa-solid fa-folder"></i> - Portfolio de Xavier Quiñones</span>
+                </a>
+                <nav class="navbar navbar-expand-lg navbar-collapse">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <ul class="nav nav-pills navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">Main</a>
+                            <div class="dropdown-menu show" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 42px);" data-popper-placement="bottom-start">
+                                <a class="dropdown-item" href="index.html">Landing</a>
+                                <a class="dropdown-item" href="index.html#skills">Skills</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">M06</a>
+                            <div class="dropdown-menu show" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 42px);" data-popper-placement="bottom-start">
+                                <a class="dropdown-item" href="m06.html##uf1javascript">Javascript</a>
+                                <a class="dropdown-item" href="m06.html##uf2jquery">JQuery</a>
+                                <a class="dropdown-item" href="m06.html##uf3jsdom">DOM</a>
+                                <a class="dropdown-item" href="m06.html##uf4async">Com. Async</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">M09</a>
+                            <div class="dropdown-menu show" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 42px);" data-popper-placement="bottom-start">
+                                <a class="dropdown-item" href="m09.html##uf1htmlcss">HTML/CSS</a>
+                                <a class="dropdown-item" href="m09.html##uf2usabweb">Canvas</a>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+            <div class="h-100 d-inline-block">
+                <div class="container d-flex flex-column align-items-center justify-content-center mt-5">
+                    <div class="row align-items-center">
+                        <div class="col-md-7 jumbotron text-center">
+                            <h1>Welcome to my portfolio!</h1>
+                            <p>As a Java developer, I specialize in writing efficient code for scalable applications that can handle complex data structures. I also have experience using the Vue.js framework to develop user-friendly interfaces and a deep understanding of system architecture and performance optimization.</p>
+                            <p>
+                                <a href="#skills">
+                                    <button type="button" class="btn btn-primary btn-sm">Skills 💪</button>
+                                </a>
+                            </p>
+                        </div>
+                        <div class="col-md-5">
+                            <img src="img/avataaars.png" class="rounded-circle img-fluid" alt="descripción de la imagen">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+<div class="container d-flex align-items-center justify-content-center vh-100">
+    <div class="row vh-100 vw-100 d-flex justify-content-center align-items-center mt-5 pt-5" id="skills">
+        <div class="row h-75d-flex justify-content-center align-items-start">
+            <div class="col-md-4 d-flex justify-content-center flex-fill">
+                <div class="w-100 card border-warning mb-3">
+                    <div class="card-header">
+                        <i class="fa-brands fa-square-js" style="scale: 1.4; margin-right: 5px"></i>
+                        <span class="ml-3">Frontend Stack</span>
+                    </div>
+                    <div class="card-body">
+                        <div>
+                            <div class="mb-3">
+                                <h6><i class="fa-brands fa-html5"></i> HTML</h6>
+                                <div class="progress">
+                                    <div class="progress-bar bg-warning" style="width: 90%;"></div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <h6><i class="fa-brands fa-css3-alt"></i> CSS</h6>
+                                <div class="progress">
+                                    <div class="progress-bar bg-warning" style="width: 65%;"></div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <h6><i class="fa-brands fa-bootstrap"></i> Bootstrap</h6>
+                                <div class="progress">
+                                    <div class="progress-bar bg-warning" style="width: 70%;"></div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <h6><i class="fa-brands fa-square-js"></i> Javascript</h6>
+                                <div class="progress">
+                                    <div class="progress-bar bg-warning" style="width: 85%;"></div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <h6><i class="fa-brands fa-vuejs"></i> VueJS</h6>
+                                <div class="progress">
+                                    <div class="progress-bar bg-warning" style="width: 65%;"></div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <h6><i class="fa-brands fa-angular"></i> Angular</h6>
+                                <div class="progress">
+                                    <div class="progress-bar bg-warning" style="width: 50%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 d-flex justify-content-center flex-fill">
+                <div class="w-100 card border-primary mb-3">
+                    <div class="card-header">
+                        <i class="fa-brands fa-python" style="scale: 1.4; margin-right: 5px"></i>
+                        Backend Stack
+                    </div>
+                    <div class="card-body">
+                        <div>
+                            <div class="mb-3">
+                                <h6><i class="fa-brands fa-java"></i> Java</h6>
+                                <div class="progress">
+                                    <div class="progress-bar bg-primary" style="width: 90%;"></div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <h6><i class="fa-brands fa-node-js"></i> NodeJS</h6>
+                                <div class="progress">
+                                    <div class="progress-bar bg-primary" style="width: 65%;"></div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <h6><i class="fa-brands fa-php"></i> PHP</h6>
+                                <div class="progress">
+                                    <div class="progress-bar bg-primary" style="width: 70%;"></div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <h6><i class="fa-solid fa-database"></i> SQL</h6>
+                                <div class="progress">
+                                    <div class="progress-bar bg-primary" style="width: 90%;"></div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <h6><i class="fa-solid fa-layer-group"></i> NoSQL</h6>
+                                <div class="progress">
+                                    <div class="progress-bar bg-primary" style="width: 50%;"></div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <h6><i class="fa-solid fa-leaf"></i> Spring Framework</h6>
+                                <div class="progress">
+                                    <div class="progress-bar bg-primary" style="width: 80%;"></div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <h6><i class="fa-solid fa-xmark"></i> Express</h6>
+                                <div class="progress">
+                                    <div class="progress-bar bg-primary" style="width: 70%;"></div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <h6><i class="fa-brands fa-laravel"></i> Laravel</h6>
+                                <div class="progress">
+                                    <div class="progress-bar bg-primary" style="width: 60%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 d-flex justify-content-center">
+                <div class="w-100 card border-info mb-3">
+                    <div class="card-header">
+                        <i class="fa-brands fa-ubuntu" style="scale: 1.4; margin-right: 5px"></i>
+                        Systems Stack
+                    </div>
+                    <div class="card-body">
+                        <div>
+                            <div class="mb-3">
+                                <h6><i class="fa-brands fa-linux"></i> Linux</h6>
+                                <div class="progress">
+                                    <div class="progress-bar bg-info" style="width: 60%;"></div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <h6><i class="fa-solid fa-terminal"></i> Bash</h6>
+                                <div class="progress">
+                                    <div class="progress-bar bg-info" style="width: 55%;"></div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <h6><i class="fa-brands fa-python"></i> Python</h6>
+                                <div class="progress">
+                                    <div class="progress-bar bg-info" style="width: 45%;"></div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <h6><i class="fa-brands fa-git"></i> GIT</h6>
+                                <div class="progress">
+                                    <div class="progress-bar bg-info" style="width: 85%;"></div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <h6><i class="fa-brands fa-docker"></i> Docker</h6>
+                                <div class="progress">
+                                    <div class="progress-bar bg-info" style="width: 65%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    window.onload = () => document.querySelectorAll(".dropdown-menu").forEach( b => b.classList.remove('show'));
+</script>
 </body>
 </html>

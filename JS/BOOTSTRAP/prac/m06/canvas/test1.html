@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            margin-top: 100px;
+        }
+        canvas {
+            border: 2px solid black;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <main style="width: 100vw; height: 100vh;">
+        <canvas id="myCanvas1" width="200" height="200">
+            Este texto se muestra para los navegadores no compatibles con
+            canvas.<br> Por favor, utiliza Firefox, Chrome, Safari u Opera.
+        </canvas>
+        <canvas id="myCanvas2" width="200" height="200">
+            Este texto se muestra para los navegadores no compatibles con
+            canvas.<br> Por favor, utiliza Firefox, Chrome, Safari u Opera.
+        </canvas>
+        <canvas id="myCanvas3" width="200" height="200">
+            Este texto se muestra para los navegadores no compatibles con
+            canvas.<br> Por favor, utiliza Firefox, Chrome, Safari u Opera.
+        </canvas>
+        <canvas id="myCanvas4" width="200" height="200">
+            Este texto se muestra para los navegadores no compatibles con
+            canvas.<br> Por favor, utiliza Firefox, Chrome, Safari u Opera.
+        </canvas>
+    </main>
+    <script>
+        window.onload = () => {
+            const canvas = document.getElementById('myCanvas1');
+            if (canvas && canvas.getContext){
+                const context = canvas.getContext("2d");
+                const square = 20;
+                const max = 200;
+                if (context){
+                    for (let i = 0; i < max; i+=square) {
+                            for (let k = 0; k < max; k+=square) {
+                                context.fillStyle = getRandomColor();
+                                context.fillRect((k+i),(i),square,square);
+                                context.fillStyle = getRandomColor();
+                                context.fillRect((i),(k+i),square,square);
+                            }
+                        }
+                   }
+            }
+            const canvas2 = document.getElementById('myCanvas2');
+            if (canvas2 && canvas2.getContext) {
+                const context2 = canvas2.getContext("2d");
+                const w = 20;
+                const h = 200;
+                if (context2) {
+                    context2.fillStyle = getRandomColor();
+                    context2.fillRect(0,0,w,h)
+                    for (let i = 0; i <= 200; i+=w) {
+                        context2.fillStyle = getRandomColor();
+                        context2.fillRect((i+w),0,w,h)
+                    }
+                }
+            }
+            const canvas3 = document.getElementById('myCanvas3');
+            if (canvas3 && canvas3.getContext){
+                const context3 = canvas3.getContext("2d");
+                if (context3) {
+                    context3.beginPath();
+                    context3.moveTo(50, 10);
+                    context3.lineTo(80, 80);
+                    context3.lineTo(20, 80);
+                    context3.closePath();
+                    context3.fill();
+                    context3.beginPath();
+                    context3.moveTo(20, 80);
+                    context3.lineTo(80, 80);
+                    context3.lineTo(50, 150);
+                    context3.closePath();
+                    context3.fill();
+
+                    context3.beginPath();
+                    context3.moveTo(50, 10);
+                    context3.lineTo(80, 80);
+                    context3.lineTo(20, 80);
+                    context3.closePath();
+                    context3.fill();
+                    context3.beginPath();
+                    context3.moveTo(20, 80);
+                    context3.lineTo(80, 80);
+                    context3.lineTo(50, 140);
+                    context3.closePath();
+                    context3.fill();
+
+
+                    context3.beginPath();
+                    context3.moveTo(130,10);
+                    context3.lineTo(160,80);
+                    context3.lineTo(100,80);
+                    context3.closePath();
+                    context3.fill();
+                    
+                    context3.fillRect(120,80,20,100);
+                }
+            }
+            // x - -----------------
+            // y - |||||||||||||||||
+            const canvas4 = document.getElementById('myCanvas4');
+            if (canvas4 && canvas4.getContext){
+                const context4 = canvas4.getContext("2d");
+                context4.beginPath();
+                let x = 20;
+                let y = 20;
+                context4.moveTo(x,y);
+                for (let i = 0; i < 16; i++) {
+                    (i % 2 === 0) ? x+=20 : y+=20 ;
+                    context4.lineTo(x,y);
+                }
+                x = 20;
+                context4.lineTo(x,y);
+                y = 20;
+                context4.lineTo(x,y);
+                context4.fill();
+            }
+        }
+
+        function getRandomColor() {
+            // Genera una cadena de 6 caracteres aleatorios en hexadecimal
+            const randomHex = Math.floor(Math.random() * 16777215).toString(16);
+            // Agrega un símbolo "#" al inicio de la cadena
+            return "#" + randomHex;
+        }
+    </script>
+    
+</body>
+</html>

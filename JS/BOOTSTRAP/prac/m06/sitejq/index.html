@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web con JQuery</title>
+    <link rel="stylesheet" href="https://bootswatch.com/5/lux/bootstrap.min.css">
+<!--
+    <link rel="stylesheet" href="https://kit.fontawesome.com/690c686dd5.css" crossorigin="anonymous">    &lt;!&ndash; OWL CARUSEL &ndash;&gt;
+-->
+    <script src="https://kit.fontawesome.com/690c686dd5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light nav-bar-border">
+    <div class="container-fluid">
+        <i class=" logo" style="margin-right: 15px"></i>
+        <a class="navbar-brand" href="#">signal</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarColor03">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="index.html">Home
+                        <span class="visually-hidden">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="datatables.html">ADMIN</a>
+                </li>
+            </ul>
+            <div style="margin-right: 10px; margin-top: 12px">
+                <p>Find new events: <input type="text" id="datepicker"></p>
+            </div>
+        </div>
+    </div>
+
+</nav>
+<main>
+    <div class="owl-carousel owl-theme top-cards-container ticket-carousel">
+        <div class="card border-primary info-card">
+            <div class="card-body">
+                <h4 class="card-title">CUPID AND THE STUPIDS @ THE MUG</h4>
+                <h6 class="card-subtitle mb-2 text-muted">BARCELONA - 09/09/2023</h6>
+                <p class="card-text">So don't miss out on your chance to be part of history. Get your tickets now and join the thousands of music lovers who will be rocking. See you at the concert! Rock on with the concert of the century, as legendary performers take the stage for an unforgettable evening of music and entertainment.</p>
+                <span class="badge bg-primary rounded-pill" id="opener-cupid">
+                    MORE INFO
+                </span>
+            </div>
+            <div class="card-image">
+                <img src="images/cupid.jpg" alt="">
+            </div>
+        </div>
+        <div class="card border-primary info-card">
+            <div class="card-body">
+                <h4 class="card-title">Erykah Badu @ Sala Salamandra</h4>
+                <h6 class="card-subtitle mb-2 text-muted">L'HOSPITALET - 14/02/2024</h6>
+                <p class="card-text">Experience the magic of live music like never before, as soaring vocals, electrifying guitar solos, and thunderous drums transport you to another world. Whether you're a diehard fan or a first-time attendee, you'll be swept away by the energy and passion of this one-of-a-kind event.</p>
+                <span class="badge bg-primary rounded-pill" id="opener-erikah">
+                    MORE INFO
+                </span>
+            </div>
+            <div class="card-image">
+                <img src="images/erykah.jpg" alt="">
+            </div>
+        </div>
+        <div class="card border-primary info-card">
+            <div class="card-body">
+                <h4 class="card-title">2MANYDJS @ RAZZMATAZZ</h4>
+                <h6 class="card-subtitle mb-2 text-muted">BARCELONA - 29/11/2024</h6>
+                <p class="card-text">The legendary DJs who's about to take the stage! This is it, the moment we've all been waiting for. With his hands on the decks and the beat dropping, he's going to take us on a musical journey we'll never forget.</p>
+                <span class="badge bg-primary rounded-pill" id="opener-2many">
+                    MORE INFO
+                </span>
+            </div>
+            <div class="card-image">
+                <img src="images/2manydjs.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="mid-container">
+        <div class="card border-primary shop-place">
+            <div class="card-body">
+                <h4 class="card-title">Visit our physical store</h4>
+                <h6 class="card-subtitle mb-2 text-muted">Carrer de la música, 123</h6>
+                <div class="map-and-history">
+                    <div>
+                        <iframe
+                                width="420"
+                                height="220"
+                                frameborder="0"
+                                scrolling="no"
+                                marginheight="0"
+                                marginwidth="0"
+                                src="https://www.openstreetmap.org/export/embed.html?bbox=2.1800056099891667%2C41.39746335527937%2C2.183546125888825%2C41.39935463897054&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card border-primary shop-info">
+            <div class="card-body">
+                <div class="info-grid">
+                    <div>Signal is a legendary music store located in the heart of Barcelona. Founded in 1978 by a group of music enthusiasts, the store has been a meeting place for musicians, fans, and collectors for over four decades.In its early years, Signal focused on selling rock and punk vinyl and cassettes imported from around the world.</div>
+                    <div class="shop-img"></div>
+                    <div>Signal continues to be a reference in Barcelona's music scene. The store is still owned by its original founders and is run by a second generation of employees, many of whom have worked there for decades. At Signal, music remains the soul of everything we do.</div>
+                </div>
+            </div>
+        </div>
+        <div class="card border-primary shop-info">
+            <div class="card-body">
+                <div class="info-grid">
+                    <iframe width="435" height="280" src="https://www.youtube.com/embed/cLWHPy9zdGs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="owl-carousel owl-theme product-carousel">
+        <div class="card border-primary mb-3 product-card">
+            <div class="card-header d-flex justify-content-between">
+                Booker T - Green Onions
+                <span class="badge bg-primary rounded-pill">
+                  BUY NOW
+                </span>
+            </div>
+            <div class="card-body product-body">
+                <img src="images/booker-t-onions.jpg" class="product-image">
+                <div>
+                    Although some tracks had potential, the overall sound was unremarkable and forgettable.
+                </div>
+            </div>
+        </div>
+        <div class="card border-primary mb-3 product-card">
+            <div class="card-header d-flex justify-content-between">
+                Sonic Youth - The Nurse
+                <span class="badge bg-primary rounded-pill">
+                    BUY NOW
+                </span>
+            </div>
+            <div class="card-body product-body">
+                <img src="images/sonic-youth.jpg" class="product-image">
+                <div>
+                    The artist's bold experimentation paid off, resulting in an electrifying and genre-defying album.
+                </div>
+            </div>
+        </div>
+        <div class="card border-primary mb-3 product-card">
+            <div class="card-header d-flex justify-content-between">
+                Belako - Render Me Numb
+                <span class="badge bg-primary rounded-pill">
+                   BUY NOW
+                </span>
+            </div>
+            <div class="card-body product-body">
+                <img src="images/belako.jpg" class="product-image">
+                <div>
+                    This album showcases the artist's exceptional songwriting skills.
+                </div>
+            </div>
+        </div>
+        <div class="card border-primary mb-3 product-card">
+            <div class="card-header d-flex justify-content-between">
+                Rufus T Firefly - Kosmos Trip
+                <span class="badge bg-primary rounded-pill">
+                    BUY NOW
+                </span>
+            </div>
+            <div class="card-body product-body">
+                <img src="images/rufus-t-firelfy.jpg" class="product-image">
+                <div>
+                    While the production was top-notch, the album ultimately failed to offer exciting.
+                </div>
+            </div>
+        </div>
+        <div class="card border-primary mb-3 product-card">
+            <div class="card-header d-flex justify-content-between">
+                The Stranglers - Something
+                <span class="badge bg-primary rounded-pill">
+                    BUY NOW
+                </span>
+            </div>
+            <div class="card-body product-body">
+                <img src="images/the-stranglers.jpg" class="product-image">
+                <div>
+                    This album is a true masterpiece, showcasing the artist's growth and evolution as a musician.
+                </div>
+            </div>
+        </div>
+        <div class="card border-primary mb-3 product-card">
+            <div class="card-header d-flex justify-content-between">
+                Jethro Tull - Best Of
+                <span class="badge bg-primary rounded-pill">
+                    BUY NOW
+                </span>
+            </div>
+            <div class="card-body product-body">
+                <img src="images/jethro-tull.jpg" class="product-image">
+                <div>
+                    The album showcases the artist's versatility and range, but lacks cohesiveness and a clear direction.
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- DIALOGS -->
+
+
+
+<div class="card border-primary mb-3" style="max-width: 20rem;" id="dialog-erikah">
+    <div class="card-header ui-button-icon ui-icon ui-icon-closethick">Header</div>
+    <div class="card-body">
+        <h4 class="card-title">Secondary card title</h4>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+</div>
+
+
+
+
+<div class="navbar navbar-expand-lg navbar-light bg-light nav-bar-border footer">
+    <div class="container-fluid d-flex justify-content-around">
+        © 2023 Signal. All rights reserved
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+<!-- OWL CARUSEL -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!-- JQ UI -->
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+</body>
+<script>
+    $( () => {
+        $( "#datepicker" ).datepicker();
+    });
+    $('.ticket-carousel').owlCarousel({
+        loop:true,
+        margin:10,
+        nav:false,
+        autoplay:true,
+        autoplayTimeout: Math.floor(Math.random() * 3000) + 4000,
+        autoplayHoverPause:true,
+        dots: false,
+        rtl:true,
+        responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:2
+            }
+        }
+    });
+    $('.product-carousel').owlCarousel({
+        loop:true,
+        margin:10,
+        nav:false,
+        autoplay:true,
+        autoplayTimeout: Math.floor(Math.random() * 1000) + 2000,
+        autoplayHoverPause:true,
+        dots: false,
+        responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:3
+            },
+            1000:{
+                items:5
+            }
+        }
+    });
+
+    $(document).ready(() => {
+        $(() => {
+            $('#dialog-erikah').dialog({
+                autoOpen: false,
+            })
+
+            $(document).on('click', '#opener-erikah', () => {
+                $('#dialog-erikah').dialog('open')
+            });
+        })
+    })
+</script>
+</html>

@@ -1,0 +1,10 @@
+.uf-img {
+    width: 250px;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8;
+}
+a {
+    text-decoration: none;
+}

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        main {
+            display: flex;
+            align-items: flex-start;
+            justify-items: flex-start;
+            flex-direction: column;
+        }
+        h1, h3 {
+            margin: auto;
+            margin-bottom: 10px;
+        }
+        ol {
+            font-family: sans-serif;
+            padding-left: 18px;
+        }
+        li {
+            padding-left: 2px;
+        }
+        li span {
+            margin: auto;
+            padding: auto;
+            margin-left: 8px;
+        }
+        ol li {
+            margin-bottom: 14px;
+        }
+        li::marker {
+            color: black;
+        }
+        li::before {
+            color: black;
+            content:"- ";
+            margin-left: -7px;
+        }
+        .categoria {
+            margin: 10px 0px;
+        }
+        .noticiaCard {
+            width: 45%;
+        }
+        .titularNoticia {
+            color: #2d3f5e;
+        }
+        .serif {
+            font-family:Times, serif
+        }
+        .sansSerif {
+            font-family:Verdana, sans-serif
+        }
+        .highlight {
+            font-size: 1.2em;
+            font-weight: 100;
+            display: flex;
+            justify-content: center;
+            border-top: 1px solid #de8c28;
+            border-bottom: 1px solid #de8c28;
+            padding: 4px;
+            margin-top: 45px;
+        }
+        .orangeColor {
+            color: #de8c28;
+        }
+        .upperCase {
+            text-transform: uppercase;
+        }
+        .commentBox {
+            background-color: #2d3f5e;
+            width: 20px;
+            height: 15px;
+            display: inline;
+            float: right;
+            margin-bottom: 40px;
+        }
+        .commentArrow {
+            margin-left: 5
+            px;
+            margin-top: 8px;
+            border-top: 15px solid #2d3f5e;
+            border-right: 15px solid transparent;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="noticiaCard">
+            <div class="commentBox">
+                <div class="commentArrow">
+
+                </div>
+            </div>
+            <div class="titularNoticia serif">
+                <h1>
+                    Felipe VI condecoró al gerente de la ciudad ‘española’ de Estados Unidos que visitó en 2015
+                </h1>
+            </div>
+            <div class="sansSerif">
+                <h3>
+                    Se le entregó Cándido Creis, cónsul de Miami y ex jefe de Protocolo de la Casa Real, al "Citi Manager" de San agustín (Florida)
+                </h3>
+            </div>
+            <div class="sansSerif resumenNoticia">
+                <p>
+                    El viaje de los reyes a Estados Unidos en septiembre del año pasado culminó con una visita a San Agustín, la ciudad del Estado de Florida fundada hace 450 años por los conquistadores españoles. Uno de los organizadores de la visita, por parte de las autoridades de San Agustín, ha sido ahora condecorado por el rey y el ministro de Asuntos Exteriores.
+                </p>
+            </div>
+            <div class="highlight orangeColor">
+                Con el impulso de la Embajada de Colombia
+            </div>
+        </div>
+        <div class="orangeColor upperCase categoria">
+            <strong>Otras casas reales</strong>
+        </div>
+        <div class="noticiaCard">
+            <div class="commentBox">
+                <div class="commentArrow">
+
+                </div>
+            </div>
+            <div class="titularNoticia serif">
+                <h1>
+                    La princesa Tatiana de Grecia debatirá en Madrid sobre la importancia social de la mujer
+                </h1>
+            </div>
+            <div class="sansSerif">
+                <h3>
+                    La esposa del heredero Nicolás intervendrá en el foro "Women Working for the World" con otras ponentes, como la alcaldesa Manuela Carmena
+                </h3>
+            </div>
+            <div class="sansSerif resumenNoticia">
+                <p>
+                    Madrid acogerá próximamente una edición del foro internacional "Women Working for the World", una iniciativa para estudiar e impulsar el papel social de la mujer y que surgiá en Colombia hace unos años. Entre las conferenciantes estará Tatiana Blatnik, princesa de Grecia y Dinamarca.
+                </p>
+            </div>
+            <div class="orangeColor">
+                <ol>
+                    <li><span>La bisabuela de la reina Sofía ya tiene una estatua en Grecia</span></li>
+                    <li><span>Felipe VI condecoró al gerente de la ciudad "española" de Estados Unidos que visitó en 2015</span></li>
+                    <li><span>Una comisión secreta diseña la coronación del príncipe Carlos de Inglaterra</span></li>
+                    <li><span>Los reyes coincidirán con Abdalá de Jordania, Victoria de Suecia y Mary de Dinamarca en la ONU</span></li>
+                    <li><span>El manto de Carlos III o una reliquia apócrifa?</span></li>
+                    <li><span>El ex comandante de la base española en la Antártida, número dos de la Guardia Real</span></li>
+                </ol>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

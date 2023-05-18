@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MasterMind JS by Xavi.Tech</title>
+    <link rel="stylesheet" href="style/style.css">
+    <script type="module" src="script/main.js"></script>
+</head>
+<body>
+<main>
+    <div class="frame">
+        <div class="flexCenter allNumbers">
+            <div>10</div>
+            <div>9</div>
+            <div>8</div>
+            <div>7</div>
+            <div>6</div>
+            <div>5</div>
+            <div>4</div>
+            <div>3</div>
+            <div>2</div>
+            <div>1</div>
+        </div>
+        <div class="allSequences">
+            <div class="sequence" id="seq_10">
+                <div class="seqHole"></div>
+                <div class="seqHole"></div>
+                <div class="seqHole"></div>
+                <div class="seqHole"></div>
+            </div>
+            <div class="sequence" id="seq_9">
+                <div class="seqHole"></div>
+                <div class="seqHole"></div>
+                <div class="seqHole"></div>
+                <div class="seqHole"></div>
+            </div>
+            <div class="sequence" id="seq_8">
+                <div class="seqHole"></div>
+                <div class="seqHole"></div>
+                <div class="seqHole"></div>
+                <div class="seqHole"></div>
+            </div>
+            <div class="sequence" id="seq_7">
+                <div class="seqHole"></div>
+                <div class="seqHole"></div>
+                <div class="seqHole"></div>
+                <div class="seqHole"></div>
+            </div>
+            <div class="sequence" id="seq_6">
+                <div class="seqHole"></div>
+                <div class="seqHole"></div>
+                <div class="seqHole"></div>
+                <div class="seqHole"></div>
+            </div>
+            <div class="sequence" id="seq_5">
+                <div class="seqHole"></div>
+                <div class="seqHole"></div>
+                <div class="seqHole"></div>
+                <div class="seqHole"></div>
+            </div>
+            <div class="sequence" id="seq_4">
+                <div class="seqHole"></div>
+                <div class="seqHole"></div>
+                <div class="seqHole"></div>
+                <div class="seqHole"></div>
+            </div>
+            <div class="sequence" id="seq_3">
+                <div class="seqHole"></div>
+                <div class="seqHole"></div>
+                <div class="seqHole"></div>
+                <div class="seqHole"></div>
+            </div>
+            <div class="sequence" id="seq_2">
+                <div class="seqHole"></div>
+                <div class="seqHole"></div>
+                <div class="seqHole"></div>
+                <div class="seqHole"></div>
+            </div>
+            <div class="sequence" id="seq_1">
+                <div class="seqHole"></div>
+                <div class="seqHole"></div>
+                <div class="seqHole"></div>
+                <div class="seqHole"></div>
+            </div>
+        </div>
+        <div class="allResults">
+
+            <div class="result" id="res_10">
+                <div class="resultHole"></div>
+                <div class="resultHole"></div>
+                <div class="resultHole"></div>
+                <div class="resultHole"></div>
+            </div>
+            <div class="result" id="res_9">
+                <div class="resultHole"></div>
+                <div class="resultHole"></div>
+                <div class="resultHole"></div>
+                <div class="resultHole"></div>
+            </div>
+            <div class="result" id="res_8">
+                <div class="resultHole"></div>
+                <div class="resultHole"></div>
+                <div class="resultHole"></div>
+                <div class="resultHole"></div>
+            </div>
+            <div class="result" id="res_7">
+                <div class="resultHole"></div>
+                <div class="resultHole"></div>
+                <div class="resultHole"></div>
+                <div class="resultHole"></div>
+            </div>
+            <div class="result" id="res_6">
+                <div class="resultHole"></div>
+                <div class="resultHole"></div>
+                <div class="resultHole"></div>
+                <div class="resultHole"></div>
+            </div>
+            <div class="result" id="res_5">
+                <div class="resultHole"></div>
+                <div class="resultHole"></div>
+                <div class="resultHole"></div>
+                <div class="resultHole"></div>
+            </div>
+            <div class="result" id="res_4">
+                <div class="resultHole"></div>
+                <div class="resultHole"></div>
+                <div class="resultHole"></div>
+                <div class="resultHole"></div>
+            </div>
+            <div class="result" id="res_3">
+                <div class="resultHole"></div>
+                <div class="resultHole"></div>
+                <div class="resultHole"></div>
+                <div class="resultHole"></div>
+            </div>
+            <div class="result" id="res_2">
+                <div class="resultHole"></div>
+                <div class="resultHole"></div>
+                <div class="resultHole"></div>
+                <div class="resultHole"></div>
+            </div>
+            <div class="result" id="res_1">
+                <div class="resultHole"></div>
+                <div class="resultHole"></div>
+                <div class="resultHole"></div>
+                <div class="resultHole"></div>
+            </div>
+        </div>
+        <div class="flexCenter allPieces">
+            <div class="colorPiece piece yellow selectPiece"></div>
+            <div class="colorPiece piece red selectPiece"></div>
+            <div class="colorPiece piece white selectPiece"></div>
+            <div class="colorPiece piece orange selectPiece"></div>
+            <div class="colorPiece piece blue selectPiece"></div>
+            <div class="colorPiece piece green selectPiece"></div>
+            <div class="colorPiece piece black selectPiece"></div>
+            <div class="colorPiece piece lilac selectPiece"></div>
+        </div>
+    </div>
+</main>
+<div class="checkButtonDiv">
+    <button class="resetBtn">RESET</button>
+    <button class="checkBtn">CHECK</button>
+</div>
+<div class="winnerSequence">
+
+</div>
+<div class="messageBox">
+</div>
+</body>
+</html>
